@@ -29,7 +29,18 @@ const characters = {
     { id: "boy9", image: "images/boy9.jpg", gender: "boy" },
     { id: "boy10", image: "images/boy10.jpg", gender: "boy" },
     { id: "boy11", image: "images/boy11.jpg", gender: "boy" },
-    { id: "boy12", image: "images/boy12.jpg", gender: "boy" }
+    { id: "boy12", image: "images/boy12.jpg", gender: "boy" },
+    { id: "boy13", image: "images/boy13.jpg", gender: "boy" },
+    { id: "boy14", image: "images/boy14.jpg", gender: "boy" },
+    { id: "boy15", image: "images/boy15.jpg", gender: "boy" },
+    { id: "boy16", image: "images/boy16.jpg", gender: "boy" },
+    { id: "boy17", image: "images/boy17.jpg", gender: "boy" },
+    { id: "boy18", image: "images/boy18.jpg", gender: "boy" },
+    { id: "boy19", image: "images/boy19.jpg", gender: "boy" },
+    { id: "boy20", image: "images/boy20.jpg", gender: "boy" },
+    { id: "boy21", image: "images/boy21.jpg", gender: "boy" },
+    { id: "boy22", image: "images/boy22.jpg", gender: "boy" }
+ 
   ],
   girls: [
     { id: "girl1", image: "images/girl1.jpg", gender: "girl" },
@@ -42,7 +53,19 @@ const characters = {
     { id: "girl8", image: "images/girl8.jpg", gender: "girl" },
     { id: "girl9", image: "images/girl9.jpg", gender: "girl" },
     { id: "girl10", image: "images/girl10.jpg", gender: "girl" },
-    { id: "girl11", image: "images/girl11.jpg", gender: "girl" }
+      { id: "girl11", image: "images/girl11.jpg", gender: "girl" },
+    { id: "girl12", image: "images/girl12.jpg", gender: "girl" },
+      { id: "girl13", image: "images/girl13.jpg", gender: "girl" },
+    { id: "girl14", image: "images/girl14.jpg", gender: "girl" },
+    { id: "girl15", image: "images/girl15.jpg", gender: "girl" },
+    { id: "girl16", image: "images/girl16.jpg", gender: "girl" },
+      { id: "girl17", image: "images/girl17.jpg", gender: "girl" },
+        { id: "girl18", image: "images/girl18.jpg", gender: "girl" },
+            { id: "girl19", image: "images/girl19.jpg", gender: "girl" },
+                { id: "girl20", image: "images/girl20.jpg", gender: "girl" },
+                    { id: "girl21", image: "images/girl21.jpg", gender: "girl" },
+                        { id: "girl22", image: "images/girl22.jpg", gender: "girl" }
+
   ]
 };
 
