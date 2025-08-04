@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Anime Smash or Pass</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Anime Smash or Pass</h1>
+    <button id="musicToggle" class="music-btn">🔊</button>
+  </header>
+
+  <audio id="bgMusic" loop>
+    <source src="audio/music.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <div id="menu" class="menu">
+    <button id="boyBtn">Anime Boys</button>
+    <button id="girlBtn">Anime Girls</button>
+    <button id="bothBtn">Both</button>
+  </div>
+
+  <div id="gameArea" class="game-area"></div>
+
+  <div class="leaderboards">
+    <div id="husbandBoard" class="leaderboard"></div>
+    <div id="wifeBoard" class="leaderboard"></div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
