@@ -129,3 +129,27 @@ button:hover {
   object-fit: cover;
   border-radius: 8px;
 }
+
+/* 🔥 New Info Section Styles (About + How to Play) */
+.info-section {
+  max-width: 800px;
+  background-color: #2a2a3f;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+.info-section h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4c4cff;
+  padding-bottom: 5px;
+}
+
+.info-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
