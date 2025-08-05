@@ -1,72 +1,109 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Anime Smash or Pass</title>
-  <link rel="stylesheet" href="style.css" />
-  <meta name="google-site-verification" content="McQhVHBC_yd0-90swszGv5l4WlOPDM9z1BMLUtPOeSs" />
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+  <title>Anime Smash or Pass</title>  
+  <link rel="stylesheet" href="style.css" />  
+  <meta name="google-site-verification" content="McQhVHBC_yd0-90swszGv5l4WlOPDM9z1BMLUtPOeSs" />  
 
-  <!-- 🔥 Open Graph Tags for Link Preview -->
-  <meta property="og:title" content="Anime Smash or Pass" />
-  <meta property="og:description" content="Vote your waifu or husbando now! 🔥 Real-time leaderboard included." />
-  <meta property="og:image" content="https://smashsenpai.github.io/anime-wife-or-nah/preview.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://smashsenpai.github.io/anime-wife-or-nah/" />
+  <!-- 🔥 Open Graph Tags for Link Preview -->  
+  <meta property="og:title" content="Anime Smash or Pass" />  
+  <meta property="og:description" content="Vote your waifu or husbando now! 🔥 Real-time leaderboard included." />  
+  <meta property="og:image" content="https://smashsenpai.github.io/anime-wife-or-nah/preview.jpg" />  
+  <meta property="og:type" content="website" />  
+  <meta property="og:url" content="https://smashsenpai.github.io/anime-wife-or-nah/" />  
 
-  <!-- 🐦 Twitter Card Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Anime Smash or Pass" />
-  <meta name="twitter:description" content="Vote your waifu or husbando now!" />
-  <meta name="twitter:image" content="https://smashsenpai.github.io/anime-wife-or-nah/preview.jpg" />
+  <!-- 🐦 Twitter Card Tags -->  
+  <meta name="twitter:card" content="summary_large_image" />  
+  <meta name="twitter:title" content="Anime Smash or Pass" />  
+  <meta name="twitter:description" content="Vote your waifu or husbando now!" />  
+  <meta name="twitter:image" content="https://smashsenpai.github.io/anime-wife-or-nah/preview.jpg" />  
 
-  <!-- 📈 SEO: Google Search Support -->
-  <meta name="description" content="Vote your favorite waifus and husbandos! Smash or Pass anime characters in this fun interactive game with real-time leaderboard." />
-  <meta name="robots" content="index, follow" />
-  <meta name="keywords" content="anime smash or pass, waifu game, anime husbando, anime voting, anime character ranking, anime leaderboard" />
-</head>
-<body>
-  <header>
-    <h1>Anime Smash or Pass</h1>
-    <button id="musicToggle" class="music-btn">🔊</button>
-  </header>
+  <!-- 📈 SEO: Google Search Support -->  
+  <meta name="description" content="Vote your favorite waifus and husbandos! Smash or Pass anime characters in this fun interactive game with real-time leaderboard." />  
+  <meta name="robots" content="index, follow" />  
+  <meta name="keywords" content="anime smash or pass, waifu game, anime husbando, anime voting, anime character ranking, anime leaderboard" />  
+</head>  
+<body>  
+  <header>  
+    <h1>Anime Smash or Pass</h1>  
+    <button id="musicToggle" class="music-btn">🔊</button>  
+  </header>  
 
-  <audio id="bgMusic" loop>
-    <source src="audio/music.mp3" type="audio/mpeg" />
-    Your browser does not support the audio element.
-  </audio>
-
-  <div id="menu" class="menu">
-    <button id="boyBtn">Anime Boys</button>
-    <button id="girlBtn">Anime Girls</button>
-    <button id="bothBtn">Both</button>
-  </div>
-
-  <div id="gameArea" class="game-area"></div>
-
-  <div class="leaderboards">
-    <div id="husbandBoard" class="leaderboard"></div>
-    <div id="wifeBoard" class="leaderboard"></div>
-  </div>
-
-  <!-- 🔥 About Section -->
-  <section id="about">
-    <h2>About</h2>
-    <p>Welcome to Anime Smash or Pass — the ultimate game to vote your favorite waifus and husbandos! ❤️ Whether you're team "smash" or team "pass", this site lets you decide who deserves to be on top of the leaderboard. Built with love for the anime community.</p>
+  <!-- 📤 Share Button Section (moved to top) -->
+  <section id="share">
+    <h2>Share This Game</h2>
+    <button id="shareBtn">📤 Share with Friends</button>
   </section>
 
-  <!-- 🎮 How to Play Section -->
-  <section id="how-to-play">
-    <h2>How to Play</h2>
-    <ul>
-      <li>Choose a mode: Anime Boys, Girls, or Both.</li>
-      <li>You'll be shown random anime characters one by one.</li>
-      <li>Click <strong>Smash</strong> if you'd date them, or <strong>Pass</strong> if not.</li>
-      <li>Check the real-time leaderboard to see which characters are most loved!</li>
-      <li>Try Endless Mode or Daily Mode for different challenges!</li>
-    </ul>
-  </section>
+  <audio id="bgMusic" loop>  
+    <source src="audio/music.mp3" type="audio/mpeg" />  
+    Your browser does not support the audio element.  
+  </audio>  
 
-  <script type="module" src="script.js"></script>
-</body>
+  <div id="menu" class="menu">  
+    <button id="boyBtn">Anime Boys</button>  
+    <button id="girlBtn">Anime Girls</button>  
+    <button id="bothBtn">Both</button>  
+  </div>  
+
+  <div id="gameArea" class="game-area"></div>  
+
+  <div class="leaderboards">  
+    <div id="husbandBoard" class="leaderboard"></div>  
+    <div id="wifeBoard" class="leaderboard"></div>  
+  </div>  
+
+  <!-- 🔥 About Section -->  
+  <section id="about">  
+    <h2>About</h2>  
+    <p>Welcome to Anime Smash or Pass — the ultimate game to vote your favorite waifus and husbandos! ❤️ Whether you're team "smash" or team "pass", this site lets you decide who deserves to be on top of the leaderboard. Built with love for the anime community.</p>  
+  </section>  
+
+  <!-- 🎮 How to Play Section -->  
+  <section id="how-to-play">  
+    <h2>How to Play</h2>  
+    <ul>  
+      <li>Choose a mode: Anime Boys, Girls, or Both.</li>  
+      <li>You'll be shown random anime characters one by one.</li>  
+      <li>Click <strong>Smash</strong> if you'd date them, or <strong>Pass</strong> if not.</li>  
+      <li>Check the real-time leaderboard to see which characters are most loved!</li>  
+      <li>Try Endless Mode or Daily Mode for different challenges!</li>  
+    </ul>  
+  </section>  
+
+  <script type="module" src="script.js"></script>  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const shareBtn = document.getElementById("shareBtn");
+      if (shareBtn) {
+        shareBtn.addEventListener("click", async () => {
+          const shareData = {
+            title: "Anime Smash or Pass",
+            text: "Vote your waifu or husbando now! 🔥",
+            url: "https://smashsenpai.github.io/anime-wife-or-nah/"
+          };
+
+          if (navigator.share) {
+            try {
+              await navigator.share(shareData);
+            } catch (err) {
+              console.error("Error sharing:", err);
+            }
+          } else {
+            // Fallback: Copy link to clipboard
+            try {
+              await navigator.clipboard.writeText(shareData.url);
+              alert("Link copied! Share it with your friends.");
+            } catch (err) {
+              alert("Couldn't copy link. Please copy manually:\n" + shareData.url);
+            }
+          }
+        });
+      }
+    });
+  </script>
+</body>  
 </html>
+
