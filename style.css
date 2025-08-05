@@ -153,3 +153,25 @@ button:hover {
   margin-bottom: 20px;
   color: #e0e0e0;
 }
+/* Existing styles you already had remain unchanged above... */
+
+/* Share Button Styling */
+#share {
+  margin: 30px auto;
+  text-align: center;
+}
+
+#shareBtn {
+  background-color: #ff5050;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#shareBtn:hover {
+  background-color: #cc3b3b;
+}
