@@ -1,3 +1,4 @@
+/* 🔥 Original Styles (UNCHANGED) */
 body {
   margin: 0;
   padding: 0;
@@ -153,7 +154,6 @@ button:hover {
   margin-bottom: 20px;
   color: #e0e0e0;
 }
-/* Existing styles you already had remain unchanged above... */
 
 /* Share Button Styling */
 #share {
@@ -175,3 +175,58 @@ button:hover {
 #shareBtn:hover {
   background-color: #cc3b3b;
 }
+
+/* 🌟 NEW FEATURES ADDED BELOW */
+
+/* 👑 Big Crown Icon for 1st Place */
+.crown-icon {
+  font-size: 32px;
+  color: gold;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+
+/* 🥇 Gold Frame for 1st Place */
+.gold-frame {
+  border: 3px solid gold;
+  border-radius: 10px;
+}
+
+/* 🥈 Silver Frame for 2nd Place */
+.silver-frame {
+  border: 3px solid silver;
+  border-radius: 10px;
+}
+
+/* 🥉 Bronze Frame for 3rd Place */
+.bronze-frame {
+  border: 3px solid #cd7f32;
+  border-radius: 10px;
+}
+
+/* 🌟 Unique Ultimate Title */
+
+
+
+
+
+/* Ultimate Title Styling */
+.ultimate-title {
+  background: linear-gradient(90deg, gold, orange);
+  color: black;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-style: italic;
+  box-shadow: 0 0 10px gold;
+  margin-top: 5px;
+  display: inline-block;
+}
+.emoji-crown {
+  font-size: 2.2rem;
+  line-height: 1;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
