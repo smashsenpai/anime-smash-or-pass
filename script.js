@@ -40,7 +40,7 @@ const characters = {
     { id: "boy20", image: "images/boy20.jpg", gender: "boy" },
     { id: "boy21", image: "images/boy21.jpg", gender: "boy" },
     { id: "boy22", image: "images/boy22.jpg", gender: "boy" }
- 
+
   ],
   girls: [
     { id: "girl1", image: "images/girl1.jpg", gender: "girl" },
@@ -194,11 +194,33 @@ async function displayLeaderboard(gender, targetId, title) {
   board.innerHTML = `<h3>${title}</h3>`;
 
   const ul = document.createElement("ul");
-  sorted.forEach(s => {
+
+  sorted.forEach((s, index) => {
     const char = group.find(c => c.id === s.id);
     const li = document.createElement("li");
+
+    let frameClass = "";
+    let crownIcon = "";
+    let ultimateTitle = "";
+
+    if (index === 0) {
+      frameClass = "gold-frame";
+      crownIcon = `<div class="emoji-crown">👑</div>`;
+      ultimateTitle = `<div class="ultimate-title">${gender === "girl" ? "Ultimate Waifu" : "Ultimate Husbando"}</div>`;
+    } else if (index === 1) {
+      frameClass = "silver-frame";
+    } else if (index === 2) {
+      frameClass = "bronze-frame";
+    }
+
     li.innerHTML = `
-      <img src="${char.image}" class="leaderboard-img" />
+      <div class="crown-container">
+        ${crownIcon}
+        <div class="leaderboard-img-container ${frameClass}">
+          <img src="${char.image}" class="leaderboard-img" />
+        </div>
+      </div>
+      ${ultimateTitle}
       <span>${(s.percent * 100).toFixed(1)}% (${s.total} votes)</span>
     `;
     ul.appendChild(li);
@@ -206,6 +228,7 @@ async function displayLeaderboard(gender, targetId, title) {
 
   board.appendChild(ul);
 }
+
 
 function shuffleArray(arr) {
   return arr
