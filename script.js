@@ -1,8 +1,10 @@
+// 🔥 IMPORTS
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import {
   getFirestore, collection, doc, getDoc, getDocs, setDoc, updateDoc, increment
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
+// 🔥 FIREBASE CONFIG
 const firebaseConfig = {
   apiKey: "AIzaSyDNRa8_noLXsg1n591GexonnK733nZxa6M",
   authDomain: "animevoteapp.firebaseapp.com",
@@ -69,8 +71,11 @@ const characters = {
   ]
 };
 
+// 🔥 VARIABLES
 let currentGroup = [];
 let currentIndex = 0;
+let currentDaily = false;
+let dailyChar = null;
 
 const gameArea = document.getElementById("gameArea");
 const boyBtn = document.getElementById("boyBtn");
@@ -101,6 +106,10 @@ boyBtn.onclick = () => startMode("boys");
 girlBtn.onclick = () => startMode("girls");
 bothBtn.onclick = () => startMode("both");
 
+// 🔥 NEW BUTTONS FOR DAILY MODES
+document.getElementById("dailyWaifuBtn").onclick = () => startDailyMode("girl");
+document.getElementById("dailyHusbandoBtn").onclick = () => startDailyMode("boy");
+
 function startMode(mode) {
   const group =
     mode === "both"
@@ -109,7 +118,32 @@ function startMode(mode) {
 
   currentGroup = shuffleArray(group);
   currentIndex = 0;
+  currentDaily = false;
   document.getElementById("menu").style.display = "none";
+  document.getElementById("dailyMenu").style.display = "none";
+  showCharacter();
+  
+}
+
+// 🔥 NEW: DAILY MODE
+function startDailyMode(gender) {
+  const today = new Date().toISOString().split("T")[0];
+  const key = `daily_${gender}_${today}`;
+  const stored = localStorage.getItem(key);
+
+  if (stored) {
+    dailyChar = JSON.parse(stored);
+  } else {
+    const pool = characters[gender === "girl" ? "girls" : "boys"];
+    dailyChar = pool[Math.floor(Math.random() * pool.length)];
+    localStorage.setItem(key, JSON.stringify(dailyChar));
+  }
+
+  currentGroup = [dailyChar];
+  currentIndex = 0;
+  currentDaily = true;
+  document.getElementById("menu").style.display = "none";
+  document.getElementById("dailyMenu").style.display = "none";
   showCharacter();
 }
 
@@ -139,7 +173,14 @@ function showCharacter() {
   `;
 }
 
+// 🔥 VOTING (CLASSIC & DAILY)
 async function vote(characterId, isSmash) {
+  const voteKey = `voted_${characterId}_${new Date().toISOString().split("T")[0]}`;
+  if (currentDaily && localStorage.getItem(voteKey)) {
+    document.getElementById("voteResult").innerText = "You've already voted today!";
+    return;
+  }
+
   const ref = doc(db, "votes", characterId);
   const snap = await getDoc(ref);
   if (!snap.exists()) {
@@ -156,6 +197,8 @@ async function vote(characterId, isSmash) {
 
   document.getElementById("voteResult").innerText = `😍 ${percent}% (${data.smash}/${total})`;
 
+  localStorage.setItem(voteKey, "true");
+
   setTimeout(() => {
     currentIndex++;
     showCharacter();
@@ -170,6 +213,8 @@ function playAgain() {
 function returnHome() {
   gameArea.innerHTML = "";
   document.getElementById("menu").style.display = "flex";
+  document.getElementById("dailyMenu").style.display = "flex";
+  
 }
 
 async function displayLeaderboard(gender, targetId, title) {
@@ -228,7 +273,6 @@ async function displayLeaderboard(gender, targetId, title) {
 
   board.appendChild(ul);
 }
-
 
 function shuffleArray(arr) {
   return arr
