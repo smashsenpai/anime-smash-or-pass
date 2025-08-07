@@ -229,4 +229,44 @@ button:hover {
   text-align: center;
 }
 
+/* Button sections layout */
+.main-modes,
+.daily-modes {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+}
 
+/* Daily button custom colors */
+#dailyWaifuBtn {
+  background-color: #ff69b4; /* hot pink */
+  color: white;
+}
+
+#dailyHusbandoBtn {
+  background-color: #87cefa; /* light sky blue */
+  color: black;
+}
+.daily-menu{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.choice-buttons button:hover,
+.gold-frame:hover,
+.silver-frame:hover,
+.bronze-frame:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
+}
+#dailyWaifuBtn:hover {
+  background-color: #e0529c; /* slightly darker hot pink */
+}
+
+#dailyHusbandoBtn:hover {
+  background-color: #5ca9dd; /* slightly darker sky blue */
+}
+
+  
