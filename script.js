@@ -4,8 +4,9 @@ import {
   getFirestore, collection, doc, getDoc, getDocs, setDoc, updateDoc, increment
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-// 🔥 FIREBASE CONFIG
-const firebaseConfig = {
+// 🔥 FIREBASE CONFIGS
+// Live project (AnimeVoteApp)
+const liveConfig = {
   apiKey: "AIzaSyDNRa8_noLXsg1n591GexonnK733nZxa6M",
   authDomain: "animevoteapp.firebaseapp.com",
   projectId: "animevoteapp",
@@ -15,8 +16,25 @@ const firebaseConfig = {
   measurementId: "G-CKL3026K7X"
 };
 
+// Test project (anime-vote-leaderboard)
+const testConfig = {
+  apiKey: "AIzaSyB4q2XirztsJOO5RvyYnMEPs7_3e13OaIE",
+  authDomain: "anime-vote-leaderboard.firebaseapp.com",
+  projectId: "anime-vote-leaderboard",
+  storageBucket: "anime-vote-leaderboard.appspot.com",
+  messagingSenderId: "153651694103",
+  appId: "1:153651694103:web:dcee9781f4129fa04faa52",
+  measurementId: "G-0QC1NNRH1T"
+};
+
+// 🔥 Toggle between live & test
+const useTest = false;// change to false when you want to use live
+const firebaseConfig = useTest ? testConfig : liveConfig;
+
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+
 
 const characters = {
   boys: [
@@ -124,28 +142,59 @@ function startMode(mode) {
   showCharacter();
   
 }
+import { runTransaction } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-// 🔥 NEW: DAILY MODE
-function startDailyMode(gender) {
+// 🔥 NEW: DAILY MODE (TRANSACTION SAFE)
+async function startDailyMode(gender) {
   const today = new Date().toISOString().split("T")[0];
-  const key = `daily_${gender}_${today}`;
-  const stored = localStorage.getItem(key);
+  const dailyRef = doc(db, "daily", `${gender}_${today}`);
+  const historyRef = doc(db, "dailyHistory", gender);
 
-  if (stored) {
-    dailyChar = JSON.parse(stored);
-  } else {
-    const pool = characters[gender === "girl" ? "girls" : "boys"];
-    dailyChar = pool[Math.floor(Math.random() * pool.length)];
-    localStorage.setItem(key, JSON.stringify(dailyChar));
+  try {
+    await runTransaction(db, async (transaction) => {
+      const dailySnap = await transaction.get(dailyRef);
+
+      if (dailySnap.exists()) {
+        // ✅ Already chosen, use it
+        dailyChar = dailySnap.data();
+      } else {
+        // ✅ Pick a new one
+        const pool = characters[gender === "girl" ? "girls" : "boys"];
+
+        const historySnap = await transaction.get(historyRef);
+        let used = historySnap.exists() ? historySnap.data().used : [];
+
+        // find unused
+        let available = pool.filter(c => !used.includes(c.id));
+        if (available.length === 0) {
+          available = pool;
+          used = [];
+        }
+
+        // random pick
+        dailyChar = available[Math.floor(Math.random() * available.length)];
+
+        // save today's choice
+        transaction.set(dailyRef, dailyChar);
+
+        // update history
+        transaction.set(historyRef, { used: [...used, dailyChar.id] });
+      }
+    });
+
+    // show the daily character
+    currentGroup = [dailyChar];
+    currentIndex = 0;
+    currentDaily = true;
+    document.getElementById("menu").style.display = "none";
+    document.getElementById("dailyMenu").style.display = "none";
+    showCharacter();
+
+  } catch (e) {
+    console.error("Transaction failed: ", e);
   }
-
-  currentGroup = [dailyChar];
-  currentIndex = 0;
-  currentDaily = true;
-  document.getElementById("menu").style.display = "none";
-  document.getElementById("dailyMenu").style.display = "none";
-  showCharacter();
 }
+
 
 function showCharacter() {
   if (currentIndex >= currentGroup.length) {
@@ -173,36 +222,46 @@ function showCharacter() {
   `;
 }
 
-// 🔥 VOTING (CLASSIC & DAILY)
-async function vote(characterId, isSmash) {
+// 🔥 VOTING (OPTIMISTIC + BACKGROUND + ERROR FEEDBACK)
+function vote(characterId, isSmash) {
+  const buttons = document.querySelectorAll(".choice-buttons button");
+  buttons.forEach(btn => (btn.disabled = true)); // disable instantly
+
   const voteKey = `voted_${characterId}_${new Date().toISOString().split("T")[0]}`;
   if (currentDaily && localStorage.getItem(voteKey)) {
-    document.getElementById("voteResult").innerText = "You've already voted today!";
+    document.getElementById("voteResult").innerText = "⚠️ You've already voted today!";
+    buttons.forEach(btn => (btn.disabled = false)); 
     return;
   }
 
-  const ref = doc(db, "votes", characterId);
-  const snap = await getDoc(ref);
-  if (!snap.exists()) {
-    await setDoc(ref, { smash: 0, nah: 0 });
-  }
-
-  const field = isSmash ? "smash" : "nah";
-  await updateDoc(ref, { [field]: increment(1) });
-
-  const updatedSnap = await getDoc(ref);
-  const data = updatedSnap.data();
-  const total = data.smash + data.nah;
-  const percent = ((data.smash / total) * 100).toFixed(1);
-
-  document.getElementById("voteResult").innerText = `😍 ${percent}% (${data.smash}/${total})`;
-
+  // ✅ Instant optimistic feedback
+  document.getElementById("voteResult").innerText = "✅ Vote submitted!";
   localStorage.setItem(voteKey, "true");
 
+  // ⏩ Move on immediately
   setTimeout(() => {
     currentIndex++;
     showCharacter();
-  }, 1500);
+  }, 500);
+
+  // 🔥 Background Firestore save
+  (async () => {
+    try {
+      const ref = doc(db, "votes", characterId);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) {
+        await setDoc(ref, { smash: 0, nah: 0 });
+      }
+
+      const field = isSmash ? "smash" : "nah";
+      await updateDoc(ref, { [field]: increment(1) });
+    } catch (err) {
+      console.error("Vote error:", err);
+      // ⚠️ Show friendly feedback instead of silent fail
+      document.getElementById("voteResult").innerText = 
+        "⚠️ Network error — your vote may not have counted.";
+    }
+  })();
 }
 
 function playAgain() {
