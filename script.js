@@ -146,7 +146,6 @@ import { runTransaction } from "https://www.gstatic.com/firebasejs/12.0.0/fireba
 
 // ================== DAILY COUNTDOWN (ONE LOGIC) ==================
 let countdownInterval;
-
 function startDailyCountdown() {
   const homeEl = document.getElementById("dailyCountdownHome");
   const gameEl = document.getElementById("dailyCountdownGame");
@@ -160,12 +159,21 @@ function startDailyCountdown() {
       now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()
     );
 
-    // next UTC midnight
     const tomorrowUTC = new Date(Date.UTC(
       utcNow.getUTCFullYear(), utcNow.getUTCMonth(), utcNow.getUTCDate() + 1
     ));
 
     const diff = tomorrowUTC - utcNow;
+
+    if (diff <= 0) {
+      // ⏰ Midnight reached → make sure both waifu/husbando are ready
+      ensureDailyCharacter("girl");
+      ensureDailyCharacter("boy");
+
+      // reload page so countdown + character both reset
+      window.location.reload();
+      return;
+    }
 
     const hours = Math.floor(diff / (1000 * 60 * 60));
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -182,6 +190,29 @@ function startDailyCountdown() {
 
 // ✅ Start countdown immediately when page loads
 startDailyCountdown();
+async function ensureDailyCharacter(gender) {
+  const todayUTC = new Date().toISOString().slice(0, 10);
+  const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
+
+  const dailySnap = await getDoc(dailyRef);
+  if (!dailySnap.exists()) {
+    // No daily character yet → create one using same logic as startDailyMode
+    const historyRef = doc(db, "dailyHistory", gender);
+    const pool = characters[gender === "girl" ? "girls" : "boys"];
+    const historySnap = await getDoc(historyRef);
+
+    let used = historySnap.exists() ? historySnap.data().used : [];
+    let available = pool.filter(c => !used.includes(c.id));
+    if (available.length === 0) {
+      available = pool;
+      used = [];
+    }
+    const newChar = available[Math.floor(Math.random() * available.length)];
+    await setDoc(dailyRef, newChar);
+    await setDoc(historyRef, { used: [...used, newChar.id] });
+  }
+}
+
 
 // ✅ Show it inside daily mode too
 function startDailyMode(gender) {
@@ -327,13 +358,19 @@ async function displayLeaderboard(gender, targetId, title) {
     const data = docSnap.data();
     const total = data.smash + data.nah;
     if (total > 0) {
-      const percent = data.smash / total;
-      scores.push({ id: docSnap.id, percent, total });
+      scores.push({
+        id: docSnap.id,
+        smash: data.smash,   // ✅ keep raw smash count
+        total: total
+      });
     }
   });
 
+  // ✅ only include characters of this gender
   const filtered = scores.filter(s => group.find(c => c.id === s.id));
-  const sorted = filtered.sort((a, b) => b.percent - a.percent).slice(0, 5);
+
+  // ✅ sort by smash count (highest first)
+  const sorted = filtered.sort((a, b) => b.smash - a.smash).slice(0, 5);
 
   const board = document.getElementById(targetId);
   board.innerHTML = `<h3>${title}</h3>`;
@@ -366,13 +403,14 @@ async function displayLeaderboard(gender, targetId, title) {
         </div>
       </div>
       ${ultimateTitle}
-      <span>${(s.percent * 100).toFixed(1)}% (${s.total} votes)</span>
+      <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
     `;
     ul.appendChild(li);
   });
 
   board.appendChild(ul);
 }
+
 
 function shuffleArray(arr) {
   return arr
