@@ -42,19 +42,34 @@
     Your browser does not support the audio element.  
   </audio>  
 
-   <div id="menu" class="menu">  
-     <button id="boyBtn">Anime Boys</button>  
-     <button id="girlBtn">Anime Girls</button>  
-     <button id="bothBtn">Both</button>
-   </div>
+  <div id="menu" class="menu">  
+    <button id="boyBtn">Anime Boys</button>  
+    <button id="girlBtn">Anime Girls</button>  
+    <button id="bothBtn">Both</button>
+  </div>
+
+  <!-- 🔥 DAILY MENU -->
   <div id="dailyMenu" class="daily-menu">
-     <button id="dailyWaifuBtn">Daily Waifu</button>
-     <button id="dailyHusbandoBtn">Daily Husbando</button>  
-   </div>  
+    <!-- Countdown visible on homepage from the start -->
+    <div id="dailyCountdownHome" 
+         style="margin:10px 0; font-size:18px; font-weight:bold; color:#ffcc00; text-align:center;">
+      Loading daily reset...
+    </div>
+
+    <button id="dailyWaifuBtn">Daily Waifu</button>
+    <button id="dailyHusbandoBtn">Daily Husbando</button>  
+  </div>
+
+  <!-- 🎮 Game Area -->
+  <div id="gameArea" class="game-area"></div>
+
+  <!-- ✅ Countdown for inside game (moved OUT of dailyMenu) -->
+  <div id="dailyCountdownGame" 
+       style="margin-top:10px; font-size:18px; font-weight:bold; color:#ffcc00; text-align:center; display:none;">
+  </div>
 
 
-  <div id="gameArea" class="game-area"></div>  
-
+  
   <div class="leaderboards">  
     <div id="husbandBoard" class="leaderboard"></div>  
     <div id="wifeBoard" class="leaderboard"></div>  
