@@ -140,60 +140,94 @@ function startMode(mode) {
   document.getElementById("menu").style.display = "none";
   document.getElementById("dailyMenu").style.display = "none";
   showCharacter();
-  
+
 }
 import { runTransaction } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-// 🔥 NEW: DAILY MODE (TRANSACTION SAFE)
-async function startDailyMode(gender) {
-  const today = new Date().toISOString().split("T")[0];
-  const dailyRef = doc(db, "daily", `${gender}_${today}`);
+// ================== DAILY COUNTDOWN (ONE LOGIC) ==================
+let countdownInterval;
+
+function startDailyCountdown() {
+  const homeEl = document.getElementById("dailyCountdownHome");
+  const gameEl = document.getElementById("dailyCountdownGame");
+
+  if (countdownInterval) clearInterval(countdownInterval);
+
+  function updateCountdown() {
+    const now = new Date();
+    const utcNow = new Date(
+      now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
+      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()
+    );
+
+    // next UTC midnight
+    const tomorrowUTC = new Date(Date.UTC(
+      utcNow.getUTCFullYear(), utcNow.getUTCMonth(), utcNow.getUTCDate() + 1
+    ));
+
+    const diff = tomorrowUTC - utcNow;
+
+    const hours = Math.floor(diff / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const text = `⏰ Next reset in: ${hours}h ${minutes}m ${seconds}s`;
+    if (homeEl) homeEl.innerText = text;
+    if (gameEl) gameEl.innerText = text;
+  }
+
+  updateCountdown();
+  countdownInterval = setInterval(updateCountdown, 1000);
+}
+
+// ✅ Start countdown immediately when page loads
+startDailyCountdown();
+
+// ✅ Show it inside daily mode too
+function startDailyMode(gender) {
+  const todayUTC = new Date().toISOString().slice(0, 10); // always UTC date
+  const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
+
+  
   const historyRef = doc(db, "dailyHistory", gender);
 
-  try {
-    await runTransaction(db, async (transaction) => {
-      const dailySnap = await transaction.get(dailyRef);
+  runTransaction(db, async (transaction) => {
+    const dailySnap = await transaction.get(dailyRef);
 
-      if (dailySnap.exists()) {
-        // ✅ Already chosen, use it
-        dailyChar = dailySnap.data();
-      } else {
-        // ✅ Pick a new one
-        const pool = characters[gender === "girl" ? "girls" : "boys"];
-
-        const historySnap = await transaction.get(historyRef);
-        let used = historySnap.exists() ? historySnap.data().used : [];
-
-        // find unused
-        let available = pool.filter(c => !used.includes(c.id));
-        if (available.length === 0) {
-          available = pool;
-          used = [];
-        }
-
-        // random pick
-        dailyChar = available[Math.floor(Math.random() * available.length)];
-
-        // save today's choice
-        transaction.set(dailyRef, dailyChar);
-
-        // update history
-        transaction.set(historyRef, { used: [...used, dailyChar.id] });
+    if (dailySnap.exists()) {
+      dailyChar = dailySnap.data();
+    } else {
+      const pool = characters[gender === "girl" ? "girls" : "boys"];
+      const historySnap = await transaction.get(historyRef);
+      let used = historySnap.exists() ? historySnap.data().used : [];
+      let available = pool.filter(c => !used.includes(c.id));
+      if (available.length === 0) {
+        available = pool;
+        used = [];
       }
+      dailyChar = available[Math.floor(Math.random() * available.length)];
+      transaction.set(dailyRef, dailyChar);
+      transaction.set(historyRef, { used: [...used, dailyChar.id] });
+    }
+  })
+    .then(() => {
+      currentGroup = [dailyChar];
+      currentIndex = 0;
+      currentDaily = true;
+
+      document.getElementById("menu").style.display = "none";
+      document.getElementById("dailyMenu").style.display = "none";
+
+      // ✅ make sure the game timer is visible
+      document.getElementById("dailyCountdownGame").style.display = "block";
+
+      showCharacter();
+    })
+    .catch((e) => {
+      console.error("Transaction failed: ", e);
     });
-
-    // show the daily character
-    currentGroup = [dailyChar];
-    currentIndex = 0;
-    currentDaily = true;
-    document.getElementById("menu").style.display = "none";
-    document.getElementById("dailyMenu").style.display = "none";
-    showCharacter();
-
-  } catch (e) {
-    console.error("Transaction failed: ", e);
-  }
 }
+
 
 
 function showCharacter() {
@@ -223,11 +257,15 @@ function showCharacter() {
 }
 
 // 🔥 VOTING (OPTIMISTIC + BACKGROUND + ERROR FEEDBACK)
+// 🔥 VOTING (OPTIMISTIC + BACKGROUND + ERROR FEEDBACK)
 function vote(characterId, isSmash) {
   const buttons = document.querySelectorAll(".choice-buttons button");
   buttons.forEach(btn => (btn.disabled = true)); // disable instantly
 
-  const voteKey = `voted_${characterId}_${new Date().toISOString().split("T")[0]}`;
+  // ✅ Use UTC date so it's the same for everyone worldwide
+  const todayUTC = new Date().toISOString().slice(0, 10);
+  const voteKey = `voted_${characterId}_${todayUTC}`;
+
   if (currentDaily && localStorage.getItem(voteKey)) {
     document.getElementById("voteResult").innerText = "⚠️ You've already voted today!";
     buttons.forEach(btn => (btn.disabled = false)); 
@@ -257,12 +295,12 @@ function vote(characterId, isSmash) {
       await updateDoc(ref, { [field]: increment(1) });
     } catch (err) {
       console.error("Vote error:", err);
-      // ⚠️ Show friendly feedback instead of silent fail
       document.getElementById("voteResult").innerText = 
         "⚠️ Network error — your vote may not have counted.";
     }
   })();
 }
+
 
 function playAgain() {
   currentIndex = 0;
@@ -273,8 +311,11 @@ function returnHome() {
   gameArea.innerHTML = "";
   document.getElementById("menu").style.display = "flex";
   document.getElementById("dailyMenu").style.display = "flex";
-  
+
+  // ✅ hide the daily countdown that belongs to the game
+  document.getElementById("dailyCountdownGame").style.display = "none";
 }
+
 
 async function displayLeaderboard(gender, targetId, title) {
   const all = [...characters.boys, ...characters.girls];
@@ -345,4 +386,4 @@ displayLeaderboard("girl", "wifeBoard", "Top Wives");
 
 window.vote = vote;
 window.playAgain = playAgain;
-window.returnHome = returnHome;
+window.returnHome = returnHome; 
