@@ -28,7 +28,7 @@ const testConfig = {
 };
 
 // 🔥 Toggle between live & test
-const useTest = true;// change to false when you want to use live
+const useTest = false;// change to false when you want to use live
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
