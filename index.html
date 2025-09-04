@@ -1,6 +1,8 @@
 <!DOCTYPE html>  
 <html lang="en">  
-<head>  
+<head> 
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
   <meta charset="UTF-8" />  
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
   <title>Anime Smash or Pass</title>  
@@ -29,13 +31,17 @@
   <header>  
     <h1>Anime Smash or Pass</h1>  
     <button id="musicToggle" class="music-btn">🔊</button>  
-  </header>  
+  </header> 
+ 
+  <!-- 🔥 HOMEPAGE TITLE -->
+  <div class="homepage-header">
+    <h1 class="smash-senpai-title">Smash Senpai</h1>
+    <!-- Tagline Section -->
 
-  <!-- 📤 Share Button Section (moved to top) -->
-  <section id="share">
-    <h2>Share This Game</h2>
-    <button id="shareBtn">📤 Share with Friends</button>
-  </section>
+    <div class="mascot">
+      <img src="images/smash-senpai-girl.png" alt="Smash Senpai Mascot">
+      <p class="mascot-text">💖 Welcome to Smash or pass 💖</p>
+    </div>
 
   <audio id="bgMusic" loop>  
     <source src="audio/music.mp3" type="audio/mpeg" />  
@@ -69,12 +75,12 @@
   </div>
 
 
-  
+
   <div class="leaderboards">  
     <div id="husbandBoard" class="leaderboard"></div>  
     <div id="wifeBoard" class="leaderboard"></div>  
   </div>  
-
+   
   <!-- 🔥 About Section -->  
   <section id="about">  
     <h2>About</h2>  
@@ -92,6 +98,12 @@
       <li>Try Endless Mode or Daily Mode for different challenges!</li>  
     </ul>  
   </section>  
+    <!-- 📤 Share Button Section (moved to top) -->
+    <section id="share">
+      <h2>Share This Game with your friends</h2>
+      <button id="shareBtn">📤 Share!</button>
+    </section>
+
 
   <script type="module" src="script.js"></script>  
   <script>
@@ -124,5 +136,7 @@
       }
     });
   </script>
+    
+
 </body>  
-</html>
+</html> 
