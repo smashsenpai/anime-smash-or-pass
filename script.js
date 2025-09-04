@@ -28,7 +28,7 @@ const testConfig = {
 };
 
 // 🔥 Toggle between live & test
-const useTest = false;// change to false when you want to use live
+const useTest = true;// change to false when you want to use live
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
@@ -179,7 +179,7 @@ function startDailyCountdown() {
     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-    const text = `⏰ Next reset in: ${hours}h ${minutes}m ${seconds}s`;
+    const text = `⏰ New characters in: ${hours}h ${minutes}m ${seconds}s`;
     if (homeEl) homeEl.innerText = text;
     if (gameEl) gameEl.innerText = text;
   }
@@ -425,3 +425,4 @@ displayLeaderboard("girl", "wifeBoard", "Top Wives");
 window.vote = vote;
 window.playAgain = playAgain;
 window.returnHome = returnHome; 
+
