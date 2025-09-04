@@ -152,11 +152,9 @@ function startDailyCountdown() {
 
   if (countdownInterval) clearInterval(countdownInterval);
 
-  function updateCountdown() {
+  async function updateCountdown() {
     const now = new Date();
 
-    // Correct: compute next UTC midnight as a UTC timestamp,
-    // then subtract the actual current time.
     const nextUTC = new Date(Date.UTC(
       now.getUTCFullYear(),
       now.getUTCMonth(),
@@ -167,11 +165,25 @@ function startDailyCountdown() {
     const diff = nextUTC.getTime() - now.getTime();
 
     if (diff <= 0) {
-      // At/after UTC midnight → ensure next daily docs exist and reload
-      ensureDailyCharacter("girl");
-      ensureDailyCharacter("boy");
-      window.location.reload();
-      return;
+      // ✅ Instead of reload, fetch new daily characters dynamically
+      await ensureDailyCharacter("girl");
+      await ensureDailyCharacter("boy");
+
+      // If user is currently in daily mode, update the character instantly
+      if (currentDaily && dailyChar) {
+        const gender = dailyChar.gender;
+        const todayUTC = new Date().toISOString().slice(0, 10);
+        const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
+        const dailySnap = await getDoc(dailyRef);
+        if (dailySnap.exists()) {
+          dailyChar = dailySnap.data();
+          currentGroup = [dailyChar];
+          currentIndex = 0;
+          showCharacter();
+        }
+      }
+
+      return; // next update will compute new diff
     }
 
     const hours   = Math.floor(diff / 3600000);
@@ -186,6 +198,7 @@ function startDailyCountdown() {
   updateCountdown();
   countdownInterval = setInterval(updateCountdown, 1000);
 }
+
 
 // ✅ Start countdown immediately when page loads
 startDailyCountdown();
