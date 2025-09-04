@@ -1,4 +1,4 @@
-/* 🔥 Original Styles (UNCHANGED) */
+ /* 🔥 Original Styles (UNCHANGED) */
 body {
   margin: 0;
   padding: 0;
@@ -268,5 +268,100 @@ button:hover {
 #dailyHusbandoBtn:hover {
   background-color: #5ca9dd; /* slightly darker sky blue */
 }
+/* 🔥 HOMEPAGE TITLE STYLES */
+.homepage-header {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
 
+.smash-senpai-title {
+  font-size: 90px; /* Extra BIG */
+  font-weight: 900;
+  color: #ff4da6; /* Pink fill */
+  -webkit-text-stroke: 3px black; /* Black border */
+  text-shadow: 4px 4px 12px rgba(255, 0, 128, 0.7); /* Glow */
+  font-family: 'Pacifico', 'Dancing Script', cursive; /* 🔥 Cursive anime-like fonts */
+  letter-spacing: 3px;
+}
+
+
+.mascot {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.mascot img {
+  max-width: 300px; /* scales for mobile */
+  width: 80%;
+  height: auto;
+}
+
+.mascot-text {
+  font-family: 'Dancing Script', cursive;
+  font-size: 24px;
+  color: #ff66cc;
+  text-shadow: 2px 2px 5px black;
+  margin-top: 10px;
+} 
+#about {
+  margin-bottom: 60px; /* adds extra spacing before next section */
+}
+#how-to-play {
+  margin-bottom: 100px; /* adds extra spacing before next section */
   
+}
+/* 🌈 Animated Gradient Background */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+
+  background: linear-gradient(270deg, #1e1e2f, #302b63, #24243e);
+  background-size: 600% 600%;
+  animation: gradientShift 20s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ✨ Glowing Pill Buttons */
+button {
+  background: linear-gradient(135deg, #ff4ec9, #ff66b2);
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  border-radius: 50px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 105, 180, 1);
+}
+
+/* 🎀 Floating Smash Senpai Mascot */
+.mascot img {
+  max-width: 300px;
+  width: 80%;
+  height: auto;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
