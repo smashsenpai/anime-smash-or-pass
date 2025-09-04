@@ -1,4 +1,4 @@
-// 🔥 IMPORTS
+ // 🔥 IMPORTS
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import {
   getFirestore, collection, doc, getDoc, getDocs, setDoc, updateDoc, increment
@@ -154,30 +154,29 @@ function startDailyCountdown() {
 
   function updateCountdown() {
     const now = new Date();
-    const utcNow = new Date(
-      now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(),
-      now.getUTCHours(), now.getUTCMinutes(), now.getUTCSeconds()
-    );
 
-    const tomorrowUTC = new Date(Date.UTC(
-      utcNow.getUTCFullYear(), utcNow.getUTCMonth(), utcNow.getUTCDate() + 1
+    // Correct: compute next UTC midnight as a UTC timestamp,
+    // then subtract the actual current time.
+    const nextUTC = new Date(Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate() + 1, // next day
+      0, 0, 0, 0
     ));
 
-    const diff = tomorrowUTC - utcNow;
+    const diff = nextUTC.getTime() - now.getTime();
 
     if (diff <= 0) {
-      // ⏰ Midnight reached → make sure both waifu/husbando are ready
+      // At/after UTC midnight → ensure next daily docs exist and reload
       ensureDailyCharacter("girl");
       ensureDailyCharacter("boy");
-
-      // reload page so countdown + character both reset
       window.location.reload();
       return;
     }
 
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    const hours   = Math.floor(diff / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
 
     const text = `⏰ New characters in: ${hours}h ${minutes}m ${seconds}s`;
     if (homeEl) homeEl.innerText = text;
@@ -219,7 +218,7 @@ function startDailyMode(gender) {
   const todayUTC = new Date().toISOString().slice(0, 10); // always UTC date
   const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
 
-  
+
   const historyRef = doc(db, "dailyHistory", gender);
 
   runTransaction(db, async (transaction) => {
@@ -425,4 +424,3 @@ displayLeaderboard("girl", "wifeBoard", "Top Wives");
 window.vote = vote;
 window.playAgain = playAgain;
 window.returnHome = returnHome; 
-
