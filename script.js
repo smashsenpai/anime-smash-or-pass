@@ -437,3 +437,26 @@ displayLeaderboard("girl", "wifeBoard", "Top Wives");
 window.vote = vote;
 window.playAgain = playAgain;
 window.returnHome = returnHome; 
+// 🌸 Dynamic Background Wallpapers
+const wallpapers = [
+  "images/wall1.png", // replace with your anime wallpaper paths
+  "images/wall2.png",
+  "images/wall3.jpg",
+  "images/wall4.png"
+
+];
+
+function setRandomWallpaper() {
+  const randomIndex = Math.floor(Math.random() * wallpapers.length);
+  document.body.style.backgroundImage = `url('${wallpapers[randomIndex]}')`;
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundPosition = "center";
+  document.body.style.backgroundAttachment = "fixed";
+}
+
+// Set random wallpaper on page load
+setRandomWallpaper();
+
+// Change every 3 minutes (180000 ms)
+setInterval(setRandomWallpaper, 180000);
+
