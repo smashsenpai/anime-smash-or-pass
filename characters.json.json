@@ -1,0 +1,5002 @@
+[
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Satoru Gojou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Yuuji Itadori",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Megumi Fushiguro",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Nobara Kugisaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Kento Nanami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Maki Zenin",
+    "gender": "Female"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Sukuna",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Toge Inumaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Suguru Getou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Touji Fushiguro",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Aoi Toudou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Chousou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Kasumi Miwa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Mahito",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen",
+    "name": "Panda",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Luffy Monkey",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Zoro Roronoa",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Sanji",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Robin Nico",
+    "gender": "Female"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Law Trafalgar",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Nami",
+    "gender": "Female"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Ace Portgas",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Chopper Tony Tony",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Usopp",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Shanks",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Brook",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Hancock Boa",
+    "gender": "Female"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Doflamingo Donquixote",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Newgate Edward",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Franky",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Jinbe",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Rosinante Donquixote",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Katakuri Charlotte",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Sabo",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Yamato",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Dracule Mihawk",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Bentham",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Perona",
+    "gender": "Female"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Buggy",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Crocodile",
+    "gender": "Male"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Vivi Nefertari",
+    "gender": "Female"
+  },
+  {
+    "anime": "ONE PIECE",
+    "name": "Kuzan",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Levi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Eren Yeager",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Mikasa Ackerman",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Armin Arlert",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Hange Zoe",
+    "gender": "female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Erwin Smith",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Gabi Braun",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Sasha Blouse",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Reiner Braun",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Jean Kirstein",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Annie Leonhart",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Krista Lenz",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Zeke",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Pieck Finger",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Ymir",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingeki no Kyojin",
+    "name": "Connie Springer",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER",
+    "name": "Killua Zoldyck",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER",
+    "name": "Gon Freecss",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER",
+    "name": "Hisoka Morow",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER",
+    "name": "Shizuku Murasaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "HUNTER×HUNTER",
+    "name": "Kite",
+    "gender": "Male"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Emilia",
+    "gender": "Female"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Rem",
+    "gender": "Female"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Subaru Natsuki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Echidna",
+    "gender": "Female"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Beatrice",
+    "gender": "Female"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Ram",
+    "gender": "Female"
+  },
+  {
+    "anime": "Re:Zero kara Hajimeru Isekai Seikatsu",
+    "name": "Otto Suwen",
+    "gender": "Male"
+  },
+  {
+    "anime": "Code Geass: Hangyaku no Lelouch",
+    "name": "Lelouch Lamperouge",
+    "gender": "Male"
+  },
+  {
+    "anime": "Code Geass: Hangyaku no Lelouch",
+    "name": "C.C.",
+    "gender": "Female"
+  },
+  {
+    "anime": "Code Geass: Hangyaku no Lelouch",
+    "name": "Shirley Fenette",
+    "gender": "Female"
+  },
+  {
+    "anime": "Code Geass: Hangyaku no Lelouch",
+    "name": "Kallen Stadtfeld",
+    "gender": "Female"
+  },
+  {
+    "anime": "Code Geass: Hangyaku no Lelouch",
+    "name": "Suzaku Kururugi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kenpuu Denki Berserk",
+    "name": "Guts",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kenpuu Denki Berserk",
+    "name": "Griffith",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kenpuu Denki Berserk",
+    "name": "Casca",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Ken Kaneki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Touka Kirishima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Juuzou Suzuya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Hideyoshi Nagachika",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Kishou Arima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Uta",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo Ghoul",
+    "name": "Ayato Kirishima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mob Psycho 100",
+    "name": "Arataka Reigen",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mob Psycho 100",
+    "name": "Shigeo Kageyama",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mob Psycho 100",
+    "name": "Ekubo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mob Psycho 100",
+    "name": "Teruki Hanazawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "DEATH NOTE",
+    "name": "L Lawliet",
+    "gender": "Male"
+  },
+  {
+    "anime": "DEATH NOTE",
+    "name": "Light Yagami",
+    "gender": "Male"
+  },
+  {
+    "anime": "DEATH NOTE",
+    "name": "Ryuk",
+    "gender": "Male"
+  },
+  {
+    "anime": "DEATH NOTE",
+    "name": "Misa Amane",
+    "gender": "Female"
+  },
+  {
+    "anime": "DEATH NOTE",
+    "name": "Nate River",
+    "gender": "Male"
+  },
+  {
+    "anime": "DEATH NOTE",
+    "name": "Mihael Keehl",
+    "gender": "Male"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Makima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Power",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Denji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Aki Hayakawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Reze",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Kobeni Higashiyama",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Asa Mitaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Pochita",
+    "gender": "Male"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Himeno",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Tenshi no Akuma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Kishibe",
+    "gender": "Male"
+  },
+  {
+    "anime": "Chainsaw Man",
+    "name": "Quanxi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Steins;Gate",
+    "name": "Kurisu Makise",
+    "gender": "Female"
+  },
+  {
+    "anime": "Steins;Gate",
+    "name": "Rintarou Okabe",
+    "gender": "Male"
+  },
+  {
+    "anime": "Steins;Gate",
+    "name": "Mayuri Shiina",
+    "gender": "Female"
+  },
+  {
+    "anime": "Steins;Gate",
+    "name": "Suzuha Amane",
+    "gender": "Female"
+  },
+  {
+    "anime": "Vinland Saga",
+    "name": "Thorfinn Karlsefni",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vinland Saga",
+    "name": "Askeladd",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vinland Saga",
+    "name": "Thorkell",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vinland Saga",
+    "name": "Canute Svenson",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vinland Saga",
+    "name": "Thors Snorresson",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Kaguya Shinomiya",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Chika Fujiwara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Miko Iino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Yuu Ishigami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Ai Hayasaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Miyuki Shirogane",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kaguya-sama wa Kokurasetai: Tensaitachi no Renai Zunousen",
+    "name": "Kei Shirogane",
+    "gender": "Female"
+  },
+  {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "name": "Mai Sakurajima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "name": "Sakuta Azusagawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "name": "Rio Futaba",
+    "gender": "Female"
+  },
+  {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "name": "Tomoe Koga",
+    "gender": "Female"
+  },
+  {
+    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
+    "name": "Kaede Azusagawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Itachi Uchiha",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Kakashi Hatake",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Naruto Uzumaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Sasuke Uchiha",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Shikamaru Nara",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Gaara",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Jiraiya",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Minato Namikaze",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Hinata Hyuuga",
+    "gender": "Female"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Rock Lee",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Madara Uchiha",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Sakura Haruno",
+    "gender": "Female"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Might Guy",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Neji Hyuuga",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Tsunade Senju",
+    "gender": "Female"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Orochimaru",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Temari",
+    "gender": "Female"
+  },
+  {
+    "anime": "NARUTO",
+    "name": "Deidara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Violet Evergarden",
+    "name": "Violet Evergarden",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sousou no Frieren",
+    "name": "Frieren",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sousou no Frieren",
+    "name": "Fern",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sousou no Frieren",
+    "name": "Stark",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sousou no Frieren",
+    "name": "Himmel",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sousou no Frieren",
+    "name": "Übel",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kusuriya no Hitorigoto",
+    "name": "Maomao",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kusuriya no Hitorigoto",
+    "name": "Jinshi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Sakura Matou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Rin Tohsaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Artoria Pendragon",
+    "gender": "Female"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Gilgamesh",
+    "gender": "Male"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Shirou Emiya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Archer",
+    "gender": "Male"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Illyasviel von Einzbern",
+    "gender": "Female"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Cú  Chulainn",
+    "gender": "Male"
+  },
+  {
+    "anime": "Carnival Phantasm",
+    "name": "Medusa",
+    "gender": "Female"
+  },
+  {
+    "anime": "HUNTER×HUNTER: Phantom Rouge",
+    "name": "Kurapika",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER: Phantom Rouge",
+    "name": "Leorio Paradinight",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi",
+    "name": "Edward Elric",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi",
+    "name": "Alphonse Elric",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi",
+    "name": "Greed",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi",
+    "name": "Maes Hughes",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi",
+    "name": "Scar",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi",
+    "name": "Alex Louis Armstrong",
+    "gender": "Male"
+  },
+  {
+    "anime": "Darling in the Franxx",
+    "name": "Ichigo",
+    "gender": "Female"
+  },
+  {
+    "anime": "Darling in the Franxx",
+    "name": "Zero Two",
+    "gender": "Female"
+  },
+  {
+    "anime": "Darling in the Franxx",
+    "name": "Hiro",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Tanjirou Kamado",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Nezuko Kamado",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Inosuke Hashibira",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Zenitsu Agatsuma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Kyoujurou Rengoku",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Giyuu Tomioka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Shinobu Kochou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Tengen Uzui",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Mitsuri Kanroji",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Kanao Tsuyuri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Muichirou Tokitou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Akaza",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Obanai Iguro",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Sanemi Shinazugawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Muzan Kibutsuji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Sabito",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimetsu no Yaiba",
+    "name": "Genya Shinazugawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "name": "Megumin",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "name": "Kazuma Satou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "name": "Aqua",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "name": "Darkness",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!",
+    "name": "Wiz",
+    "gender": "Female"
+  },
+  {
+    "anime": "Go-toubun no Hanayome",
+    "name": "Itsuki Nakano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Go-toubun no Hanayome",
+    "name": "Miku Nakano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Go-toubun no Hanayome",
+    "name": "Nino Nakano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Go-toubun no Hanayome",
+    "name": "Yotsuba Nakano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Go-toubun no Hanayome",
+    "name": "Ichika Nakano",
+    "gender": "Female"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken (TV)",
+    "name": "Joseph Joestar",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken (TV)",
+    "name": "Caesar Zeppeli",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken (TV)",
+    "name": "Robert E. O. Speedwagon",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Gintoki Sakata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Kagura",
+    "gender": "Female"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Kotarou Katsura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Toushirou Hijikata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Sougo Okita",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Shinsuke Takasugi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gintama",
+    "name": "Tsukuyo",
+    "gender": "Female"
+  },
+  {
+    "anime": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "name": "Kiyotaka Ayanokouji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "name": "Suzune Horikita",
+    "gender": "Female"
+  },
+  {
+    "anime": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "name": "Kei Karuizawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "name": "Honami Ichinose",
+    "gender": "Female"
+  },
+  {
+    "anime": "Youkoso Jitsuryoku Shijou Shugi no Kyoushitsu e",
+    "name": "Arisu Sakayanagi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sono Bisque Doll wa Koi wo Suru",
+    "name": "Marin Kitagawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sono Bisque Doll wa Koi wo Suru",
+    "name": "Wakana Gojou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Osamu Dazai",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Ranpo Edogawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Chuuya Nakahara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Ryuunosuke Akutagawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Atsushi Nakajima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Akiko Yosano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Kyouka Izumi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bungou Stray Dogs",
+    "name": "Doppo Kunikida",
+    "gender": "Male"
+  },
+  {
+    "anime": "Na Honjaman Level Up",
+    "name": "Jin-U Seong",
+    "gender": "Male"
+  },
+  {
+    "anime": "Na Honjaman Level Up",
+    "name": "Hae-In Cha",
+    "gender": "Female"
+  },
+  {
+    "anime": "Na Honjaman Level Up",
+    "name": "Igris",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Shouto Todoroki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Katsuki Bakugou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Izuku Midoriya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Shouta Aizawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Toshinori Yagi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Eijirou Kirishima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Dabi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Ochako Uraraka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Tomura Shigaraki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Mirio Togata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Keigo Takami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Denki Kaminari",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Tsuyu Asui",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Kyouka Jirou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Tamaki Amajiki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Fumikage Tokoyami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Momo Yaoyorozu",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Hitoshi Shinsou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Mina Ashido",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Jin Bubaigawara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Eri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Enji Todoroki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Kai Chisaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia",
+    "name": "Tenya Iida",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Senkuu Ishigami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Gen Asagiri",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Kohaku",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Chrome",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Ryuusui Nanami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Tsukasa Shishiou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dr. STONE",
+    "name": "Suika",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Hitagi Senjougahara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Koyomi Araragi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Tsubasa Hanekawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Mayoi Hachikuji",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Nadeko Sengoku",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Suruga Kanbaru",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Meme Oshino",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bakemonogatari",
+    "name": "Karen Araragi",
+    "gender": "Female"
+  },
+  {
+    "anime": "One Punch Man",
+    "name": "Saitama",
+    "gender": "Male"
+  },
+  {
+    "anime": "One Punch Man",
+    "name": "Tatsumaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "One Punch Man",
+    "name": "Genos",
+    "gender": "Male"
+  },
+  {
+    "anime": "One Punch Man",
+    "name": "Fubuki",
+    "gender": "Female"
+  },
+  {
+    "anime": "One Punch Man",
+    "name": "Onsoku no Sonic",
+    "gender": "Male"
+  },
+  {
+    "anime": "One Punch Man",
+    "name": "Satoru",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hori-san to Miyamura-kun",
+    "name": "Izumi Miyamura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hori-san to Miyamura-kun",
+    "name": "Kyouko Hori",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hori-san to Miyamura-kun",
+    "name": "Yuki Yoshikawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hori-san to Miyamura-kun",
+    "name": "Remi Ayasaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "SPY×FAMILY",
+    "name": "Yor Forger",
+    "gender": "Female"
+  },
+  {
+    "anime": "SPY×FAMILY",
+    "name": "Anya Forger",
+    "gender": "Female"
+  },
+  {
+    "anime": "SPY×FAMILY",
+    "name": "Loid Forger",
+    "gender": "Male"
+  },
+  {
+    "anime": "SPY×FAMILY",
+    "name": "Bond",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nekomonogatari (Kuro)",
+    "name": "Shinobu Oshino",
+    "gender": "Female"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken",
+    "name": "Joutarou Kuujou",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken",
+    "name": "Noriaki Kakyouin",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken",
+    "name": "Jean-Pierre Polnareff",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Shouyou Hinata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Tobio Kageyama",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Yuu Nishinoya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Kenma Kozume",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Tooru Oikawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Kei Tsukishima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Tetsurou Kuroo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Koushi Sugawara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Ryuunosuke Tanaka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Atsumu Miya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Tadashi Yamaguchi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Kiyoko Shimizu",
+    "gender": "Female"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Daichi Sawamura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Asahi Azumane",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!",
+    "name": "Keishin Ukai",
+    "gender": "Male"
+  },
+  {
+    "anime": "Cowboy Bebop",
+    "name": "Spike Spiegel",
+    "gender": "Male"
+  },
+  {
+    "anime": "Cowboy Bebop",
+    "name": "Faye Valentine",
+    "gender": "Female"
+  },
+  {
+    "anime": "Cowboy Bebop",
+    "name": "Edward Wong Hau Pepelu Tivrusky IV",
+    "gender": "Female"
+  },
+  {
+    "anime": "Cowboy Bebop",
+    "name": "Jet Black",
+    "gender": "Male"
+  },
+  {
+    "anime": "Cowboy Bebop",
+    "name": "Ein",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Rimuru Tempest",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Milim Nava",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Shion",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Diablo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Shuna",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Veldora Tempest",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tensei Shitara Slime Datta Ken",
+    "name": "Benimaru",
+    "gender": "Male"
+  },
+  {
+    "anime": "Saiki Kusuo no Ψ-nan",
+    "name": "Kusuo Saiki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Saiki Kusuo no Ψ-nan",
+    "name": "Shun Kaidou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Saiki Kusuo no Ψ-nan",
+    "name": "Riki Nendou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Saiki Kusuo no Ψ-nan",
+    "name": "Kokomi Teruhashi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Roy Mustang",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Winry Rockbell",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Riza Hawkeye",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Ling Yao",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Olivier Mira Armstrong",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Envy",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hagane no Renkinjutsushi: FULLMETAL ALCHEMIST",
+    "name": "Van Hohenheim",
+    "gender": "Male"
+  },
+  {
+    "anime": "Evangelion Shin Movie: Ha",
+    "name": "Asuka Langley Souryuu",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Ichigo Kurosaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Kisuke Urahara",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Yoruichi Shihouin",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Rukia Kuchiki",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Sousuke Aizen",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Kenpachi Zaraki",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Ulquiorra Cifer",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Grimmjow Jaegerjaquez",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Toushirou Hitsugaya",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Byakuya Kuchiki",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Orihime Inoue",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Jirou Souzousa Shunsui Kyouraku",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Shinji Hirako",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Gin Ichimaru",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Renji Abarai",
+    "gender": "Male"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Rangiku Matsumoto",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Nelliel Tu Oderschvank",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLEACH",
+    "name": "Uryuu Ishida",
+    "gender": "Male"
+  },
+  {
+    "anime": "Noragami",
+    "name": "Yato",
+    "gender": "Male"
+  },
+  {
+    "anime": "Noragami",
+    "name": "Hiyori Iki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Noragami",
+    "name": "Yukine",
+    "gender": "Male"
+  },
+  {
+    "anime": "Noragami",
+    "name": "Bishamon",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yahari Ore no Seishun Love Come wa Machigatteiru.",
+    "name": "Hachiman Hikigaya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yahari Ore no Seishun Love Come wa Machigatteiru.",
+    "name": "Yukino Yukinoshita",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yahari Ore no Seishun Love Come wa Machigatteiru.",
+    "name": "Yui Yuigahama",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yahari Ore no Seishun Love Come wa Machigatteiru.",
+    "name": "Shizuka Hiratsuka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bocchi the Rock!",
+    "name": "Hitori Gotou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bocchi the Rock!",
+    "name": "Nijika Ijichi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bocchi the Rock!",
+    "name": "Ryou Yamada",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bocchi the Rock!",
+    "name": "Ikuyo Kita",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bocchi the Rock!",
+    "name": "Kikuri Hiroi",
+    "gender": "Female"
+  },
+  {
+    "anime": "[Oshi no Ko]",
+    "name": "Kana Arima",
+    "gender": "Female"
+  },
+  {
+    "anime": "[Oshi no Ko]",
+    "name": "Ai Hoshino",
+    "gender": "Female"
+  },
+  {
+    "anime": "[Oshi no Ko]",
+    "name": "Akane Kurokawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "[Oshi no Ko]",
+    "name": "Aquamarine Hoshino",
+    "gender": "Male"
+  },
+  {
+    "anime": "[Oshi no Ko]",
+    "name": "Ruby Hoshino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "name": "Roxy Migurdia",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "name": "Rudeus Greyrat",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "name": "Eris Boreas Greyrat",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "name": "Sylphiette",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "name": "Sara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mushoku Tensei: Isekai Ittara Honki Dasu",
+    "name": "Ruijerd Superdia",
+    "gender": "Male"
+  },
+  {
+    "anime": "Koe no Katachi",
+    "name": "Shouko Nishimiya",
+    "gender": "Female"
+  },
+  {
+    "anime": "Koe no Katachi",
+    "name": "Shouya Ishida",
+    "gender": "Male"
+  },
+  {
+    "anime": "Koe no Katachi",
+    "name": "Naoka Ueno",
+    "gender": "Female"
+  },
+  {
+    "anime": "Koe no Katachi",
+    "name": "Yuzuru Nishimiya",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahou Shoujo Madoka☆Magica",
+    "name": "Homura Akemi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahou Shoujo Madoka☆Magica",
+    "name": "Madoka Kaname",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahou Shoujo Madoka☆Magica",
+    "name": "Kyouko Sakura",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahou Shoujo Madoka☆Magica",
+    "name": "Sayaka Miki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahou Shoujo Madoka☆Magica",
+    "name": "Mami Tomoe",
+    "gender": "Female"
+  },
+  {
+    "anime": "MONSTER",
+    "name": "Johan Liebert",
+    "gender": "Male"
+  },
+  {
+    "anime": "MONSTER",
+    "name": "Kenzou Tenma",
+    "gender": "Male"
+  },
+  {
+    "anime": "MONSTER",
+    "name": "Wolfgang Grimmer",
+    "gender": "Male"
+  },
+  {
+    "anime": "MONSTER",
+    "name": "Heinrich Runge",
+    "gender": "Male"
+  },
+  {
+    "anime": "MONSTER",
+    "name": "Anna Liebert",
+    "gender": "Female"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Yami Sukehiro",
+    "gender": "Male"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Asta",
+    "gender": "Male"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Noelle Silva",
+    "gender": "Female"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Yuno",
+    "gender": "Male"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Julius Novachrono",
+    "gender": "Male"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Mereoleona Vermillion",
+    "gender": "Female"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Luck Voltia",
+    "gender": "Male"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Kuro Nero",
+    "gender": "Female"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Zora Ideale",
+    "gender": "Male"
+  },
+  {
+    "anime": "Black Clover",
+    "name": "Vanessa Enoteca",
+    "gender": "Female"
+  },
+  {
+    "anime": "86: Eighty Six",
+    "name": "Kurena Kukumila",
+    "gender": "Female"
+  },
+  {
+    "anime": "86: Eighty Six",
+    "name": "Vladilena Milizé",
+    "gender": "Female"
+  },
+  {
+    "anime": "86: Eighty Six",
+    "name": "Shinei Nouzen",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kanojo, Okarishimasu",
+    "name": "Mami Nanami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kanojo, Okarishimasu",
+    "name": "Chizuru Ichinose",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kanojo, Okarishimasu",
+    "name": "Sumi Sakurasawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kanojo, Okarishimasu",
+    "name": "Ruka Sarashina",
+    "gender": "Female"
+  },
+  {
+    "anime": "Evangelion Shin Movie: Jo",
+    "name": "Misato Katsuragi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Evangelion Shin Movie: Jo",
+    "name": "Shinji Ikari",
+    "gender": "Male"
+  },
+  {
+    "anime": "Evangelion Shin Movie: Jo",
+    "name": "Rei Ayanami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Evangelion Shin Movie: Jo",
+    "name": "Kaworu Nagisa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Kyou Souma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Tooru Honda",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Yuki Souma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Hatsuharu Souma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Momiji Souma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Saki Hanajima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Shigure Souma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Hatori Souma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fruits Basket",
+    "name": "Isuzu Souma",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ansatsu Kyoushitsu: Jump Festa 2013 Special",
+    "name": "Karma Akabane",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ansatsu Kyoushitsu: Jump Festa 2013 Special",
+    "name": "Koro-sensei",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ansatsu Kyoushitsu: Jump Festa 2013 Special",
+    "name": "Nagisa Shiota",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ansatsu Kyoushitsu: Jump Festa 2013 Special",
+    "name": "Tadaomi Karasuma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jujutsu Kaisen 0: Tokyo Toritsu Jujutsu Koutou Senmon Gakkou",
+    "name": "Yuuta Okkotsu",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Steel Ball Run",
+    "name": "Gyro Zeppeli",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Steel Ball Run",
+    "name": "Johnny Joestar",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Steel Ball Run",
+    "name": "Funny Valentine",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Steel Ball Run",
+    "name": "Diego Brando",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sword Art Online",
+    "name": "Asuna Yuuki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sword Art Online",
+    "name": "Kazuto Kirigaya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sword Art Online",
+    "name": "Alice Zuberg",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sword Art Online",
+    "name": "Eugeo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vagabond",
+    "name": "Musashi Miyamoto",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vagabond",
+    "name": "Kojirou Sasaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Manjirou Sano",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Chifuyu Matsuno",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Ken Ryuuguji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Keisuke Baji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Takashi Mitsuya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Takemichi Hanagaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Kazutora Hanemiya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tokyo卍Revengers",
+    "name": "Hinata Tachibana",
+    "gender": "Female"
+  },
+  {
+    "anime": "Houseki no Kuni",
+    "name": "Phosphophyllite",
+    "gender": "Female"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Phantom Blood",
+    "name": "Dio Brando",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Phantom Blood",
+    "name": "Jonathan Joestar",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER (2011)",
+    "name": "Meruem",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER (2011)",
+    "name": "Chrollo Lucilfer",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER (2011)",
+    "name": "Feitan Portor",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER (2011)",
+    "name": "Isaac Netero",
+    "gender": "Male"
+  },
+  {
+    "anime": "HUNTER×HUNTER (2011)",
+    "name": "Neferpitou",
+    "gender": "Female"
+  },
+  {
+    "anime": "HUNTER×HUNTER (2011)",
+    "name": "Illumi Zoldyck",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dragon Ball Z",
+    "name": "Gokuu Son",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yakusoku no Neverland",
+    "name": "Ray",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yakusoku no Neverland",
+    "name": "Norman",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yakusoku no Neverland",
+    "name": "Emma",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yakusoku no Neverland",
+    "name": "Phil",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shigatsu wa Kimi no Uso",
+    "name": "Kaori Miyazono",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shigatsu wa Kimi no Uso",
+    "name": "Kousei Arima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jibaku Shounen Hanako-kun",
+    "name": "Hanako",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jibaku Shounen Hanako-kun",
+    "name": "Nene Yashiro",
+    "gender": "Female"
+  },
+  {
+    "anime": "Jibaku Shounen Hanako-kun",
+    "name": "Kou Minamoto",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jibaku Shounen Hanako-kun",
+    "name": "Sousuke Mitsuba",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jibaku Shounen Hanako-kun",
+    "name": "Tsuchigomori",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tengen Toppa Gurren Lagann",
+    "name": "Kamina",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tengen Toppa Gurren Lagann",
+    "name": "Simon",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tengen Toppa Gurren Lagann",
+    "name": "Youko Littner",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tengen Toppa Gurren Lagann",
+    "name": "Nia Teppelin",
+    "gender": "Female"
+  },
+  {
+    "anime": "Komi-san wa, Komyushou desu.",
+    "name": "Shouko Komi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Komi-san wa, Komyushou desu.",
+    "name": "Rumiko Manbagi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Komi-san wa, Komyushou desu.",
+    "name": "Najimi Osana",
+    "gender": "female"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Diamond wa Kudakenai",
+    "name": "Yoshikage Kira",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Diamond wa Kudakenai",
+    "name": "Jousuke Higashikata",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Diamond wa Kudakenai",
+    "name": "Rohan Kishibe",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Diamond wa Kudakenai",
+    "name": "Okuyasu Nijimura",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Diamond wa Kudakenai",
+    "name": "Kouichi Hirose",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kakegurui",
+    "name": "Yumeko Jabami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kakegurui",
+    "name": "Mary Saotome",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kakegurui",
+    "name": "Kirari Momobami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kakegurui",
+    "name": "Midari Ikishima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Date A Live",
+    "name": "Kurumi Tokisaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Date A Live",
+    "name": "Tooka Yatogami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Date A Live",
+    "name": "Origami Tobiichi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Date A Live",
+    "name": "Kotori Itsuka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Banana Fish",
+    "name": "Ash Lynx",
+    "gender": "Male"
+  },
+  {
+    "anime": "Banana Fish",
+    "name": "Eiji Okumura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Banana Fish",
+    "name": "Shorter Wong",
+    "gender": "Male"
+  },
+  {
+    "anime": "Toradora!",
+    "name": "Taiga Aisaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Toradora!",
+    "name": "Ryuuji Takasu",
+    "gender": "Male"
+  },
+  {
+    "anime": "Toradora!",
+    "name": "Ami Kawashima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Toradora!",
+    "name": "Minori Kushieda",
+    "gender": "Female"
+  },
+  {
+    "anime": "Cyberpunk: Edgerunners",
+    "name": "Lucy",
+    "gender": "Female"
+  },
+  {
+    "anime": "Cyberpunk: Edgerunners",
+    "name": "Rebecca",
+    "gender": "Female"
+  },
+  {
+    "anime": "Cyberpunk: Edgerunners",
+    "name": "David Martinez",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kill la Kill",
+    "name": "Ryuuko Matoi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kill la Kill",
+    "name": "Mako Mankanshoku",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kill la Kill",
+    "name": "Satsuki Kiryuuin",
+    "gender": "Female"
+  },
+  {
+    "anime": "Howl no Ugoku Shiro",
+    "name": "Howl",
+    "gender": "Male"
+  },
+  {
+    "anime": "Howl no Ugoku Shiro",
+    "name": "Calcifer",
+    "gender": ""
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Stone Ocean",
+    "name": "Jolyne Kuujou",
+    "gender": "Female"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Stone Ocean",
+    "name": "Weather Report",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Stone Ocean",
+    "name": "Enrico Pucci",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Stone Ocean",
+    "name": "Foo Fighters",
+    "gender": "female"
+  },
+  {
+    "anime": "BLACK LAGOON",
+    "name": "Revy",
+    "gender": "Female"
+  },
+  {
+    "anime": "BLACK LAGOON",
+    "name": "Balalaika",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chuunibyou demo Koi ga Shitai!",
+    "name": "Rikka Takanashi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hyouka",
+    "name": "Houtarou Oreki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hyouka",
+    "name": "Eru Chitanda",
+    "gender": "Female"
+  },
+  {
+    "anime": "serial experiments lain",
+    "name": "Lain Iwakura",
+    "gender": "Female"
+  },
+  {
+    "anime": "NANA",
+    "name": "Nana Oosaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "NANA",
+    "name": "Nana Komatsu",
+    "gender": "Female"
+  },
+  {
+    "anime": "NANA",
+    "name": "Shinichi Okazaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "NANA",
+    "name": "Yasushi Takagi",
+    "gender": "Male"
+  },
+  {
+    "anime": "GTO",
+    "name": "Eikichi Onizuka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Lycoris Recoil",
+    "name": "Chisato Nishikigi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Lycoris Recoil",
+    "name": "Takina Inoue",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nanatsu no Taizai",
+    "name": "Ban",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nanatsu no Taizai",
+    "name": "Meliodas",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nanatsu no Taizai",
+    "name": "King",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nanatsu no Taizai",
+    "name": "Diane",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nanatsu no Taizai",
+    "name": "Elizabeth Liones",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nanatsu no Taizai",
+    "name": "Merlin",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shokugeki no Souma",
+    "name": "Souma Yukihira",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shokugeki no Souma",
+    "name": "Erina Nakiri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shokugeki no Souma",
+    "name": "Alice Nakiri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shokugeki no Souma",
+    "name": "Megumi Tadokoro",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shokugeki no Souma",
+    "name": "Rindou Kobayashi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ookami to Koushinryou",
+    "name": "Holo",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tate no Yuusha no Nariagari",
+    "name": "Raphtalia",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tate no Yuusha no Nariagari",
+    "name": "Naofumi Iwatani",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tate no Yuusha no Nariagari",
+    "name": "Filo",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fate/stay night",
+    "name": "Kiritsugu Emiya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fate/stay night",
+    "name": "Mordred Pendragon",
+    "gender": "female"
+  },
+  {
+    "anime": "FAIRY TAIL",
+    "name": "Erza Scarlet",
+    "gender": "Female"
+  },
+  {
+    "anime": "FAIRY TAIL",
+    "name": "Natsu Dragneel",
+    "gender": "Male"
+  },
+  {
+    "anime": "FAIRY TAIL",
+    "name": "Lucy Heartfilia",
+    "gender": "Female"
+  },
+  {
+    "anime": "FAIRY TAIL",
+    "name": "Juvia Lockser",
+    "gender": "Female"
+  },
+  {
+    "anime": "FAIRY TAIL",
+    "name": "Happy",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dragon Ball GT",
+    "name": "Vegeta",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dragon Ball GT",
+    "name": "Trunks",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dragon Ball GT",
+    "name": "Gohan Son",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ao no Hako",
+    "name": "Hina Chouno",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ao no Hako",
+    "name": "Chinatsu Kano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Akame",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Esdeath",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Mine",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Leone",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Tatsumi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Chelsea",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akame ga Kill!",
+    "name": "Lubbock",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kage no Jitsuryokusha ni Naritakute!",
+    "name": "Cid Kagenou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kage no Jitsuryokusha ni Naritakute!",
+    "name": "Delta",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kage no Jitsuryokusha ni Naritakute!",
+    "name": "Alpha",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dandadan",
+    "name": "Momo Ayase",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dandadan",
+    "name": "Aira Shiratori",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dandadan",
+    "name": "Ken Takakura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dandadan",
+    "name": "Seiko Ayase",
+    "gender": "Female"
+  },
+  {
+    "anime": "3-gatsu no Lion",
+    "name": "Rei Kiriyama",
+    "gender": "Male"
+  },
+  {
+    "anime": "3-gatsu no Lion",
+    "name": "Hinata Kawamoto",
+    "gender": "Female"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Ougon no Kaze",
+    "name": "Giorno Giovanna",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Ougon no Kaze",
+    "name": "Bruno Bucciarati",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Ougon no Kaze",
+    "name": "Guido Mista",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Ougon no Kaze",
+    "name": "Narancia Ghirga",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: Ougon no Kaze",
+    "name": "Leone Abbacchio",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Lock",
+    "name": "Meguru Bachira",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Lock",
+    "name": "Seishirou Nagi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Lock",
+    "name": "Yoichi Isagi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Lock",
+    "name": "Hyouma Chigiri",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Lock",
+    "name": "Rin Itoshi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Lock",
+    "name": "Shouei Barou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Benimaru Shinmon",
+    "gender": "Male"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Iris",
+    "gender": "Female"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Shinra Kusakabe",
+    "gender": "Male"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Arthur Boyle",
+    "gender": "Male"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Maki Oze",
+    "gender": "Female"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Tamaki Kotatsu",
+    "gender": "Female"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Joker",
+    "gender": "Male"
+  },
+  {
+    "anime": "Enen no Shouboutai",
+    "name": "Princess Hibana",
+    "gender": "Female"
+  },
+  {
+    "anime": "One Punch-Man",
+    "name": "Garou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!! 2nd Season",
+    "name": "Koutarou Bokuto",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!! 2nd Season",
+    "name": "Keiji Akaashi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dororo to Hyakkimaru",
+    "name": "Hyakkimaru",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dororo to Hyakkimaru",
+    "name": "Dororo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nisemonogatari",
+    "name": "Deishuu Kaiki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nisemonogatari",
+    "name": "Yotsugi Ononoki",
+    "gender": "Female"
+  },
+  {
+    "anime": "BEASTARS",
+    "name": "Legoshi",
+    "gender": "Male"
+  },
+  {
+    "anime": "BEASTARS",
+    "name": "Louis",
+    "gender": "Male"
+  },
+  {
+    "anime": "High School DxD",
+    "name": "Rias Gremory",
+    "gender": "Female"
+  },
+  {
+    "anime": "High School DxD",
+    "name": "Akeno Himejima",
+    "gender": "Female"
+  },
+  {
+    "anime": "High School DxD",
+    "name": "Koneko Toujou",
+    "gender": "Female"
+  },
+  {
+    "anime": "High School DxD",
+    "name": "Issei Hyoudou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Youjo Senki",
+    "name": "Tanya Degurechaff",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yofukashi no Uta",
+    "name": "Nazuna Nanakusa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Made in Abyss",
+    "name": "Nanachi",
+    "gender": "female"
+  },
+  {
+    "anime": "Made in Abyss",
+    "name": "Bondrewd",
+    "gender": "Male"
+  },
+  {
+    "anime": "Made in Abyss",
+    "name": "Reg",
+    "gender": "Male"
+  },
+  {
+    "anime": "Made in Abyss",
+    "name": "Ouzen",
+    "gender": "Female"
+  },
+  {
+    "anime": "K-ON!",
+    "name": "Yui Hirasawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "K-ON!",
+    "name": "Mio Akiyama",
+    "gender": "Female"
+  },
+  {
+    "anime": "K-ON!",
+    "name": "Azusa Nakano",
+    "gender": "Female"
+  },
+  {
+    "anime": "K-ON!",
+    "name": "Tsumugi Kotobuki",
+    "gender": "Female"
+  },
+  {
+    "anime": "K-ON!",
+    "name": "Ritsu Tainaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Overlord",
+    "name": "Albedo",
+    "gender": "Female"
+  },
+  {
+    "anime": "Overlord",
+    "name": "Momonga",
+    "gender": "Male"
+  },
+  {
+    "anime": "Overlord",
+    "name": "Shalltear Bloodfallen",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kobayashi-san Chi no Maidragon",
+    "name": "Kanna Kamui",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kobayashi-san Chi no Maidragon",
+    "name": "Tohru",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kobayashi-san Chi no Maidragon",
+    "name": "Kobayashi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kobayashi-san Chi no Maidragon",
+    "name": "Elma",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kobayashi-san Chi no Maidragon",
+    "name": "Quetzalcoatl",
+    "gender": "Female"
+  },
+  {
+    "anime": "No Game No Life",
+    "name": "Shiro",
+    "gender": "Female"
+  },
+  {
+    "anime": "No Game No Life",
+    "name": "Sora",
+    "gender": "Male"
+  },
+  {
+    "anime": "No Game No Life",
+    "name": "Jibril",
+    "gender": "Female"
+  },
+  {
+    "anime": "Soul Eater",
+    "name": "Death the Kid",
+    "gender": "Male"
+  },
+  {
+    "anime": "Soul Eater",
+    "name": "Maka Albarn",
+    "gender": "Female"
+  },
+  {
+    "anime": "Soul Eater",
+    "name": "Soul Eater Evans",
+    "gender": "Male"
+  },
+  {
+    "anime": "Soul Eater",
+    "name": "Crona",
+    "gender": "female"
+  },
+  {
+    "anime": "Soul Eater",
+    "name": "Black☆Star",
+    "gender": "Male"
+  },
+  {
+    "anime": "Soul Eater",
+    "name": "Franken Stein",
+    "gender": "Male"
+  },
+  {
+    "anime": "Toaru Kagaku no Railgun",
+    "name": "Mikoto Misaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Toaru Kagaku no Railgun",
+    "name": "Ruiko Saten",
+    "gender": "Female"
+  },
+  {
+    "anime": "Toaru Kagaku no Railgun",
+    "name": "Touma Kamijou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Toaru Kagaku no Railgun",
+    "name": "Kuroko Shirai",
+    "gender": "Female"
+  },
+  {
+    "anime": "HELLSING",
+    "name": "Alucard",
+    "gender": "Male"
+  },
+  {
+    "anime": "HELLSING",
+    "name": "Seras Victoria",
+    "gender": "Female"
+  },
+  {
+    "anime": "Vanitas no Carte",
+    "name": "Vanitas",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vanitas no Carte",
+    "name": "Noé Archiviste",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vanitas no Carte",
+    "name": "Jeanne",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
+    "name": "Ais Wallenstein",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
+    "name": "Bell Cranel",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
+    "name": "Hestia",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dungeon ni Deai wo Motomeru no wa Machigatteiru Darou ka",
+    "name": "Ryuu  Lion",
+    "gender": "Female"
+  },
+  {
+    "anime": "Majo no Tabitabi",
+    "name": "Elaina",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nisekoi",
+    "name": "Kosaki Onodera",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nisekoi",
+    "name": "Chitoge Kirisaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Charlotte",
+    "name": "Nao Tomori",
+    "gender": "Female"
+  },
+  {
+    "anime": "Charlotte",
+    "name": "Yuu Otosaka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Hero Academia 2",
+    "name": "Himiko Toga",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mirai Nikki",
+    "name": "Yuno Gasai",
+    "gender": "Female"
+  },
+  {
+    "anime": "Oyasumi Punpun",
+    "name": "Punpun Onodera",
+    "gender": "Male"
+  },
+  {
+    "anime": "Oyasumi Punpun",
+    "name": "Aiko Tanaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Oyasumi Punpun",
+    "name": "Sachi Nanjou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ao no Exorcist",
+    "name": "Rin Okumura",
+    "gender": "Male"
+  },
+  {
+    "anime": "TRIGUN",
+    "name": "Vash the Stampede",
+    "gender": "Male"
+  },
+  {
+    "anime": "TRIGUN",
+    "name": "Narrator",
+    "gender": ""
+  },
+  {
+    "anime": "TRIGUN",
+    "name": "Nicholas D. Wolfwood",
+    "gender": "Male"
+  },
+  {
+    "anime": "Akatsuki no Yona",
+    "name": "Hak Son",
+    "gender": "Male"
+  },
+  {
+    "anime": "Akatsuki no Yona",
+    "name": "Yona",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akatsuki no Yona",
+    "name": "Shin-Ah",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kamisama Hajimemashita",
+    "name": "Tomoe",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kamisama Hajimemashita",
+    "name": "Nanami Momozono",
+    "gender": "Female"
+  },
+  {
+    "anime": "Owari no Seraph",
+    "name": "Shinoa Hiiragi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Owari no Seraph",
+    "name": "Mikaela Hyakuya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Owari no Seraph",
+    "name": "Yuuichirou Hyakuya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Owari no Seraph",
+    "name": "Krul Tepes",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaichou wa Maid-sama!",
+    "name": "Takumi Usui",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kaichou wa Maid-sama!",
+    "name": "Misaki Ayuzawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ijiranaide, Nagatoro-san",
+    "name": "Hayase Nagatoro",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kuroshitsuji",
+    "name": "Sebastian Michaelis",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroshitsuji",
+    "name": "Ciel Phantomhive",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroshitsuji",
+    "name": "Grell Sutcliff",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kuroshitsuji",
+    "name": "Undertaker",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuru Camp△",
+    "name": "Rin Shima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yuru Camp△",
+    "name": "Nadeshiko Kagamihara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sinui Tap",
+    "name": "Aguero Agnis Khun",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sinui Tap",
+    "name": "Twenty-Fifth Baam",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sinui Tap",
+    "name": "Rak Wraithraiser",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sinui Tap",
+    "name": "Endorsi Jahad",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sinui Tap",
+    "name": "Yuri Ha Jahad",
+    "gender": "Female"
+  },
+  {
+    "anime": "SK∞",
+    "name": "Reki Kyan",
+    "gender": "Male"
+  },
+  {
+    "anime": "SK∞",
+    "name": "Langa Hasegawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "SK∞",
+    "name": "Miya Chinen",
+    "gender": "Male"
+  },
+  {
+    "anime": "SK∞",
+    "name": "Kaoru Sakurayashiki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hibike! Euphonium",
+    "name": "Kumiko Oumae",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hibike! Euphonium",
+    "name": "Reina Kousaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hibike! Euphonium",
+    "name": "Asuka Tanaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "NARUTO: Shippuuden",
+    "name": "Pain",
+    "gender": "Male"
+  },
+  {
+    "anime": "NARUTO: Shippuuden",
+    "name": "Tobi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jigokuraku",
+    "name": "Gabimaru",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jigokuraku",
+    "name": "Sagiri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Jigokuraku",
+    "name": "Yuzuriha",
+    "gender": "Female"
+  },
+  {
+    "anime": "Blue Period",
+    "name": "Yatora Yaguchi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Blue Period",
+    "name": "Ryuuji Ayukawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sakurasou no Pet na Kanojo",
+    "name": "Mashiro Shiina",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sakurasou no Pet na Kanojo",
+    "name": "Nanami Aoyama",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sword Art Online II",
+    "name": "Shino Asada",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sword Art Online II",
+    "name": "Yuuki Konno",
+    "gender": "Female"
+  },
+  {
+    "anime": "Samurai Champloo",
+    "name": "Mugen",
+    "gender": "Male"
+  },
+  {
+    "anime": "Samurai Champloo",
+    "name": "Jin",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tonikaku Kawaii",
+    "name": "Tsukasa Yuzaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yuukoku no Moriarty",
+    "name": "William Moriarty",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuukoku no Moriarty",
+    "name": "Sherlock Holmes",
+    "gender": "Male"
+  },
+  {
+    "anime": "Given",
+    "name": "Mafuyu Satou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Given",
+    "name": "Ritsuka Uenoyama",
+    "gender": "Male"
+  },
+  {
+    "anime": "Given",
+    "name": "Haruki Nakayama",
+    "gender": "Male"
+  },
+  {
+    "anime": "Given",
+    "name": "Akihiko Kaji",
+    "gender": "Male"
+  },
+  {
+    "anime": "SLAM DUNK",
+    "name": "Hanamichi Sakuragi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kimi ni Todoke",
+    "name": "Sawako Kuronuma",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimi ni Todoke",
+    "name": "Shouta Kazehaya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kara no Kyoukai: Fukan Fuukei",
+    "name": "Shiki Ryougi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimi no Na wa.",
+    "name": "Mitsuha Miyamizu",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimi no Na wa.",
+    "name": "Taki Tachibana",
+    "gender": "Male"
+  },
+  {
+    "anime": "CB chara Go Nagai World",
+    "name": "Akira Fudou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Wotaku ni Koi wa Muzukashii",
+    "name": "Hirotaka Nifuji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Wotaku ni Koi wa Muzukashii",
+    "name": "Hanako Koyanagi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Wotaku ni Koi wa Muzukashii",
+    "name": "Narumi Momose",
+    "gender": "Female"
+  },
+  {
+    "anime": "Wotaku ni Koi wa Muzukashii",
+    "name": "Tarou Kabakura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tomodachi Game",
+    "name": "Yuuichi Katagiri",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mushishi",
+    "name": "Ginko",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ousama Ranking",
+    "name": "Bojji",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jeonjijeok Dokja Sijeom",
+    "name": "Dok-Ja Kim",
+    "gender": "Male"
+  },
+  {
+    "anime": "Jeonjijeok Dokja Sijeom",
+    "name": "Su-Yeong Han",
+    "gender": "Female"
+  },
+  {
+    "anime": "Jeonjijeok Dokja Sijeom",
+    "name": "Jung-Hyeok Yu",
+    "gender": "Male"
+  },
+  {
+    "anime": "Clannad Movie",
+    "name": "Tomoya Okazaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Domestic na Kanojo",
+    "name": "Rui Tachibana",
+    "gender": "Female"
+  },
+  {
+    "anime": "Durarara!!",
+    "name": "Izaya Orihara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Durarara!!",
+    "name": "Shizuo Heiwajima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Durarara!!",
+    "name": "Celty Sturluson",
+    "gender": "Female"
+  },
+  {
+    "anime": "Monogatari Series: Second Season",
+    "name": "Ougi Oshino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei - The Animation",
+    "name": "Kyouko Kirigiri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei - The Animation",
+    "name": "Junko Enoshima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Danganronpa: Kibou no Gakuen to Zetsubou no Koukousei - The Animation",
+    "name": "Celestia Ludenberg",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ouran Koukou Host Club",
+    "name": "Tamaki Suou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ouran Koukou Host Club",
+    "name": "Haruhi Fujioka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ouran Koukou Host Club",
+    "name": "Hikaru Hitachiin",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ouran Koukou Host Club",
+    "name": "Kyouya Ootori",
+    "gender": "Male"
+  },
+  {
+    "anime": "PSYCHO-PASS",
+    "name": "Shinya Kougami",
+    "gender": "Male"
+  },
+  {
+    "anime": "PSYCHO-PASS",
+    "name": "Shougo Makishima",
+    "gender": "Male"
+  },
+  {
+    "anime": "PSYCHO-PASS",
+    "name": "Akane Tsunemori",
+    "gender": "Female"
+  },
+  {
+    "anime": "Magi: The labyrinth of magic",
+    "name": "Sinbad",
+    "gender": "Male"
+  },
+  {
+    "anime": "Magi: The labyrinth of magic",
+    "name": "Morgiana",
+    "gender": "Female"
+  },
+  {
+    "anime": "Magi: The labyrinth of magic",
+    "name": "Alibaba Saluja",
+    "gender": "Male"
+  },
+  {
+    "anime": "Magi: The labyrinth of magic",
+    "name": "Aladdin",
+    "gender": "Male"
+  },
+  {
+    "anime": "Angel Beats!",
+    "name": "Yuri Nakamura",
+    "gender": "Female"
+  },
+  {
+    "anime": "Angel Beats!",
+    "name": "Kanade Tachibana",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fumetsu no Anata e",
+    "name": "Fushi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fumetsu no Anata e",
+    "name": "Gugu",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroko no Basket",
+    "name": "Daiki Aomine",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroko no Basket",
+    "name": "Tetsuya Kuroko",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroko no Basket",
+    "name": "Seijuurou Akashi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroko no Basket",
+    "name": "Ryouta Kise",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kuroko no Basket",
+    "name": "Taiga Kagami",
+    "gender": "Male"
+  },
+  {
+    "anime": "Satsuriku no Tenshi",
+    "name": "Isaac Foster",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuu☆Yuu☆Hakusho",
+    "name": "Yuusuke Urameshi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuu☆Yuu☆Hakusho",
+    "name": "Kurama",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ashita no Joe",
+    "name": "Joe Yabuki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dungeon Meshi",
+    "name": "Marcille Donato",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dungeon Meshi",
+    "name": "Laios Thorden",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dungeon Meshi",
+    "name": "Senshi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kawaii dake ja Nai Shikimori-san",
+    "name": "Miyako Shikimori",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaoru Hana wa Rin to Saku",
+    "name": "Kaoruko Waguri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaoru Hana wa Rin to Saku",
+    "name": "Rintarou Tsumugi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nanatsu no Taizai Movie: Tenkuu no Torawarebito",
+    "name": "Escanor",
+    "gender": "Male"
+  },
+  {
+    "anime": "Saenai Heroine no Sodatekata",
+    "name": "Megumi Katou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Saenai Heroine no Sodatekata",
+    "name": "Utaha Kasumigaoka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Death Billiards",
+    "name": "Decim",
+    "gender": "Male"
+  },
+  {
+    "anime": "Death Billiards",
+    "name": "Kurokami no Onna",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nyoro-n☆Churuya-san",
+    "name": "Haruhi Suzumiya",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nyoro-n☆Churuya-san",
+    "name": "Yuki Nagato",
+    "gender": "Female"
+  },
+  {
+    "anime": "Nyoro-n☆Churuya-san",
+    "name": "Kyon",
+    "gender": "Male"
+  },
+  {
+    "anime": "Wonder Egg Priority",
+    "name": "Ai Ooto",
+    "gender": "Female"
+  },
+  {
+    "anime": "Wonder Egg Priority",
+    "name": "Rika Kawai",
+    "gender": "Female"
+  },
+  {
+    "anime": "Grand Blue",
+    "name": "Chisa Kotegawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Grand Blue",
+    "name": "Iori Kitahara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Grand Blue",
+    "name": "Azusa Hamaoka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Grand Blue",
+    "name": "Kouhei Imamura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fuufu Ijou, Koibito Miman.",
+    "name": "Shiori Sakurazaka",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fuufu Ijou, Koibito Miman.",
+    "name": "Akari Watanabe",
+    "gender": "Female"
+  },
+  {
+    "anime": "Danganronpa 3: The End of Kibougamine Gakuen - Zetsubou-hen",
+    "name": "Nagito Komaeda",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hajime no Ippo: THE FIGHTING!",
+    "name": "Ippo Makunouchi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hajime no Ippo: THE FIGHTING!",
+    "name": "Mamoru Takamura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kiseijuu: Sei no Kakuritsu",
+    "name": "Shinichi Izumi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kiseijuu: Sei no Kakuritsu",
+    "name": "Migi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Vivy: Fluorite Eye’s Song",
+    "name": "Vivy",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fate/Zero",
+    "name": "Iskandar",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fate/Zero",
+    "name": "Kirei Kotomine",
+    "gender": "Male"
+  },
+  {
+    "anime": "FAIRY TAIL OVA",
+    "name": "Gray Fullbuster",
+    "gender": "Male"
+  },
+  {
+    "anime": "Goblin Slayer",
+    "name": "Goblin Slayer",
+    "gender": "Male"
+  },
+  {
+    "anime": "Goblin Slayer",
+    "name": "Ushikai Musume",
+    "gender": "Female"
+  },
+  {
+    "anime": "Arifureta Shokugyou de Sekai Saikyou",
+    "name": "Kaori Shirasaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Arifureta Shokugyou de Sekai Saikyou",
+    "name": "Yue",
+    "gender": "Female"
+  },
+  {
+    "anime": "Arifureta Shokugyou de Sekai Saikyou",
+    "name": "Hajime Nagumo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuuri!!! on ICE",
+    "name": "Victor Nikiforov",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuuri!!! on ICE",
+    "name": "Yuuri Plisetsky",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuuri!!! on ICE",
+    "name": "Yuuri Katsuki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fugou Keiji: Balance:UNLIMITED",
+    "name": "Daisuke Kanbe",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fugou Keiji: Balance:UNLIMITED",
+    "name": "Haru Katou",
+    "gender": "Male"
+  },
+  {
+    "anime": "MASHLE",
+    "name": "Mash Burnedead",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shiguang Dailiren",
+    "name": "Xiaoshi Cheng",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shiguang Dailiren",
+    "name": "Guang Lu",
+    "gender": "Male"
+  },
+  {
+    "anime": "AMON: Devilman Mokushiroku",
+    "name": "Ryo Asuka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Maou Gakuin no Futekigousha: Shijou Saikyou no Maou no Shiso, Tensei shite Shison-tachi no Gakkou e Kayou",
+    "name": "Anos Voldigoad",
+    "gender": "Male"
+  },
+  {
+    "anime": "Karakai Jouzu no Takagi-san",
+    "name": "Takagi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Free!",
+    "name": "Rin Matsuoka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Free!",
+    "name": "Haruka Nanase",
+    "gender": "Male"
+  },
+  {
+    "anime": "Free!",
+    "name": "Makoto Tachibana",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yagate Kimi ni Naru",
+    "name": "Yuu Koito",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yagate Kimi ni Naru",
+    "name": "Touko Nanami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kimi no Suizou wo Tabetai",
+    "name": "Sakura Yamauchi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ao Haru Ride",
+    "name": "Kou Mabuchi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bokutachi wa Benkyou ga Dekinai",
+    "name": "Fumino Furuhashi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bokutachi wa Benkyou ga Dekinai",
+    "name": "Mafuyu Kirisu",
+    "gender": "Female"
+  },
+  {
+    "anime": "CLANNAD",
+    "name": "Nagisa Furukawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Natsume Yuujinchou",
+    "name": "Takashi Natsume",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kyoukai no Kanata",
+    "name": "Mirai Kuriyama",
+    "gender": "Female"
+  },
+  {
+    "anime": "Downloader",
+    "name": "Miku Hatsune",
+    "gender": "Female"
+  },
+  {
+    "anime": "God of High School",
+    "name": "Mo-Ri Jin",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gyakkyou Burai Kaiji: Hakairoku-hen",
+    "name": "Kaiji Itou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Azumanga WEB Daiou",
+    "name": "Ayumu Kasuga",
+    "gender": "Female"
+  },
+  {
+    "anime": "Toaru Kagaku no Railgun S",
+    "name": "Accelerator",
+    "gender": "Male"
+  },
+  {
+    "anime": "Super Danganronpa 2: Nanami Chiaki no Sayonara Zetsubou Daibouken",
+    "name": "Chiaki Nanami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Gokushufudou",
+    "name": "Tatsu",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dragon Ball",
+    "name": "Piccolo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Umineko no Naku Koro ni",
+    "name": "Beatrice",
+    "gender": "Female"
+  },
+  {
+    "anime": "Umineko no Naku Koro ni",
+    "name": "Battler Ushiromiya",
+    "gender": "Male"
+  },
+  {
+    "anime": "Umineko no Naku Koro ni",
+    "name": "Ange Ushiromiya",
+    "gender": "Female"
+  },
+  {
+    "anime": "Plastic Memories",
+    "name": "Isla",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tokidoki Bosotto Russiago de Dereru Tonari no Alya-san",
+    "name": "Alisa Kujou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tokidoki Bosotto Russiago de Dereru Tonari no Alya-san",
+    "name": "Yuki Suou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Koukaku Kidoutai ARISE: GHOST IN THE SHELL - border:1 Ghost Pain",
+    "name": "Motoko Kusanagi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Lucky☆Star",
+    "name": "Konata Izumi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ginga Eiyuu Densetsu",
+    "name": "Wenli Yang",
+    "gender": "Male"
+  },
+  {
+    "anime": "Cardcaptor Sakura",
+    "name": "Sakura Kinomoto",
+    "gender": "Female"
+  },
+  {
+    "anime": "Another",
+    "name": "Mei Misaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yotsuba to!",
+    "name": "Yotsuba Koiwai",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bungou Stray Dogs 2nd Season",
+    "name": "Lucy Montgomery",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bungou Stray Dogs 2nd Season",
+    "name": "Sakunosuke Oda",
+    "gender": "Male"
+  },
+  {
+    "anime": "Golden Kamuy",
+    "name": "Saichi Sugimoto",
+    "gender": "Male"
+  },
+  {
+    "anime": "Golden Kamuy",
+    "name": "Asirpa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Golden Kamuy",
+    "name": "Hyakunosuke Ogata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kidou Senshi Gundam I",
+    "name": "Char Aznable",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku no Kokoro no Yabai Yatsu",
+    "name": "Anna Yamada",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku no Kokoro no Yabai Yatsu",
+    "name": "Kyoutarou Ichikawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Watashi ga Motenai no wa Dou Kangaetemo Omaera ga Warui!",
+    "name": "Tomoko Kuroki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Higurashi no Naku Koro ni",
+    "name": "Rika Furude",
+    "gender": "Female"
+  },
+  {
+    "anime": "Higurashi no Naku Koro ni",
+    "name": "Rena Ryuuguu",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dorohedoro",
+    "name": "Noi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dorohedoro",
+    "name": "Kaiman",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dorohedoro",
+    "name": "Nikaido",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dorohedoro",
+    "name": "Shin",
+    "gender": "Male"
+  },
+  {
+    "anime": "NieR:Automata: Nagai Hanashi",
+    "name": "YoRHa 2-gou B-gata",
+    "gender": "Female"
+  },
+  {
+    "anime": "Otonari no Tenshi-sama ni Itsunomanika Dame Ningen ni Sareteita Ken",
+    "name": "Mahiru Shiina",
+    "gender": "Female"
+  },
+  {
+    "anime": "Rurouni Kenshin DVD-BOX Special Ending",
+    "name": "Kenshin Himura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Owari no Seraph: Nagoya Kessen-hen",
+    "name": "Guren Ichinose",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yahari Ore no Seishun Love Come wa Machigatteiru. Zoku",
+    "name": "Iroha Isshiki",
+    "gender": "Female"
+  },
+  {
+    "anime": "FLCL",
+    "name": "Haruko Haruhara",
+    "gender": "Female"
+  },
+  {
+    "anime": "FLCL",
+    "name": "Mamimi Samejima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahoutsukai no Yome: Hoshi Matsu Hito",
+    "name": "Chise Hatori",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tomo-chan wa Onnanoko!",
+    "name": "Misuzu Gundou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tomo-chan wa Onnanoko!",
+    "name": "Tomo Aizawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tian Guan Ci Fu",
+    "name": "Cheng Hua",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tian Guan Ci Fu",
+    "name": "Lian Xie",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shuumatsu Nani Shitemasu ka? Isogashii desu ka? Sukutte Moratte Ii desu ka?",
+    "name": "Chtholly Nota Seniorious",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fate/Apocrypha",
+    "name": "Astolfo",
+    "gender": "Male"
+  },
+  {
+    "anime": "Fate/Apocrypha",
+    "name": "Jeanne  d'Arc",
+    "gender": "Female"
+  },
+  {
+    "anime": "D.Gray-man",
+    "name": "Allen Walker",
+    "gender": "Male"
+  },
+  {
+    "anime": "Modao Zushi",
+    "name": "Wuxian Wei",
+    "gender": "Male"
+  },
+  {
+    "anime": "Modao Zushi",
+    "name": "Wangji Lan",
+    "gender": "Male"
+  },
+  {
+    "anime": "Komi-san wa Komyushou desu.",
+    "name": "Hitohito Tadano",
+    "gender": "Male"
+  },
+  {
+    "anime": "Gakuen Mokushiroku: HIGHSCHOOL OF THE DEAD",
+    "name": "Rei Miyamoto",
+    "gender": "Female"
+  },
+  {
+    "anime": "Gakuen Mokushiroku: HIGHSCHOOL OF THE DEAD",
+    "name": "Saeko Busujima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Boku dake ga Inai Machi",
+    "name": "Satoru Fujinuma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Boku dake ga Inai Machi",
+    "name": "Kayo Hinazuki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yuu☆Yuu☆Hakusho: The Golden Seal",
+    "name": "Hiei",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yuu☆Yuu☆Hakusho: The Golden Seal",
+    "name": "Kazuma Kuwabara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Panty & Stocking in Sanitarybox",
+    "name": "Stocking Anarchy",
+    "gender": "Female"
+  },
+  {
+    "anime": "Meitantei Conan",
+    "name": "Conan Edogawa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Meitantei Conan",
+    "name": "Kaito Kuroba",
+    "gender": "Male"
+  },
+  {
+    "anime": "SSSS.GRIDMAN",
+    "name": "Rikka Takarada",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sen to Chihiro no Kamikakushi",
+    "name": "Haku",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sen to Chihiro no Kamikakushi",
+    "name": "Chihiro Ogino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sen to Chihiro no Kamikakushi",
+    "name": "Kaonashi",
+    "gender": ""
+  },
+  {
+    "anime": "Skip to Loafer",
+    "name": "Mitsumi Iwakura",
+    "gender": "Female"
+  },
+  {
+    "anime": "Little Witch Academia",
+    "name": "Atsuko Kagari",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mieruko-chan",
+    "name": "Miko Yotsuya",
+    "gender": "Female"
+  },
+  {
+    "anime": "Inuyasha",
+    "name": "Inuyasha",
+    "gender": "Male"
+  },
+  {
+    "anime": "Inuyasha",
+    "name": "Sesshoumaru",
+    "gender": "Male"
+  },
+  {
+    "anime": "Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou",
+    "name": "Satori Tendou",
+    "gender": "Male"
+  },
+  {
+    "anime": "JoJo no Kimyou na Bouken: JoJolion",
+    "name": "Jousuke Higashikata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Bishoujo Senshi Sailor Moon",
+    "name": "Usagi Tsukino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bishoujo Senshi Sailor Moon",
+    "name": "Rei Hino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kokou no Hito",
+    "name": "Buntarou Mori",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mahouka Koukou no Rettousei",
+    "name": "Tatsuya Shiba",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mahouka Koukou no Rettousei",
+    "name": "Miyuki Shiba",
+    "gender": "Female"
+  },
+  {
+    "anime": "Rakudai Kishi no Cavalry",
+    "name": "Stella  Vermillion",
+    "gender": "Female"
+  },
+  {
+    "anime": "Non Non Biyori",
+    "name": "Renge Miyauchi",
+    "gender": "Female"
+  },
+  {
+    "anime": "ReLIFE",
+    "name": "Chizuru Hishiro",
+    "gender": "Female"
+  },
+  {
+    "anime": "NHK ni Youkoso!",
+    "name": "Misaki Nakahara",
+    "gender": "Female"
+  },
+  {
+    "anime": "NHK ni Youkoso!",
+    "name": "Tatsuhiro Satou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shoujo Kakumei Utena",
+    "name": "Utena Tenjou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mairimashita! Iruma-kun",
+    "name": "Ameri Azazel",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mairimashita! Iruma-kun",
+    "name": "Iruma Suzuki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mairimashita! Iruma-kun",
+    "name": "Clara Valac",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kono Subarashii Sekai ni Shukufuku wo!: Kono Subarashii Choker ni Shukufuku wo!",
+    "name": "Yunyun",
+    "gender": "Female"
+  },
+  {
+    "anime": "Initial D BATTLE STAGE",
+    "name": "Takumi Fujiwara",
+    "gender": "Male"
+  },
+  {
+    "anime": "Dengeki Bunko 2007 Movie Festival Special",
+    "name": "Kino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hataraku Maou-sama!",
+    "name": "Satan Jacob",
+    "gender": "Male"
+  },
+  {
+    "anime": "PERSONA 5 the Animation: THE DAY BREAKERS",
+    "name": "Ren Amamiya",
+    "gender": "Male"
+  },
+  {
+    "anime": "GATE: Jieitai Kanochi nite, Kaku Tatakaeri",
+    "name": "Rory Mercury",
+    "gender": "Female"
+  },
+  {
+    "anime": "Masamune-kun no Revenge",
+    "name": "Aki Adagaki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaijuu 8-gou",
+    "name": "Soushirou Hoshina",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kaijuu 8-gou",
+    "name": "Mina Ashiro",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kaijuu 8-gou",
+    "name": "Kafka Hibino",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yamada-kun to Lv999 no Koi wo Suru",
+    "name": "Akito Yamada",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yamada-kun to Lv999 no Koi wo Suru",
+    "name": "Akane  Kinoshita",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kokoro Connect",
+    "name": "Himeko Inaba",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kingdom",
+    "name": "Xin Li",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kyokou Suiri",
+    "name": "Saki Yumihara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Vigilante: Boku no Hero Academia ILLEGALS",
+    "name": "Rumi Usagiyama",
+    "gender": "Female"
+  },
+  {
+    "anime": "GREAT PRETENDER",
+    "name": "Laurent Thierry",
+    "gender": "Male"
+  },
+  {
+    "anime": "GREAT PRETENDER",
+    "name": "Abigail Jones",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akagami no Shirayuki-hime",
+    "name": "Shirayuki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Akagami no Shirayuki-hime",
+    "name": "Obi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Akagami no Shirayuki-hime",
+    "name": "Zen Wistaria",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ginga Eiyuu Densetsu Gaiden: Ougon no Tsubasa",
+    "name": "Reinhard von Lohengramm",
+    "gender": "Male"
+  },
+  {
+    "anime": "Guilty Crown",
+    "name": "Inori Yuzuriha",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tenkuu Shinpan",
+    "name": "Sniper Kamen",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shoujo Shuumatsu Ryokou",
+    "name": "Chito",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shoujo Shuumatsu Ryokou",
+    "name": "Yuuri",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mononoke-hime",
+    "name": "San",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kumo desu ga, Nani ka?",
+    "name": "Kumoko",
+    "gender": "Female"
+  },
+  {
+    "anime": "Fire Punch",
+    "name": "Togata",
+    "gender": "Male"
+  },
+  {
+    "anime": "Grappler Baki",
+    "name": "Baki Hanma",
+    "gender": "Male"
+  },
+  {
+    "anime": "Golden Time",
+    "name": "Kouko Kaga",
+    "gender": "Female"
+  },
+  {
+    "anime": "ayakashi: Japanese Classic Horror",
+    "name": "Kusuriuri",
+    "gender": "Male"
+  },
+  {
+    "anime": "Make Heroine ga Oosugiru!",
+    "name": "Anna Yanami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chihayafuru",
+    "name": "Chihaya Ayase",
+    "gender": "Female"
+  },
+  {
+    "anime": "Chihayafuru",
+    "name": "Taichi Mashima",
+    "gender": "Male"
+  },
+  {
+    "anime": "Hotarubi no Mori e",
+    "name": "Gin",
+    "gender": "Male"
+  },
+  {
+    "anime": "Summer Time Render",
+    "name": "Mio Kofune",
+    "gender": "Female"
+  },
+  {
+    "anime": "Summer Time Render",
+    "name": "Shinpei Ajiro",
+    "gender": "Male"
+  },
+  {
+    "anime": "Summer Time Render",
+    "name": "Hizuru Minakata",
+    "gender": "Female"
+  },
+  {
+    "anime": "Summer Time Render",
+    "name": "Ushio Kofune",
+    "gender": "Female"
+  },
+  {
+    "anime": "Otome Game no Hametsu Flag shika Nai Akuyaku Reijou ni Tensei shiteshimatta...",
+    "name": "Katarina Claes",
+    "gender": "Female"
+  },
+  {
+    "anime": "Hige wo Soru. Soshite Joshikousei wo Hirou.",
+    "name": "Sayu Ogiwara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yubisaki to Renren",
+    "name": "Yuki Itose",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yubisaki to Renren",
+    "name": "Itsuomi Nagi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Elfen Lied",
+    "name": "Lucy",
+    "gender": "Female"
+  },
+  {
+    "anime": "takt op.Destiny",
+    "name": "Unmei",
+    "gender": "Female"
+  },
+  {
+    "anime": "Gabriel Dropout",
+    "name": "Satanichia Kurumizawa McDowell",
+    "gender": "Female"
+  },
+  {
+    "anime": "WIND BREAKER",
+    "name": "Haruka Sakura",
+    "gender": "Male"
+  },
+  {
+    "anime": "Himouto! Umaru-chan",
+    "name": "Umaru Doma",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tonari no Kaibutsu-kun",
+    "name": "Haru Yoshida",
+    "gender": "Male"
+  },
+  {
+    "anime": "Motto To LOVE-Ru",
+    "name": "Momo Belia Deviluke",
+    "gender": "Female"
+  },
+  {
+    "anime": "Motto To LOVE-Ru",
+    "name": "Konjiki no Yami",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tonari no Totoro",
+    "name": "Totoro",
+    "gender": ""
+  },
+  {
+    "anime": "It's a Rumic World: 50th Anniversary Weekly★Shonen Sunday",
+    "name": "Lum",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bokura no LIVE Kimi to no LIFE",
+    "name": "Maki Nishikino",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bokura no LIVE Kimi to no LIFE",
+    "name": "Nico Yazawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Bungou Stray Dogs 3rd Season",
+    "name": "Fyodor Dostoyevsky",
+    "gender": "Male"
+  },
+  {
+    "anime": "Pandora Hearts",
+    "name": "Xerxes Break",
+    "gender": "Male"
+  },
+  {
+    "anime": "Pandora Hearts",
+    "name": "Oz Vessalius",
+    "gender": "Male"
+  },
+  {
+    "anime": "91Days",
+    "name": "Angelo Lagusa",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
+    "name": "Meiko Honma",
+    "gender": "Female"
+  },
+  {
+    "anime": "Deadman Wonderland",
+    "name": "Shiro",
+    "gender": "Female"
+  },
+  {
+    "anime": "DARKER THAN BLACK: Kuro no Keiyakusha",
+    "name": "Hei",
+    "gender": "Male"
+  },
+  {
+    "anime": "ARIA The ANIMATION",
+    "name": "Akari Mizunashi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ping Pong THE ANIMATION",
+    "name": "Yutaka Hoshino",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sasaki to Miyano",
+    "name": "Shuumei Sasaki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Shuumatsu no Valkyrie",
+    "name": "Adam",
+    "gender": "Male"
+  },
+  {
+    "anime": "Tantei wa mou, Shindeiru.",
+    "name": "Siesta",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yojouhan Shinwa Taikei",
+    "name": "Watashi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Sewayaki Kitsune no Senko-san",
+    "name": "Senko",
+    "gender": "Female"
+  },
+  {
+    "anime": "Mahoutsukai no Yome",
+    "name": "Elias Ainsworth",
+    "gender": "Male"
+  },
+  {
+    "anime": "Amagi Brilliant Park",
+    "name": "Isuzu Sento",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tensai Ouji no Akaji Kokka Saisei Jutsu: Souda, Baikoku shiyou",
+    "name": "Ninym Ralei",
+    "gender": "Female"
+  },
+  {
+    "anime": "Shingetsutan Tsukihime",
+    "name": "Arcueid Brunestud",
+    "gender": "Female"
+  },
+  {
+    "anime": "GANGSTA.",
+    "name": "Nicolas Brown",
+    "gender": "Male"
+  },
+  {
+    "anime": "SAKAMOTO DAYS",
+    "name": "Yoichi Nagumo",
+    "gender": "Male"
+  },
+  {
+    "anime": "SAKAMOTO DAYS",
+    "name": "Tarou Sakamoto",
+    "gender": "Male"
+  },
+  {
+    "anime": "Mirai Nikki OVA",
+    "name": "Minene Uryuu",
+    "gender": "female"
+  },
+  {
+    "anime": "Maou-jou de Oyasumi",
+    "name": "Aurora Suya Rhys Kaymin",
+    "gender": "Female"
+  },
+  {
+    "anime": "Kono Oto Tomare!",
+    "name": "Chika Kudou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kekkai Sensen",
+    "name": "Leonardo Watch",
+    "gender": "Male"
+  },
+  {
+    "anime": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu.",
+    "name": "Kaede Honjou",
+    "gender": "Female"
+  },
+  {
+    "anime": "No Game No Life Zero",
+    "name": "Schwi Dola",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tanaka-kun wa Itsumo Kedaruge",
+    "name": "Tanaka",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yokohama Kaidashi Kikou",
+    "name": "Alpha Hatsuseno",
+    "gender": "Female"
+  },
+  {
+    "anime": "Sora yori mo Tooi Basho",
+    "name": "Shirase Kobuchizawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "GOLDEN BOY: Sasurai no Obenkyou Yarou",
+    "name": "Kintarou Ooe",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yesterday wo Utatte",
+    "name": "Shinako Morinome",
+    "gender": "Female"
+  },
+  {
+    "anime": "Yu☆Gi☆Oh!",
+    "name": "Yami Yuugi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Yu☆Gi☆Oh!",
+    "name": "Seto Kaiba",
+    "gender": "Male"
+  },
+  {
+    "anime": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
+    "name": "Ruri Gokou",
+    "gender": "Female"
+  },
+  {
+    "anime": "20 Seiki Shounen",
+    "name": "Kenji Endou",
+    "gender": "Male"
+  },
+  {
+    "anime": "20 Seiki Shounen",
+    "name": "Tomodachi",
+    "gender": "Male"
+  },
+  {
+    "anime": "Nichijou",
+    "name": "Yuuko Aioi",
+    "gender": "Female"
+  },
+  {
+    "anime": "NEW GAME!",
+    "name": "Hifumi Takimoto",
+    "gender": "Female"
+  },
+  {
+    "anime": "Ajin",
+    "name": "Satou",
+    "gender": "Male"
+  },
+  {
+    "anime": "Kaze no Tani no Nausicaä",
+    "name": "Nausicaä",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tomie",
+    "name": "Tomie",
+    "gender": "female"
+  },
+  {
+    "anime": "Ergo Proxy",
+    "name": "Re-l Mayer",
+    "gender": "Female"
+  },
+  {
+    "anime": "Persona 5",
+    "name": "Futaba Sakura",
+    "gender": "Female"
+  },
+  {
+    "anime": "Haibane Renmei",
+    "name": "Reki",
+    "gender": "Female"
+  },
+  {
+    "anime": "Eromanga Sensei",
+    "name": "Sagiri Izumi",
+    "gender": "Female"
+  },
+  {
+    "anime": "Love Live! Sunshine!!",
+    "name": "Yoshiko Tsushima",
+    "gender": "Female"
+  },
+  {
+    "anime": "Zankyou no Terror",
+    "name": "Twelve",
+    "gender": "Male"
+  },
+  {
+    "anime": "Uma Musume: Pretty Derby",
+    "name": "Toukai Teiou",
+    "gender": "Female"
+  },
+  {
+    "anime": "Gekkan Shoujo Nozaki-kun",
+    "name": "Chiyo Sakura ",
+    "gender": "Female"
+  },
+  {
+    "anime": "Gekkan Shoujo Nozaki-kun",
+    "name": "Mikoto Mikoshiba ",
+    "gender": "Male"
+  },
+  {
+    "anime": "PERSONA 3 THE MOVIE: #1 Spring of Birth",
+    "name": "Makoto Yuuki",
+    "gender": "Male"
+  },
+  {
+    "anime": "Overlord III",
+    "name": "Arche Eeb Rile Furt",
+    "gender": "female"
+  },
+  {
+    "anime": "Cardcaptor Sakura Movie: Fuinsareta Card",
+    "name": "Tomoyo Daidouji",
+    "gender": "Female"
+  },
+  {
+    "anime": "Owarimonogatari",
+    "name": "Sodachi Oikura",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tenki no Ko",
+    "name": "Hina Amano",
+    "gender": "Female"
+  },
+  {
+    "anime": "Tsubasa Chronicle",
+    "name": "Yuuko Ichihara",
+    "gender": "Female"
+  },
+  {
+    "anime": "Dead Dead Demon's Dededededestruction",
+    "name": "Ouran Nakagawa",
+    "gender": "Female"
+  },
+  {
+    "anime": "Berserk",
+    "name": "Puck",
+    "gender": ""
+  },
+  {
+    "anime": "Tongari Boushi no Atelier",
+    "name": "Qifrey",
+    "gender": "Male"
+  }
+]
