@@ -1,11 +1,10 @@
- // 🔥 IMPORTS
+// 🔥 IMPORTS (must be at top)
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
 import {
-  getFirestore, collection, doc, getDoc, getDocs, setDoc, updateDoc, increment
+  getFirestore, collection, doc, getDoc, getDocs, setDoc, updateDoc, increment, runTransaction
 } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
 // 🔥 FIREBASE CONFIGS
-// Live project (AnimeVoteApp)
 const liveConfig = {
   apiKey: "AIzaSyDNRa8_noLXsg1n591GexonnK733nZxa6M",
   authDomain: "animevoteapp.firebaseapp.com",
@@ -15,8 +14,6 @@ const liveConfig = {
   appId: "1:202781686417:web:eb6bf936d2d9f73d6c5d30",
   measurementId: "G-CKL3026K7X"
 };
-
-// Test project (anime-vote-leaderboard)
 const testConfig = {
   apiKey: "AIzaSyB4q2XirztsJOO5RvyYnMEPs7_3e13OaIE",
   authDomain: "anime-vote-leaderboard.firebaseapp.com",
@@ -26,150 +23,234 @@ const testConfig = {
   appId: "1:153651694103:web:dcee9781f4129fa04faa52",
   measurementId: "G-0QC1NNRH1T"
 };
-
-// 🔥 Toggle between live & test
-const useTest = false;// change to false when you want to use live
+const useTest = false; // set to true for test project
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Characters will be loaded from characters.json
+let characters = { boys: [], girls: [], other: [] };
 
-const characters = {
-  boys: [
-    { id: "boy1", image: "images/boy1.png", gender: "boy" },
-    { id: "boy2", image: "images/boy2.jpg", gender: "boy" },
-    { id: "boy3", image: "images/boy3.jpg", gender: "boy" },
-    { id: "boy4", image: "images/boy4.jpg", gender: "boy" },
-    { id: "boy5", image: "images/boy5.jpg", gender: "boy" },
-    { id: "boy6", image: "images/boy6.jpg", gender: "boy" },
-    { id: "boy7", image: "images/boy7.jpg", gender: "boy" },
-    { id: "boy8", image: "images/boy8.jpg", gender: "boy" },
-    { id: "boy9", image: "images/boy9.jpg", gender: "boy" },
-    { id: "boy10", image: "images/boy10.jpg", gender: "boy" },
-    { id: "boy11", image: "images/boy11.jpg", gender: "boy" },
-    { id: "boy12", image: "images/boy12.jpg", gender: "boy" },
-    { id: "boy13", image: "images/boy13.jpg", gender: "boy" },
-    { id: "boy14", image: "images/boy14.jpg", gender: "boy" },
-    { id: "boy15", image: "images/boy15.jpg", gender: "boy" },
-    { id: "boy16", image: "images/boy16.jpg", gender: "boy" },
-    { id: "boy17", image: "images/boy17.jpg", gender: "boy" },
-    { id: "boy18", image: "images/boy18.jpg", gender: "boy" },
-    { id: "boy19", image: "images/boy19.jpg", gender: "boy" },
-    { id: "boy20", image: "images/boy20.jpg", gender: "boy" },
-    { id: "boy21", image: "images/boy21.jpg", gender: "boy" },
-    { id: "boy22", image: "images/boy22.jpg", gender: "boy" }
+// Load JSON file (characters.json) and build characters arrays
+async function loadCharacters() {
+  try {
+    const res = await fetch("characters.json");
+    if (!res.ok) throw new Error("Failed to fetch characters.json: " + res.status);
+    const data = await res.json();
 
-  ],
-  girls: [
-    { id: "girl1", image: "images/girl1.jpg", gender: "girl" },
-    { id: "girl2", image: "images/girl2.jpg", gender: "girl" },
-    { id: "girl3", image: "images/girl3.jpg", gender: "girl" },
-    { id: "girl4", image: "images/girl4.jpg", gender: "girl" },
-    { id: "girl5", image: "images/girl5.jpg", gender: "girl" },
-    { id: "girl6", image: "images/girl6.jpg", gender: "girl" },
-    { id: "girl7", image: "images/girl7.jpg", gender: "girl" },
-    { id: "girl8", image: "images/girl8.jpg", gender: "girl" },
-    { id: "girl9", image: "images/girl9.jpg", gender: "girl" },
-    { id: "girl10", image: "images/girl10.jpg", gender: "girl" },
-      { id: "girl11", image: "images/girl11.jpg", gender: "girl" },
-    { id: "girl12", image: "images/girl12.jpg", gender: "girl" },
-      { id: "girl13", image: "images/girl13.jpg", gender: "girl" },
-    { id: "girl14", image: "images/girl14.jpg", gender: "girl" },
-    { id: "girl15", image: "images/girl15.jpg", gender: "girl" },
-    { id: "girl16", image: "images/girl16.jpg", gender: "girl" },
-      { id: "girl17", image: "images/girl17.jpg", gender: "girl" },
-        { id: "girl18", image: "images/girl18.jpg", gender: "girl" },
-            { id: "girl19", image: "images/girl19.jpg", gender: "girl" },
-                { id: "girl20", image: "images/girl20.jpg", gender: "girl" },
-                    { id: "girl21", image: "images/girl21.jpg", gender: "girl" },
-                        { id: "girl22", image: "images/girl22.jpg", gender: "girl" }
+    data.forEach(c => {
+      const id = (c.name || "").replace(/\s+/g, "_");
+      const ext = ".jpg"; // your files are .jpg per your last note
+      const fileName = id + ext;
 
-  ]
-};
+      const genderRaw = (c.gender || "").toLowerCase();
+      const gender = genderRaw === "male" ? "boy" :
+                     genderRaw === "female" ? "girl" : "other";
 
-// 🔥 VARIABLES
+      const charObj = {
+        id,
+        name: c.name,
+        anime: c.anime,
+        gender,
+        image: `images/${fileName}`
+      };
+
+      if (gender === "boy") characters.boys.push(charObj);
+      else if (gender === "girl") characters.girls.push(charObj);
+      else characters.other.push(charObj);
+    });
+
+    console.log(`✅ Loaded ${characters.boys.length} boys, ${characters.girls.length} girls, ${characters.other.length} others.`);
+  } catch (err) {
+    console.error("Error loading characters.json:", err);
+    alert("Could not load characters.json — open browser console for details.");
+  }
+}
+
+// --- State ---
 let currentGroup = [];
 let currentIndex = 0;
 let currentDaily = false;
 let dailyChar = null;
 
-const gameArea = document.getElementById("gameArea");
-const boyBtn = document.getElementById("boyBtn");
-const girlBtn = document.getElementById("girlBtn");
-const bothBtn = document.getElementById("bothBtn");
-const musicToggle = document.getElementById("musicToggle");
-const bgMusic = document.getElementById("bgMusic");
+// DOM references (will be set in init)
+let gameArea, boyBtn, girlBtn, bothBtn, musicToggle, bgMusic;
 
-let isMuted = false;
-musicToggle.addEventListener("click", () => {
-  if (isMuted) {
-    bgMusic.play();
-    musicToggle.textContent = "🔊";
-  } else {
-    bgMusic.pause();
-    musicToggle.textContent = "🔇";
-  }
-  isMuted = !isMuted;
-});
-
-document.body.addEventListener("click", () => {
-  if (!isMuted && bgMusic.paused) {
-    bgMusic.play().catch(() => {});
-  }
-}, { once: true });
-
-boyBtn.onclick = () => startMode("boys");
-girlBtn.onclick = () => startMode("girls");
-bothBtn.onclick = () => startMode("both");
-
-// 🔥 NEW BUTTONS FOR DAILY MODES
-document.getElementById("dailyWaifuBtn").onclick = () => startDailyMode("girl");
-document.getElementById("dailyHusbandoBtn").onclick = () => startDailyMode("boy");
-
-function startMode(mode) {
-  const group =
-    mode === "both"
-      ? [...characters.boys, ...characters.girls]
-      : [...characters[mode]];
-
-  currentGroup = shuffleArray(group);
-  currentIndex = 0;
-  currentDaily = false;
-  document.getElementById("menu").style.display = "none";
-  document.getElementById("dailyMenu").style.display = "none";
-  showCharacter();
-
+// --- Helper: shuffle ---
+function shuffleArray(arr) {
+  return arr
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
 }
-import { runTransaction } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
 
-// ================== DAILY COUNTDOWN (ONE LOGIC) ==================
+// --- Display single character (game view) ---
+function showCharacter() {
+  if (!gameArea) return;
+  if (currentIndex >= currentGroup.length) {
+    gameArea.innerHTML = `
+      <button class="btn" onclick="playAgain()">Play Again</button>
+      <button class="btn" onclick="returnHome()">Return to Homepage</button>
+    `;
+    return;
+  }
+
+  const char = currentGroup[currentIndex];
+  const label = (char.gender === "boy") ? "Husband or Nah?" : "Wife or Nah?";
+
+  gameArea.innerHTML = `
+    <h2>${label}</h2>
+    <img src="${char.image}" class="character-img" onerror="this.style.opacity=0.4; this.title='Image not found: ${char.image}'" />
+    <p class="char-name">${char.name}</p>
+    <div class="choice-buttons">
+      <button onclick="vote('${char.id}', true)">😍</button>
+      <button onclick="vote('${char.id}', false)">💀</button>
+    </div>
+    <div id="voteResult"></div>
+    <div style="margin-top: 20px;">
+      <button class="btn" onclick="returnHome()">Return to Homepage</button>
+    </div>
+  `;
+}
+
+// --- Voting function (same optimistic + firestore logic) ---
+async function vote(characterId, isSmash) {
+  const buttons = document.querySelectorAll(".choice-buttons button");
+  buttons.forEach(btn => (btn.disabled = true));
+
+  const todayUTC = new Date().toISOString().slice(0, 10);
+  const voteKey = `voted_${characterId}_${todayUTC}`;
+
+  if (currentDaily && localStorage.getItem(voteKey)) {
+    const vr = document.getElementById("voteResult");
+    if (vr) vr.innerText = "⚠️ You've already voted today!";
+    buttons.forEach(btn => (btn.disabled = false));
+    return;
+  }
+
+  const vr = document.getElementById("voteResult");
+  if (vr) vr.innerText = "✅ Vote submitted!";
+  localStorage.setItem(voteKey, "true");
+
+  setTimeout(() => {
+    currentIndex++;
+    showCharacter();
+  }, 500);
+
+  // Background save
+  (async () => {
+    try {
+      const ref = doc(db, "votes", characterId);
+      const snap = await getDoc(ref);
+      if (!snap.exists()) {
+        await setDoc(ref, { smash: 0, nah: 0 });
+      }
+      const field = isSmash ? "smash" : "nah";
+      await updateDoc(ref, { [field]: increment(1) });
+    } catch (err) {
+      console.error("Vote error:", err);
+      const vr2 = document.getElementById("voteResult");
+      if (vr2) vr2.innerText = "⚠️ Network error — your vote may not have counted.";
+    }
+  })();
+}
+
+// --- Play again / return home ---
+function playAgain() {
+  currentIndex = 0;
+  showCharacter();
+}
+function returnHome() {
+  gameArea.innerHTML = "";
+  const menu = document.getElementById("menu");
+  const dailyMenu = document.getElementById("dailyMenu");
+  if (menu) menu.style.display = "flex";
+  if (dailyMenu) dailyMenu.style.display = "flex";
+  const gameCountdown = document.getElementById("dailyCountdownGame");
+  if (gameCountdown) gameCountdown.style.display = "none";
+}
+
+// --- Leaderboard display (uses dynamically loaded characters) ---
+// --- Leaderboard display (clean layout) ---
+// --- Leaderboard display (clean layout, no crown) ---
+async function displayLeaderboard(gender, targetId, title) {
+  const all = [...characters.boys, ...characters.girls, ...characters.other];
+  const group = all.filter(c => c.gender === gender);
+
+  const board = document.getElementById(targetId);
+  if (!board) return; // safe guard if element missing
+
+  board.innerHTML = `<h3>${title}</h3>`; // reset
+
+  try {
+    const allVotesSnap = await getDocs(collection(db, "votes"));
+    const scores = [];
+
+    allVotesSnap.forEach(docSnap => {
+      const data = docSnap.data() || {};
+      const smash = data.smash || 0;
+      const nah = data.nah || 0;
+      const total = smash + nah;
+      if (total > 0) scores.push({ id: docSnap.id, smash, total });
+    });
+
+    // only characters in this gender
+    const filtered = scores.filter(s => group.some(c => c.id === s.id));
+    const sorted = filtered.sort((a, b) => b.smash - a.smash).slice(0, 5);
+
+    const ul = document.createElement("ul");
+
+    sorted.forEach((s, index) => {
+      const char = group.find(c => c.id === s.id);
+      if (!char) return;
+
+      // create list item element (ensure li exists before using it)
+      const li = document.createElement("li");
+
+      let frameClass = "";
+      if (index === 0) frameClass = "gold-frame";
+      else if (index === 1) frameClass = "silver-frame";
+      else if (index === 2) frameClass = "bronze-frame";
+
+      li.innerHTML = `
+        <div class="leaderboard-img-container ${frameClass}">
+          <img src="${char.image}" class="leaderboard-img" onerror="this.style.opacity=0.4" />
+        </div>
+        <div class="leaderboard-info">
+          <p class="leaderboard-name">${char.name}</p>
+          <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
+        </div>
+      `;
+
+      ul.appendChild(li);
+    });
+
+    board.appendChild(ul);
+  } catch (err) {
+    console.error("displayLeaderboard error:", err);
+    board.innerHTML += `<p style="color:#ff8c42;">Error loading leaderboard</p>`;
+  }
+}
+
+
+
+// --- Daily countdown & daily logic (keeps your original behavior) ---
 let countdownInterval;
 function startDailyCountdown() {
   const homeEl = document.getElementById("dailyCountdownHome");
   const gameEl = document.getElementById("dailyCountdownGame");
-
   if (countdownInterval) clearInterval(countdownInterval);
 
   async function updateCountdown() {
     const now = new Date();
-
-    const nextUTC = new Date(Date.UTC(
-      now.getUTCFullYear(),
-      now.getUTCMonth(),
-      now.getUTCDate() + 1, // next day
-      0, 0, 0, 0
-    ));
-
+    const nextUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0, 0));
     const diff = nextUTC.getTime() - now.getTime();
 
     if (diff <= 0) {
-      // ✅ Instead of reload, fetch new daily characters dynamically
       await ensureDailyCharacter("girl");
       await ensureDailyCharacter("boy");
-
-      // If user is currently in daily mode, update the character instantly
       if (currentDaily && dailyChar) {
         const gender = dailyChar.gender;
         const todayUTC = new Date().toISOString().slice(0, 10);
@@ -182,14 +263,12 @@ function startDailyCountdown() {
           showCharacter();
         }
       }
-
-      return; // next update will compute new diff
+      return;
     }
 
-    const hours   = Math.floor(diff / 3600000);
+    const hours = Math.floor(diff / 3600000);
     const minutes = Math.floor((diff % 3600000) / 60000);
     const seconds = Math.floor((diff % 60000) / 1000);
-
     const text = `⏰ New characters in: ${hours}h ${minutes}m ${seconds}s`;
     if (homeEl) homeEl.innerText = text;
     if (gameEl) gameEl.innerText = text;
@@ -199,44 +278,30 @@ function startDailyCountdown() {
   countdownInterval = setInterval(updateCountdown, 1000);
 }
 
-
-// ✅ Start countdown immediately when page loads
-startDailyCountdown();
 async function ensureDailyCharacter(gender) {
   const todayUTC = new Date().toISOString().slice(0, 10);
   const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
-
   const dailySnap = await getDoc(dailyRef);
   if (!dailySnap.exists()) {
-    // No daily character yet → create one using same logic as startDailyMode
     const historyRef = doc(db, "dailyHistory", gender);
     const pool = characters[gender === "girl" ? "girls" : "boys"];
     const historySnap = await getDoc(historyRef);
-
     let used = historySnap.exists() ? historySnap.data().used : [];
     let available = pool.filter(c => !used.includes(c.id));
-    if (available.length === 0) {
-      available = pool;
-      used = [];
-    }
+    if (available.length === 0) { available = pool; used = []; }
     const newChar = available[Math.floor(Math.random() * available.length)];
     await setDoc(dailyRef, newChar);
     await setDoc(historyRef, { used: [...used, newChar.id] });
   }
 }
 
-
-// ✅ Show it inside daily mode too
 function startDailyMode(gender) {
-  const todayUTC = new Date().toISOString().slice(0, 10); // always UTC date
+  const todayUTC = new Date().toISOString().slice(0, 10);
   const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
-
-
   const historyRef = doc(db, "dailyHistory", gender);
 
   runTransaction(db, async (transaction) => {
     const dailySnap = await transaction.get(dailyRef);
-
     if (dailySnap.exists()) {
       dailyChar = dailySnap.data();
     } else {
@@ -244,208 +309,34 @@ function startDailyMode(gender) {
       const historySnap = await transaction.get(historyRef);
       let used = historySnap.exists() ? historySnap.data().used : [];
       let available = pool.filter(c => !used.includes(c.id));
-      if (available.length === 0) {
-        available = pool;
-        used = [];
-      }
+      if (available.length === 0) { available = pool; used = []; }
       dailyChar = available[Math.floor(Math.random() * available.length)];
       transaction.set(dailyRef, dailyChar);
       transaction.set(historyRef, { used: [...used, dailyChar.id] });
     }
   })
-    .then(() => {
-      currentGroup = [dailyChar];
-      currentIndex = 0;
-      currentDaily = true;
-
-      document.getElementById("menu").style.display = "none";
-      document.getElementById("dailyMenu").style.display = "none";
-
-      // ✅ make sure the game timer is visible
-      document.getElementById("dailyCountdownGame").style.display = "block";
-
-      showCharacter();
-    })
-    .catch((e) => {
-      console.error("Transaction failed: ", e);
-    });
-}
-
-
-
-function showCharacter() {
-  if (currentIndex >= currentGroup.length) {
-    gameArea.innerHTML = `
-      <button onclick="playAgain()">Play Again</button>
-      <button onclick="returnHome()">Return to Homepage</button>
-    `;
-    return;
-  }
-
-  const char = currentGroup[currentIndex];
-  const label = (char.gender === "boy") ? "Husband or Nah?" : "Wife or Nah?";
-
-  gameArea.innerHTML = `
-    <h2>${label}</h2>
-    <img src="${char.image}" class="character-img" />
-    <div class="choice-buttons">
-      <button onclick="vote('${char.id}', true)">😍</button>
-      <button onclick="vote('${char.id}', false)">💀</button>
-    </div>
-    <div id="voteResult"></div>
-    <div style="margin-top: 20px;">
-      <button onclick="returnHome()">Return to Homepage</button>
-    </div>
-  `;
-}
-
-// 🔥 VOTING (OPTIMISTIC + BACKGROUND + ERROR FEEDBACK)
-// 🔥 VOTING (OPTIMISTIC + BACKGROUND + ERROR FEEDBACK)
-function vote(characterId, isSmash) {
-  const buttons = document.querySelectorAll(".choice-buttons button");
-  buttons.forEach(btn => (btn.disabled = true)); // disable instantly
-
-  // ✅ Use UTC date so it's the same for everyone worldwide
-  const todayUTC = new Date().toISOString().slice(0, 10);
-  const voteKey = `voted_${characterId}_${todayUTC}`;
-
-  if (currentDaily && localStorage.getItem(voteKey)) {
-    document.getElementById("voteResult").innerText = "⚠️ You've already voted today!";
-    buttons.forEach(btn => (btn.disabled = false)); 
-    return;
-  }
-
-  // ✅ Instant optimistic feedback
-  document.getElementById("voteResult").innerText = "✅ Vote submitted!";
-  localStorage.setItem(voteKey, "true");
-
-  // ⏩ Move on immediately
-  setTimeout(() => {
-    currentIndex++;
+  .then(() => {
+    currentGroup = [dailyChar];
+    currentIndex = 0;
+    currentDaily = true;
+    const menu = document.getElementById("menu");
+    const dailyMenu = document.getElementById("dailyMenu");
+    if (menu) menu.style.display = "none";
+    if (dailyMenu) dailyMenu.style.display = "none";
+    const gameCountdown = document.getElementById("dailyCountdownGame");
+    if (gameCountdown) gameCountdown.style.display = "block";
     showCharacter();
-  }, 500);
-
-  // 🔥 Background Firestore save
-  (async () => {
-    try {
-      const ref = doc(db, "votes", characterId);
-      const snap = await getDoc(ref);
-      if (!snap.exists()) {
-        await setDoc(ref, { smash: 0, nah: 0 });
-      }
-
-      const field = isSmash ? "smash" : "nah";
-      await updateDoc(ref, { [field]: increment(1) });
-    } catch (err) {
-      console.error("Vote error:", err);
-      document.getElementById("voteResult").innerText = 
-        "⚠️ Network error — your vote may not have counted.";
-    }
-  })();
+  })
+  .catch((e) => console.error("Transaction failed: ", e));
 }
 
-
-function playAgain() {
-  currentIndex = 0;
-  showCharacter();
-}
-
-function returnHome() {
-  gameArea.innerHTML = "";
-  document.getElementById("menu").style.display = "flex";
-  document.getElementById("dailyMenu").style.display = "flex";
-
-  // ✅ hide the daily countdown that belongs to the game
-  document.getElementById("dailyCountdownGame").style.display = "none";
-}
-
-
-async function displayLeaderboard(gender, targetId, title) {
-  const all = [...characters.boys, ...characters.girls];
-  const group = all.filter(c => c.gender === gender);
-  const allVotesSnap = await getDocs(collection(db, "votes"));
-  const scores = [];
-
-  allVotesSnap.forEach(docSnap => {
-    const data = docSnap.data();
-    const total = data.smash + data.nah;
-    if (total > 0) {
-      scores.push({
-        id: docSnap.id,
-        smash: data.smash,   // ✅ keep raw smash count
-        total: total
-      });
-    }
-  });
-
-  // ✅ only include characters of this gender
-  const filtered = scores.filter(s => group.find(c => c.id === s.id));
-
-  // ✅ sort by smash count (highest first)
-  const sorted = filtered.sort((a, b) => b.smash - a.smash).slice(0, 5);
-
-  const board = document.getElementById(targetId);
-  board.innerHTML = `<h3>${title}</h3>`;
-
-  const ul = document.createElement("ul");
-
-  sorted.forEach((s, index) => {
-    const char = group.find(c => c.id === s.id);
-    const li = document.createElement("li");
-
-    let frameClass = "";
-    let crownIcon = "";
-    let ultimateTitle = "";
-
-    if (index === 0) {
-      frameClass = "gold-frame";
-      crownIcon = `<div class="emoji-crown">👑</div>`;
-      ultimateTitle = `<div class="ultimate-title">${gender === "girl" ? "Ultimate Waifu" : "Ultimate Husbando"}</div>`;
-    } else if (index === 1) {
-      frameClass = "silver-frame";
-    } else if (index === 2) {
-      frameClass = "bronze-frame";
-    }
-
-    li.innerHTML = `
-      <div class="crown-container">
-        ${crownIcon}
-        <div class="leaderboard-img-container ${frameClass}">
-          <img src="${char.image}" class="leaderboard-img" />
-        </div>
-      </div>
-      ${ultimateTitle}
-      <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
-    `;
-    ul.appendChild(li);
-  });
-
-  board.appendChild(ul);
-}
-
-
-function shuffleArray(arr) {
-  return arr
-    .map(value => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
-}
-
-displayLeaderboard("boy", "husbandBoard", "Top Husbands");
-displayLeaderboard("girl", "wifeBoard", "Top Wives");
-
-window.vote = vote;
-window.playAgain = playAgain;
-window.returnHome = returnHome; 
-// 🌸 Dynamic Background Wallpapers
+// --- Wallpaper logic ---
 const wallpapers = [
-  "images/wall1.png", // replace with your anime wallpaper paths
+  "images/wall1.png",
   "images/wall2.png",
   "images/wall3.jpg",
   "images/wall4.png"
-
 ];
-
 function setRandomWallpaper() {
   const randomIndex = Math.floor(Math.random() * wallpapers.length);
   document.body.style.backgroundImage = `url('${wallpapers[randomIndex]}')`;
@@ -454,9 +345,47 @@ function setRandomWallpaper() {
   document.body.style.backgroundAttachment = "fixed";
 }
 
-// Set random wallpaper on page load
-setRandomWallpaper();
+// --- Initialization (run once) ---
+(async function init() {
+  await loadCharacters();
 
-// Change every 3 minutes (180000 ms)
-setInterval(setRandomWallpaper, 180000);
+  // DOM refs (ensure script is loaded at end of body or DOM exists)
+  gameArea = document.getElementById("gameArea");
+  boyBtn = document.getElementById("boyBtn");
+  girlBtn = document.getElementById("girlBtn");
+  bothBtn = document.getElementById("bothBtn");
+  musicToggle = document.getElementById("musicToggle");
+  bgMusic = document.getElementById("bgMusic");
 
+  if (boyBtn) boyBtn.onclick = () => { currentGroup = shuffleArray(characters.boys); currentIndex = 0; currentDaily = false; document.getElementById("menu").style.display = "none"; document.getElementById("dailyMenu").style.display = "none"; showCharacter(); };
+  if (girlBtn) girlBtn.onclick = () => { currentGroup = shuffleArray(characters.girls); currentIndex = 0; currentDaily = false; document.getElementById("menu").style.display = "none"; document.getElementById("dailyMenu").style.display = "none"; showCharacter(); };
+  if (bothBtn) bothBtn.onclick = () => { currentGroup = shuffleArray([...characters.boys, ...characters.girls]); currentIndex = 0; currentDaily = false; document.getElementById("menu").style.display = "none"; document.getElementById("dailyMenu").style.display = "none"; showCharacter(); };
+
+  // music toggle
+  if (musicToggle && bgMusic) {
+    musicToggle.addEventListener("click", () => {
+      if (bgMusic.paused) { bgMusic.play().catch(()=>{}); musicToggle.textContent = "🔊"; }
+      else { bgMusic.pause(); musicToggle.textContent = "🔇"; }
+    });
+  }
+  document.body.addEventListener("click", () => { if (bgMusic && bgMusic.paused) bgMusic.play().catch(()=>{}); }, { once: true });
+
+  // wire daily buttons (if present)
+  const dailyWaifuBtn = document.getElementById("dailyWaifuBtn");
+  const dailyHusbandoBtn = document.getElementById("dailyHusbandoBtn");
+  if (dailyWaifuBtn) dailyWaifuBtn.onclick = () => startDailyMode("girl");
+  if (dailyHusbandoBtn) dailyHusbandoBtn.onclick = () => startDailyMode("boy");
+
+  // start countdown + wallpapers + leaderboards
+  startDailyCountdown();
+  setRandomWallpaper();
+  setInterval(setRandomWallpaper, 180000);
+
+  await displayLeaderboard("boy", "husbandBoard", "Top Husbands");
+  await displayLeaderboard("girl", "wifeBoard", "Top Wives");
+
+  // expose functions for inline onclicks used in HTML
+  window.vote = vote;
+  window.playAgain = playAgain;
+  window.returnHome = returnHome;
+})();
