@@ -33,6 +33,21 @@ const db = getFirestore(app);
 // Characters will be loaded from characters.json
 let characters = { boys: [], girls: [], other: [] };
 
+/**
+ * formatName(raw)
+ * Converts JSON name like "satoru_gojo" or "satoru gojo" to "Satoru Gojo"
+ */
+function formatName(raw) {
+  if (!raw) return "";
+  // replace underscores and multiple spaces with single space, trim
+  const spaced = raw.replace(/_/g, " ").replace(/\s+/g, " ").trim();
+  // title-case each word but keep existing capitalization for words that already have it
+  return spaced.split(" ").map(w => {
+    if (w.length === 0) return w;
+    return w[0].toUpperCase() + w.slice(1);
+  }).join(" ");
+}
+
 // Load JSON file (characters.json) and build characters arrays
 async function loadCharacters() {
   try {
@@ -40,19 +55,26 @@ async function loadCharacters() {
     if (!res.ok) throw new Error("Failed to fetch characters.json: " + res.status);
     const data = await res.json();
 
+    // reset arrays
+    characters = { boys: [], girls: [], other: [] };
+
     data.forEach(c => {
-      const id = (c.name || "").replace(/\s+/g, "_");
-      const ext = ".jpg"; // your files are .jpg per your last note
+      // Some JSON entries may already have underscores. Normalize id to use underscores without spaces.
+      const rawName = c.name || "";
+      const id = rawName.replace(/\s+/g, "_").replace(/__+/g, "_");
+      // You said your image files are .jpg — if some files differ, you'll need to update this logic or provide full image paths in JSON.
+      const ext = ".jpg";
       const fileName = id + ext;
 
-      const genderRaw = (c.gender || "").toLowerCase();
+      const genderRaw = (c.gender || "").toString().toLowerCase();
       const gender = genderRaw === "male" ? "boy" :
                      genderRaw === "female" ? "girl" : "other";
 
       const charObj = {
         id,
-        name: c.name,
-        anime: c.anime,
+        // store raw name from JSON (underscored) but keep it so we can format for display
+        name: rawName,
+        anime: c.anime || "",
         gender,
         image: `images/${fileName}`
       };
@@ -99,14 +121,15 @@ function showCharacter() {
 
   const char = currentGroup[currentIndex];
   const label = (char.gender === "boy") ? "Husband or Nah?" : "Wife or Nah?";
+  const displayName = formatName(char.name); // formatted display name
 
   gameArea.innerHTML = `
     <h2>${label}</h2>
     <img src="${char.image}" class="character-img" onerror="this.style.opacity=0.4; this.title='Image not found: ${char.image}'" />
-    <p class="char-name">${char.name}</p>
+    <p class="char-name">${displayName}</p>
     <div class="choice-buttons">
-      <button onclick="vote('${char.id}', true)">😍</button>
-      <button onclick="vote('${char.id}', false)">💀</button>
+      <button onclick="vote('${char.id}', true)">smash</button>
+      <button onclick="vote('${char.id}', false)">pass</button>
     </div>
     <div id="voteResult"></div>
     <div style="margin-top: 20px;">
@@ -173,8 +196,6 @@ function returnHome() {
 }
 
 // --- Leaderboard display (uses dynamically loaded characters) ---
-// --- Leaderboard display (clean layout) ---
-// --- Leaderboard display (clean layout, no crown) ---
 async function displayLeaderboard(gender, targetId, title) {
   const all = [...characters.boys, ...characters.girls, ...characters.other];
   const group = all.filter(c => c.gender === gender);
@@ -203,29 +224,36 @@ async function displayLeaderboard(gender, targetId, title) {
     const ul = document.createElement("ul");
 
     sorted.forEach((s, index) => {
-      const char = group.find(c => c.id === s.id);
-      if (!char) return;
+  const char = group.find(c => c.id === s.id);
+  if (!char) return;
 
-      // create list item element (ensure li exists before using it)
-      const li = document.createElement("li");
+  const li = document.createElement("li");
 
-      let frameClass = "";
-      if (index === 0) frameClass = "gold-frame";
-      else if (index === 1) frameClass = "silver-frame";
-      else if (index === 2) frameClass = "bronze-frame";
+  let frameClass = "";
+  let ultimateTitle = "";
+  if (index === 0) {
+    frameClass = "gold-frame";
+    ultimateTitle = `<div class="ultimate-title">${
+      gender === "girl" ? "Ultimate Waifu" : "Ultimate Husbando"
+    }</div>`;
+  } else if (index === 1) {
+    frameClass = "silver-frame";
+  } else if (index === 2) {
+    frameClass = "bronze-frame";
+  }
 
-      li.innerHTML = `
-        <div class="leaderboard-img-container ${frameClass}">
-          <img src="${char.image}" class="leaderboard-img" onerror="this.style.opacity=0.4" />
-        </div>
-        <div class="leaderboard-info">
-          <p class="leaderboard-name">${char.name}</p>
-          <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
-        </div>
-      `;
+  li.innerHTML = `
+    <div class="leaderboard-img-container ${frameClass}">
+      <img src="${char.image}" class="leaderboard-img" />
+    </div>
+    <div class="leaderboard-info">
+      <p class="leaderboard-name">${char.name} ${ultimateTitle}</p>
+      <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
+    </div>
+  `;
 
-      ul.appendChild(li);
-    });
+  ul.appendChild(li);
+});
 
     board.appendChild(ul);
   } catch (err) {
@@ -233,8 +261,6 @@ async function displayLeaderboard(gender, targetId, title) {
     board.innerHTML += `<p style="color:#ff8c42;">Error loading leaderboard</p>`;
   }
 }
-
-
 
 // --- Daily countdown & daily logic (keeps your original behavior) ---
 let countdownInterval;
