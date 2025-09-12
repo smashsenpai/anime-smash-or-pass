@@ -1,16 +1,4 @@
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #1e1e2f;
-  color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-}
-
 header {
   width: 100%;
   background-color: #2c2c3e;
@@ -77,15 +65,64 @@ button:hover {
 }
 
 .choice-buttons button {
-  font-size: 32px;
-  padding: 10px 20px;
-  border-radius: 50%;
-  background-color: #333;
+  font-size: 20px;
+  padding: 12px 28px;
+  border-radius: 50px; /* pill shape */
+  background: linear-gradient(135deg, #ff4ec9, #ff66b2);
   color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  box-shadow: 0 0 10px rgba(255,105,180,0.6);
 }
 
 .choice-buttons button:hover {
   background-color: #555;
+}
+
+
+/* 🔥 New Info Section Styles (About + How to Play) */
+.info-section {
+  max-width: 800px;
+  background-color: #2a2a3f;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  line-height: 1.6;
+}
+
+.info-section h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #4c4cff;
+  padding-bottom: 5px;
+}
+
+.info-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #e0e0e0;
+}
+
+/* Share Button Styling */
+#share {
+  margin: 30px auto;
+  text-align: center;
+}
+
+#shareBtn {
+  background-color: #ff5050;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#shareBtn:hover {
+  background-color: #cc3b3b;
 }
 
 /* 🔥 Leaderboard Fixes */
@@ -141,78 +178,21 @@ button:hover {
   color: #ff8c42;
 }
 
-/* Crown & Ultimate Title */
 
 
+
+/* Ultimate Title Styling */
 .ultimate-title {
   background: linear-gradient(90deg, gold, orange);
   color: black;
   font-weight: bold;
-  padding: 3px 8px;
-  border-radius: 6px;
+  padding: 4px 10px;
+  border-radius: 8px;
   font-style: italic;
-  box-shadow: 0 0 8px gold;
-  font-size: 0.8rem;
-  margin-left: 8px;
+  box-shadow: 0 0 10px gold;
+  margin-top: 5px;
   display: inline-block;
 }
-
-
-/* 🔥 New Info Section Styles (About + How to Play) */
-.info-section {
-  max-width: 800px;
-  background-color: #2a2a3f;
-  padding: 30px;
-  margin: 40px auto;
-  border-radius: 15px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-  line-height: 1.6;
-}
-
-.info-section h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #4c4cff;
-  padding-bottom: 5px;
-}
-
-.info-section p {
-  font-size: 16px;
-  margin-bottom: 20px;
-  color: #e0e0e0;
-}
-
-/* Share Button Styling */
-#share {
-  margin: 30px auto;
-  text-align: center;
-}
-
-#shareBtn {
-  background-color: #ff5050;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#shareBtn:hover {
-  background-color: #cc3b3b;
-}
-
-/* 🌟 NEW FEATURES ADDED BELOW */
-
-/* 👑 Big Crown Icon for 1st Place */
-
-
-/* 🌟 Unique Ultimate Title */
-
-
-
-
 
 
 /* Button sections layout */
@@ -298,7 +278,6 @@ button:hover {
   
 }
 
-
 /* ✨ Glowing Pill Buttons */
 button {
   background: linear-gradient(135deg, #ff4ec9, #ff66b2);
@@ -330,18 +309,31 @@ button:hover {
   50% { transform: translateY(-15px); }
   100% { transform: translateY(0px); }
 }
+/* 🔥 Final body styles */
 body {
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: url("images/background1.png") no-repeat center center fixed;
-  background-size: cover;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
+
+  /* Combined wallpaper + animated gradient */
+  background: 
+    linear-gradient(270deg, #1e1e2f, #302b63, #24243e),
+    url("images/background1.png") no-repeat center center fixed;
+  background-size: 600% 600%, cover;
+  animation: gradientShift 20s ease infinite;
 }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%, center; }
+  50% { background-position: 100% 50%, center; }
+  100% { background-position: 0% 50%, center; }
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -349,16 +341,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5); /* transparent black */
-  z-index: -1; /* keeps it behind content */
+  background: rgba(0,0,0,0.5); /* dark overlay */
+  z-index: -1;
 }
-.char-name {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-  font-weight: bold;
+@media (max-width: 600px) {
+  .smash-senpai-title {
+    font-size: 50px;
+    -webkit-text-stroke: 2px black;
+  }
 }
-
-.leaderboard-name {
-  margin-top: 0.4rem;
-  font-size: 1rem;
-  font-weight: bold;} 
