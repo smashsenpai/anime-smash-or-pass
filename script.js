@@ -415,3 +415,12 @@ function setRandomWallpaper() {
   window.playAgain = playAgain;
   window.returnHome = returnHome;
 })();
+// 🔎 Debug missing images + auto fallback
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img").forEach(img => {
+    img.onerror = () => {
+      console.warn("⚠️ Missing image:", img.src); // logs broken image
+      img.src = "images/placeholder.png";        // swap to fallback
+    };
+  });
+});
