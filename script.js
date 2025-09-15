@@ -194,6 +194,38 @@ function returnHome() {
   const gameCountdown = document.getElementById("dailyCountdownGame");
   if (gameCountdown) gameCountdown.style.display = "none";
 }
+// --- Character Gallery ---
+function showGallery() {
+  const menu = document.getElementById("menu");
+  const dailyMenu = document.getElementById("dailyMenu");
+  if (menu) menu.style.display = "none";
+  if (dailyMenu) dailyMenu.style.display = "none";
+  gameArea.innerHTML = `
+    <div id="galleryHeader" style="position:sticky;top:0;background:rgba(0,0,0,0.8);padding:10px;z-index:10;display:flex;justify-content:space-between;align-items:center;">
+      <h2 style="margin:0;">Character Gallery</h2>
+      <button onclick="returnHome()">Back to Menu</button>
+    </div>
+    <div id="characterGallery" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:15px;"></div>
+  `;
+
+  const galleryArea = document.getElementById("characterGallery");
+  const allChars = [...characters.boys, ...characters.girls, ...characters.other];
+
+  allChars.forEach(c => {
+   const card = document.createElement("div");
+card.className = "gallery-card"; // 🔥 applies your CSS hover
+
+    card.innerHTML = `
+      <img src="${c.image}" 
+           alt="${c.name}" 
+           style="width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.4);" 
+           onerror="this.style.opacity=0.3; this.title='Image missing';">
+      <p style="font-size:12px;margin-top:4px;">${formatName(c.name)}</p>
+    `;
+    galleryArea.appendChild(card);
+  });
+}
+
 
 // --- Leaderboard display (uses dynamically loaded characters) ---
 async function displayLeaderboard(gender, targetId, title) {
@@ -380,6 +412,10 @@ function setRandomWallpaper() {
   boyBtn = document.getElementById("boyBtn");
   girlBtn = document.getElementById("girlBtn");
   bothBtn = document.getElementById("bothBtn");
+    // gallery button
+  const galleryBtn = document.getElementById("galleryBtn");
+  if (galleryBtn) galleryBtn.onclick = () => showGallery();
+
   musicToggle = document.getElementById("musicToggle");
   bgMusic = document.getElementById("bgMusic");
 
