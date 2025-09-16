@@ -200,30 +200,103 @@ function showGallery() {
   const dailyMenu = document.getElementById("dailyMenu");
   if (menu) menu.style.display = "none";
   if (dailyMenu) dailyMenu.style.display = "none";
+
   gameArea.innerHTML = `
-    <div id="galleryHeader" style="position:sticky;top:0;background:rgba(0,0,0,0.8);padding:10px;z-index:10;display:flex;justify-content:space-between;align-items:center;">
-      <h2 style="margin:0;">Character Gallery</h2>
+    <div id="galleryHeader">
+      <h2>Character Gallery</h2>
+      <input type="text" id="searchInput" placeholder="🔍 Search characters..." />
       <button onclick="returnHome()">Back to Menu</button>
     </div>
-    <div id="characterGallery" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:15px;"></div>
+    <div id="characterGallery"></div>
+    <div id="characterModal" class="modal" style="display:none;">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <img id="modalImage" src="" alt="" />
+    <h3 id="modalName"></h3>
+    <p id="modalVotes"></p>
+  </div>
+</div>
+
   `;
 
   const galleryArea = document.getElementById("characterGallery");
   const allChars = [...characters.boys, ...characters.girls, ...characters.other];
 
   allChars.forEach(c => {
-   const card = document.createElement("div");
-card.className = "gallery-card"; // 🔥 applies your CSS hover
+    const card = document.createElement("div");
+    card.className = "gallery-card";
+    card.dataset.id = c.id;
+    card.dataset.name = formatName(c.name);
 
     card.innerHTML = `
-      <img src="${c.image}" 
-           alt="${c.name}" 
-           style="width:100%;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,0.4);" 
+      <img src="${c.image}" alt="${c.name}" 
+      loading="lazy"
            onerror="this.style.opacity=0.3; this.title='Image missing';">
-      <p style="font-size:12px;margin-top:4px;">${formatName(c.name)}</p>
+      <p>${formatName(c.name)}</p>
     `;
+
+    // 🔥 click to open modal
+    card.addEventListener("click", () => openModal(c));
+
     galleryArea.appendChild(card);
   });
+
+  // 🔎 Search filter
+  const searchInput = document.getElementById("searchInput");
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.toLowerCase();
+    document.querySelectorAll(".gallery-card").forEach(card => {
+      const name = card.dataset.name.toLowerCase();
+      card.style.display = name.includes(query) ? "block" : "none";
+    });
+  });
+}
+
+// --- Modal logic ---
+async function openModal(char) {
+  const modal = document.getElementById("characterModal");
+  const modalImg = document.getElementById("modalImage");
+  const modalName = document.getElementById("modalName");
+  const modalVotes = document.getElementById("modalVotes");
+  
+
+  modalImg.src = char.image;
+  modalName.innerText = formatName(char.name);
+
+  try {
+    const ref = doc(db, "votes", char.id);
+    const snap = await getDoc(ref);
+    if (snap.exists()) {
+      const d = snap.data();
+      modalVotes.innerText = `🔥 ${d.smash || 0} smashes | ❌ ${d.nah || 0} passes`;
+    } else {
+      modalVotes.innerText = "No votes yet.";
+    }
+  } catch {
+    modalVotes.innerText = "Error loading votes.";
+  }
+
+  modal.style.display = "flex";
+
+  // Close with X
+  document.querySelector(".close-btn").onclick = () => {
+    modal.style.display = "none";
+  };
+  // ESC key support
+document.onkeydown = (e) => {
+  if (e.key === "Escape") {
+    modal.style.display = "none";
+    document.onkeydown = null; // cleanup
+  }
+};
+
+
+  // 🔥 Close when clicking outside modal-content
+  modal.onclick = (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  };
 }
 
 
