@@ -298,6 +298,32 @@ document.onkeydown = (e) => {
     }
   };
 }
+// --- Leaderboard cache wrapper (reduces Firestore reads massively) ---
+async function loadLeaderboardCached(gender, targetId, title) {
+  const cacheKey = `leaderboard_${gender}`;
+  const timeKey = `${cacheKey}_time`;
+  const now = Date.now();
+
+  const cachedHTML = localStorage.getItem(cacheKey);
+  const cachedTime = localStorage.getItem(timeKey);
+
+  // Use cached leaderboard for 10 minutes
+  if (cachedHTML && cachedTime && now - cachedTime < 10 * 60 * 1000) {
+    const board = document.getElementById(targetId);
+    if (board) board.innerHTML = cachedHTML;
+    return;
+  }
+
+  // Otherwise load fresh data
+  await displayLeaderboard(gender, targetId, title);
+
+  // Save rendered HTML to cache
+  const board = document.getElementById(targetId);
+  if (board) {
+    localStorage.setItem(cacheKey, board.innerHTML);
+    localStorage.setItem(timeKey, now);
+  }
+}
 
 
 // --- Leaderboard display (uses dynamically loaded characters) ---
@@ -516,8 +542,9 @@ function setRandomWallpaper() {
   setRandomWallpaper();
   setInterval(setRandomWallpaper, 180000);
 
-  await displayLeaderboard("boy", "husbandBoard", "Top Husbands");
-  await displayLeaderboard("girl", "wifeBoard", "Top Wives");
+ loadLeaderboardCached("boy", "husbandBoard", "Top Husbands");
+loadLeaderboardCached("girl", "wifeBoard", "Top Wives");
+
 
   // expose functions for inline onclicks used in HTML
   window.vote = vote;
