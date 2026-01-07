@@ -29,6 +29,8 @@ const firebaseConfig = useTest ? testConfig : liveConfig;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// 🔒 ADMIN CONFIG (simple & safe)
+const ADMIN_KEY = "change-this-to-anything-secret";
 
 // Characters will be loaded from characters.json
 let characters = { boys: [], girls: [], other: [] };
@@ -298,102 +300,92 @@ document.onkeydown = (e) => {
     }
   };
 }
-// --- Leaderboard cache wrapper (reduces Firestore reads massively) ---
-async function loadLeaderboardCached(gender, targetId, title) {
-  const cacheKey = `leaderboard_${gender}`;
-  const timeKey = `${cacheKey}_time`;
-  const now = Date.now();
+// ===============================
+// 🔒 ADMIN: BUILD LEADERBOARD ON DEMAND
+// ===============================
+async function adminUpdateLeaderboard(gender) {
+  const all = [...characters.boys, ...characters.girls];
+  const group = all.filter(c => c.gender === gender);
 
-  const cachedHTML = localStorage.getItem(cacheKey);
-  const cachedTime = localStorage.getItem(timeKey);
+  const votesSnap = await getDocs(collection(db, "votes"));
+  const scores = [];
 
-  // Use cached leaderboard for 10 minutes
-  if (cachedHTML && cachedTime && now - cachedTime < 10 * 60 * 1000) {
-    const board = document.getElementById(targetId);
-    if (board) board.innerHTML = cachedHTML;
-    return;
-  }
+  votesSnap.forEach(d => {
+    const data = d.data();
+    const smash = data.smash || 0;
+    const nah = data.nah || 0;
+    const total = smash + nah;
 
-  // Otherwise load fresh data
-  await displayLeaderboard(gender, targetId, title);
+    if (total > 0 && group.some(c => c.id === d.id)) {
+      scores.push({ id: d.id, smash, total });
+    }
+  });
 
-  // Save rendered HTML to cache
-  const board = document.getElementById(targetId);
-  if (board) {
-    localStorage.setItem(cacheKey, board.innerHTML);
-    localStorage.setItem(timeKey, now);
-  }
+  const top = scores
+    .sort((a, b) => b.smash - a.smash)
+    .slice(0, 5);
+
+  await setDoc(doc(db, "leaderboard_cache", gender), {
+    updatedAt: new Date(),
+    top
+  });
+
+  alert(`✅ ${gender} leaderboard updated`);
 }
 
 
-// --- Leaderboard display (uses dynamically loaded characters) ---
+// ===============================
+// 📊 FRONTEND: READ CACHED LEADERBOARD
+// ===============================
 async function displayLeaderboard(gender, targetId, title) {
-  const all = [...characters.boys, ...characters.girls, ...characters.other];
-  const group = all.filter(c => c.gender === gender);
-
   const board = document.getElementById(targetId);
-  if (!board) return; // safe guard if element missing
+  if (!board) return;
 
-  board.innerHTML = `<h3>${title}</h3>`; // reset
+  board.innerHTML = `<h3>${title}</h3>`;
 
   try {
-    const allVotesSnap = await getDocs(collection(db, "votes"));
-    const scores = [];
+    const snap = await getDoc(doc(db, "leaderboard_cache", gender));
+    if (!snap.exists()) {
+      board.innerHTML += "<p>Leaderboard updating soon 🔄</p>";
+      return;
+    }
 
-    allVotesSnap.forEach(docSnap => {
-      const data = docSnap.data() || {};
-      const smash = data.smash || 0;
-      const nah = data.nah || 0;
-      const total = smash + nah;
-      if (total > 0) scores.push({ id: docSnap.id, smash, total });
-    });
-
-    // only characters in this gender
-    const filtered = scores.filter(s => group.some(c => c.id === s.id));
-    const sorted = filtered.sort((a, b) => b.smash - a.smash).slice(0, 5);
-
+    const data = snap.data();
     const ul = document.createElement("ul");
 
-    sorted.forEach((s, index) => {
-  const char = group.find(c => c.id === s.id);
-  if (!char) return;
+    data.top.forEach((s, index) => {
+      const char = [...characters.boys, ...characters.girls].find(c => c.id === s.id);
+      if (!char) return;
 
-  const li = document.createElement("li");
+      let frameClass = "";
+      let ultimateTitle = "";
 
-  let frameClass = "";
-  let ultimateTitle = "";
-  if (index === 0) {
-    frameClass = "gold-frame";
-    ultimateTitle = `<div class="ultimate-title">${
-      gender === "girl" ? "Ultimate Waifu" : "Ultimate Husbando"
-    }</div>`;
-  } else if (index === 1) {
-    frameClass = "silver-frame";
-  } else if (index === 2) {
-    frameClass = "bronze-frame";
-  }
+      if (index === 0) {
+        frameClass = "gold-frame";
+        ultimateTitle = `<div class="ultimate-title">${gender === "girl" ? "Ultimate Waifu" : "Ultimate Husbando"}</div>`;
+      } else if (index === 1) frameClass = "silver-frame";
+      else if (index === 2) frameClass = "bronze-frame";
 
-  li.innerHTML = `
-    <div class="leaderboard-img-container ${frameClass}">
-      <img src="${char.image}" class="leaderboard-img" />
-    </div>
-    <div class="leaderboard-info">
-      <p class="leaderboard-name">${char.name} ${ultimateTitle}</p>
-      <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
-    </div>
-  `;
-
-  ul.appendChild(li);
-});
+      const li = document.createElement("li");
+      li.innerHTML = `
+        <div class="leaderboard-img-container ${frameClass}">
+          <img src="${char.image}" class="leaderboard-img" />
+        </div>
+        <div class="leaderboard-info">
+          <p class="leaderboard-name">${formatName(char.name)} ${ultimateTitle}</p>
+          <span>🔥 ${s.smash} smashes (${s.total} votes)</span>
+        </div>
+      `;
+      ul.appendChild(li);
+    });
 
     board.appendChild(ul);
   } catch (err) {
-    console.error("displayLeaderboard error:", err);
-    board.innerHTML += `<p style="color:#ff8c42;">Error loading leaderboard</p>`;
+    console.error(err);
+    board.innerHTML += "<p>Error loading leaderboard</p>";
   }
 }
 
-// --- Daily countdown & daily logic (keeps your original behavior) ---
 let countdownInterval;
 function startDailyCountdown() {
   const homeEl = document.getElementById("dailyCountdownHome");
@@ -542,14 +534,27 @@ function setRandomWallpaper() {
   setRandomWallpaper();
   setInterval(setRandomWallpaper, 180000);
 
- loadLeaderboardCached("boy", "husbandBoard", "Top Husbands");
-loadLeaderboardCached("girl", "wifeBoard", "Top Wives");
+ displayLeaderboard("boy", "husbandBoard", "Top Husbands");
+displayLeaderboard("girl", "wifeBoard", "Top Wives");
 
 
   // expose functions for inline onclicks used in HTML
   window.vote = vote;
   window.playAgain = playAgain;
   window.returnHome = returnHome;
+  // 🔐 SECRET ADMIN TRIGGER (press L)
+document.addEventListener("keydown", async (e) => {
+  if (e.key.toLowerCase() === "l") {
+    const key = prompt("Admin key:");
+    if (key === ADMIN_KEY) {
+      await adminUpdateLeaderboard("boy");
+      await adminUpdateLeaderboard("girl");
+    } else {
+      alert("Wrong key");
+    }
+  }
+});
+
 })();
 // 🔎 Debug missing images + auto fallback
 document.addEventListener("DOMContentLoaded", () => {
