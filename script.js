@@ -29,8 +29,9 @@ const firebaseConfig = useTest ? testConfig : liveConfig;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-// 🔒 ADMIN CONFIG (simple & safe)
-const ADMIN_KEY = "change-this-to-anything-secret";
+// ⏱️ AUTO LEADERBOARD UPDATE (1 DAY)
+const LEADERBOARD_UPDATE_DAYS = 1;
+
 
 // Characters will be loaded from characters.json
 let characters = { boys: [], girls: [], other: [] };
@@ -330,7 +331,8 @@ async function adminUpdateLeaderboard(gender) {
     top
   });
 
-  alert(`✅ ${gender} leaderboard updated`);
+  console.log(`✅ ${gender} leaderboard updated`);
+
 }
 
 
@@ -493,6 +495,29 @@ function setRandomWallpaper() {
   document.body.style.backgroundPosition = "center";
   document.body.style.backgroundAttachment = "fixed";
 }
+async function autoUpdateLeaderboardIfNeeded() {
+  const metaRef = doc(db, "leaderboard_cache", "meta");
+  const metaSnap = await getDoc(metaRef);
+
+  const now = Date.now();
+  const interval = LEADERBOARD_UPDATE_DAYS * 24 * 60 * 60 * 1000;
+
+  if (metaSnap.exists()) {
+    const last = metaSnap.data().lastUpdated?.toMillis?.() || 0;
+    if (now - last < interval) {
+      return; // ⛔ too soon, skip update
+    }
+  }
+
+  console.log("🔄 Auto-updating leaderboard (daily)");
+
+  await adminUpdateLeaderboard("boy");
+  await adminUpdateLeaderboard("girl");
+
+  await setDoc(metaRef, {
+    lastUpdated: new Date()
+  });
+}
 
 // --- Initialization (run once) ---
 (async function init() {
@@ -533,6 +558,7 @@ function setRandomWallpaper() {
   startDailyCountdown();
   setRandomWallpaper();
   setInterval(setRandomWallpaper, 180000);
+await autoUpdateLeaderboardIfNeeded();
 
  displayLeaderboard("boy", "husbandBoard", "Top Husbands");
 displayLeaderboard("girl", "wifeBoard", "Top Wives");
@@ -542,18 +568,7 @@ displayLeaderboard("girl", "wifeBoard", "Top Wives");
   window.vote = vote;
   window.playAgain = playAgain;
   window.returnHome = returnHome;
-  // 🔐 SECRET ADMIN TRIGGER (press L)
-document.addEventListener("keydown", async (e) => {
-  if (e.key.toLowerCase() === "l") {
-    const key = prompt("Admin key:");
-    if (key === ADMIN_KEY) {
-      await adminUpdateLeaderboard("boy");
-      await adminUpdateLeaderboard("girl");
-    } else {
-      alert("Wrong key");
-    }
-  }
-});
+ 
 
 })();
 // 🔎 Debug missing images + auto fallback
