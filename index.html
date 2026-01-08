@@ -8,7 +8,7 @@
   <!-- Basic Meta -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anime Smash or Pass</title>
+  
   <link rel="stylesheet" href="style.css" />
   <meta name="google-site-verification" content="McQhVHBC_yd0-90swszGv5l4WlOPDM9z1BMLUtPOeSs" />
 
@@ -111,6 +111,37 @@
     <div id="husbandBoard" class="leaderboard"></div>  
     <div id="wifeBoard" class="leaderboard"></div>  
   </div>  
+  <!-- 🔥 USER STATS -->
+<section id="user-stats">
+  <h2>🔥 Your Stats</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <span class="stat-icon">⚡</span>
+      <div>
+        <strong id="statStreak">0</strong>
+        <p>Day Streak</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-icon">❤️</span>
+      <div>
+        <strong id="statVotes">0</strong>
+        <p>Total Votes</p>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <span class="stat-icon">📅</span>
+      <div>
+        <strong id="statDays">0</strong>
+        <p>Days Played</p>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- 🛍️ WAIFU SHOP SECTION -->
 <section id="waifu-shop">
   <h2>🔥 Top Anime Waifu Figures (Fans Love These)</h2>
@@ -263,6 +294,65 @@
   <a href="contact.html">Contact</a>
 </footer>
 
+<script>
+(function () {
+  const today = new Date().toISOString().split("T")[0];
+
+  let totalVotes = parseInt(localStorage.getItem("totalVotes") || "0");
+  let streak = parseInt(localStorage.getItem("streak") || "0");
+  let daysPlayed = parseInt(localStorage.getItem("daysPlayed") || "0");
+  let lastVoteDate = localStorage.getItem("lastVoteDate");
+
+
+
+
+  // Display
+  document.getElementById("statStreak").textContent = streak;
+  document.getElementById("statVotes").textContent = totalVotes;
+  document.getElementById("statDays").textContent = daysPlayed;
+
+  // 🔥 Expose function to increase votes
+window.incrementVoteStat = function () {
+  const today = new Date().toISOString().split("T")[0];
+
+  let totalVotes = parseInt(localStorage.getItem("totalVotes") || "0");
+  let streak = parseInt(localStorage.getItem("streak") || "0");
+  let daysPlayed = parseInt(localStorage.getItem("daysPlayed") || "0");
+  let lastVoteDate = localStorage.getItem("lastVoteDate");
+
+  totalVotes += 1;
+
+  if (lastVoteDate !== today) {
+    if (!lastVoteDate) {
+      // 🔥 First vote EVER
+      streak = 1;
+      daysPlayed = 1;
+    } else {
+      const diff =
+        (new Date(today) - new Date(lastVoteDate)) / (1000 * 60 * 60 * 24);
+
+      if (diff === 1) {
+        streak += 1;
+        daysPlayed += 1;
+      } else {
+        streak = 1;
+        daysPlayed += 1;
+      }
+    }
+    localStorage.setItem("lastVoteDate", today);
+  }
+
+  localStorage.setItem("totalVotes", totalVotes);
+  localStorage.setItem("streak", streak);
+  localStorage.setItem("daysPlayed", daysPlayed);
+
+  document.getElementById("statVotes").textContent = totalVotes;
+  document.getElementById("statStreak").textContent = streak;
+  document.getElementById("statDays").textContent = daysPlayed;
+};
+
+})();
+</script>
 
 </body>  
 </html> 
