@@ -635,3 +635,46 @@ body::before {
     grid-template-columns: 1fr;
   }
 }
+#user-stats {
+  margin: 50px auto;
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
+}
+
+#user-stats h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.stats-grid {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat-card {
+  background: rgba(0,0,0,0.5);
+  border-radius: 14px;
+  padding: 15px 20px;
+  min-width: 180px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stat-icon {
+  font-size: 26px;
+}
+
+.stat-card strong {
+  font-size: 22px;
+  display: block;
+}
+
+.stat-card p {
+  font-size: 13px;
+  opacity: 0.8;
+  margin: 0;
+}
