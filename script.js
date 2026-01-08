@@ -159,7 +159,7 @@ async function vote(characterId, isSmash) {
   const vr = document.getElementById("voteResult");
   if (vr) vr.innerText = "✅ Vote submitted!";
   localStorage.setItem(voteKey, "true");
-
+if (window.incrementVoteStat) window.incrementVoteStat();
   setTimeout(() => {
     currentIndex++;
     showCharacter();
