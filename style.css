@@ -574,23 +574,25 @@ body::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
+  justify-items: center; /* 🔥 centers cards */
 }
-
 .shop-card {
-  background: rgba(0,0,0,0.4);
-  border-radius: 14px;
+  width: 100%;
+  max-width: 220px; /* 🔥 key fix */
+  background: rgba(0,0,0,0.6);
+  border-radius: 16px;
   padding: 15px;
+  text-align: center;
   transition: transform 0.2s ease;
 }
+
+
+
 
 .shop-card:hover {
   transform: translateY(-5px);
 }
 
-.shop-card img {
-  width: 100%;
-  border-radius: 10px;
-}
 
 .shop-card h3 {
   margin: 10px 0 5px;
@@ -616,23 +618,20 @@ body::before {
   font-size: 13px;
   opacity: 0.7;
 }
-.shop-card {
-  width: 220px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 16px;
-  padding: 15px;
-  text-align: center;
-}
+
 
 .shop-card img {
   width: 100%;
-  height: 260px;          /* 🔥 same height for all */
-  object-fit: cover;     /* crops Marin nicely */
+  height: 260px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 12px;
   background: #fff;
+  display: block;
+  margin: 0 auto; /* 🔥 ensures center */
 }
-.shop-card img {
-  object-fit: cover;
-  object-position: top; /* focuses on face */
+@media (max-width: 768px) {
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
 }
-
