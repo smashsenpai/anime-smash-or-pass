@@ -159,7 +159,9 @@ async function vote(characterId, isSmash) {
   const vr = document.getElementById("voteResult");
   if (vr) vr.innerText = "✅ Vote submitted!";
   localStorage.setItem(voteKey, "true");
-if (window.incrementVoteStat) window.incrementVoteStat();
+  if (window.incrementVoteStat) window.incrementVoteStat();
+
+
   setTimeout(() => {
     currentIndex++;
     showCharacter();
@@ -230,6 +232,7 @@ function showGallery() {
     card.className = "gallery-card";
     card.dataset.id = c.id;
     card.dataset.name = formatName(c.name);
+
 
     card.innerHTML = `
       <img src="${c.image}" alt="${c.name}" 
@@ -580,3 +583,75 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   });
 });
+function getRarity(percent) {
+  if (percent >= 70) return { label: "Common", emoji: "🟢" };
+  if (percent >= 40) return { label: "Uncommon", emoji: "🔵" };
+  if (percent >= 15) return { label: "Rare", emoji: "🟣" };
+  if (percent >= 5)  return { label: "Epic", emoji: "🟠" };
+  return { label: "Legendary", emoji: "🔴" };
+}
+
+// ===============================
+// 🏆 ACHIEVEMENTS SYSTEM
+// ===============================
+async function loadAchievements() {
+  const container = document.getElementById("achievementsGrid");
+  if (!container) return;
+
+  try {
+    const res = await fetch("achievements.json");
+    const achievements = await res.json();
+
+    // 🔥 Read stats from localStorage
+    const stats = {
+      votes: parseInt(localStorage.getItem("totalVotes") || "0"),
+      days: parseInt(localStorage.getItem("daysPlayed") || "0"),
+      streak: parseInt(localStorage.getItem("streak") || "0")
+    };
+
+    container.innerHTML = "";
+
+    achievements.forEach(a => {
+      let unlocked = false;
+if (a.type === "votes" && stats.votes >= a.value) unlocked = true;
+if (a.type === "days_played" && stats.days >= a.value) unlocked = true;
+if (a.type === "streak" && stats.streak >= a.value) unlocked = true;
+
+      const card = document.createElement("div");
+      card.className = "achievement-card" + (unlocked ? " unlocked" : "");
+const rarity = getRarity(a.percent);
+
+      card.innerHTML = `
+  <div class="achievement-icon">${a.icon}</div>
+  <div class="achievement-name">${a.name}</div>
+  <div class="achievement-desc">${a.description}</div>
+
+  <div class="achievement-rarity">
+    ${rarity.emoji}
+    <strong>${rarity.label}</strong>
+    — Only ${a.percent}% of players
+  </div>
+`;
+
+
+      container.appendChild(card);
+    });
+
+  } catch (err) {
+    console.error("Achievements load failed:", err);
+    container.innerHTML = "<p>⚠️ Failed to load achievements</p>";
+  }
+}
+
+// 🔄 Reload achievements whenever stats change
+document.addEventListener("DOMContentLoaded", loadAchievements);
+
+// 🔥 Hook into vote system
+const originalIncrement = window.incrementVoteStat;
+if (originalIncrement) {
+  window.incrementVoteStat = function () {
+    originalIncrement();
+    loadAchievements();
+  };
+}
+
