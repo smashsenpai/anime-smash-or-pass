@@ -286,16 +286,22 @@ localStorage.setItem(
 
   const a = dailyPool[dailyIndex];
   const b = dailyPool[dailyIndex + 1];
-    if (!a || !b) {
-    console.warn("Daily match corrupted, resetting daily state");
-    clearDailyState(dailyGender);
+   if (!a || !b) {
+  console.warn("⚠️ Invalid daily pair detected, skipping");
 
-    returnHome();
-    clearDailyState(dailyGender);
-localStorage.removeItem(`daily_played_${dailyGender}_${getTodayUTC()}`);
+  dailyIndex += 2;
 
-    return;
+  if (dailyIndex >= dailyPool.length) {
+    dailyPool = dailyWinners;
+    dailyRoundSize = dailyPool.length;
+    dailyWinners = [];
+    dailyIndex = 0;
   }
+
+  saveDailyState();
+  showDailyMatch();
+  return;
+}
 
 
   gameArea.innerHTML = `
