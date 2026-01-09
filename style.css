@@ -848,4 +848,76 @@ body::before {
   justify-content: center;
   gap: 30px;
 }
+/* 👑 DAILY ULTIMATE BUTTONS */
+.daily-btn {
+  position: relative;
+  font-size: 17px;
+  padding: 14px 34px;
+  letter-spacing: 0.6px;
+  font-weight: 800;
+  text-transform: uppercase;
+  border-radius: 999px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* ✨ Animated glow ring */
+.daily-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(
+    120deg,
+    gold,
+    hotpink,
+    violet,
+    cyan,
+    gold
+  );
+  background-size: 300% 300%;
+  animation: dailyGlow 4s linear infinite;
+  z-index: -1;
+  filter: blur(6px);
+}
+
+/* Inner body */
+.daily-btn::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #1e1e2f;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+/* 💖 Waifu Theme */
+.daily-btn.waifu {
+  color: #ff7ac8;
+  box-shadow: 0 0 30px rgba(255, 105, 180, 0.9);
+}
+
+/* 💙 Husbando Theme */
+.daily-btn.husbando {
+  color: #7fd6ff;
+  box-shadow: 0 0 30px rgba(120, 200, 255, 0.9);
+}
+
+/* Hover = POWER */
+.daily-btn:hover {
+  transform: scale(1.12);
+}
+
+/* 🔄 Glow animation */
+@keyframes dailyGlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@media (max-width: 600px) {
+  .daily-btn {
+    font-size: 14px;
+    padding: 11px 22px;
+  }
+}
+
 
