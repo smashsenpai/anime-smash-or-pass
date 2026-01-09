@@ -97,8 +97,7 @@ async function loadCharacters() {
 // --- State ---
 let currentGroup = [];
 let currentIndex = 0;
-let currentDaily = false;
-let dailyChar = null;
+
 
 // DOM references (will be set in init)
 let gameArea, boyBtn, girlBtn, bothBtn, musicToggle, bgMusic;
@@ -149,12 +148,7 @@ async function vote(characterId, isSmash) {
   const todayUTC = new Date().toISOString().slice(0, 10);
   const voteKey = `voted_${characterId}_${todayUTC}`;
 
-  if (currentDaily && localStorage.getItem(voteKey)) {
-    const vr = document.getElementById("voteResult");
-    if (vr) vr.innerText = "⚠️ You've already voted today!";
-    buttons.forEach(btn => (btn.disabled = false));
-    return;
-  }
+ 
 
   const vr = document.getElementById("voteResult");
   if (vr) vr.innerText = "✅ Vote submitted!";
@@ -193,18 +187,15 @@ function playAgain() {
 function returnHome() {
   gameArea.innerHTML = "";
   const menu = document.getElementById("menu");
-  const dailyMenu = document.getElementById("dailyMenu");
   if (menu) menu.style.display = "flex";
-  if (dailyMenu) dailyMenu.style.display = "flex";
-  const gameCountdown = document.getElementById("dailyCountdownGame");
-  if (gameCountdown) gameCountdown.style.display = "none";
 }
+
 // --- Character Gallery ---
 function showGallery() {
   const menu = document.getElementById("menu");
-  const dailyMenu = document.getElementById("dailyMenu");
+ 
   if (menu) menu.style.display = "none";
-  if (dailyMenu) dailyMenu.style.display = "none";
+  
 
   gameArea.innerHTML = `
     <div id="galleryHeader">
@@ -391,98 +382,7 @@ async function displayLeaderboard(gender, targetId, title) {
   }
 }
 
-let countdownInterval;
-function startDailyCountdown() {
-  const homeEl = document.getElementById("dailyCountdownHome");
-  const gameEl = document.getElementById("dailyCountdownGame");
-  if (countdownInterval) clearInterval(countdownInterval);
 
-  async function updateCountdown() {
-    const now = new Date();
-    const nextUTC = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1, 0, 0, 0, 0));
-    const diff = nextUTC.getTime() - now.getTime();
-
-    if (diff <= 0) {
-      await ensureDailyCharacter("girl");
-      await ensureDailyCharacter("boy");
-      if (currentDaily && dailyChar) {
-        const gender = dailyChar.gender;
-        const todayUTC = new Date().toISOString().slice(0, 10);
-        const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
-        const dailySnap = await getDoc(dailyRef);
-        if (dailySnap.exists()) {
-          dailyChar = dailySnap.data();
-          currentGroup = [dailyChar];
-          currentIndex = 0;
-          showCharacter();
-        }
-      }
-      return;
-    }
-
-    const hours = Math.floor(diff / 3600000);
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-    const text = `⏰ New characters in: ${hours}h ${minutes}m ${seconds}s`;
-    if (homeEl) homeEl.innerText = text;
-    if (gameEl) gameEl.innerText = text;
-  }
-
-  updateCountdown();
-  countdownInterval = setInterval(updateCountdown, 1000);
-}
-
-async function ensureDailyCharacter(gender) {
-  const todayUTC = new Date().toISOString().slice(0, 10);
-  const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
-  const dailySnap = await getDoc(dailyRef);
-  if (!dailySnap.exists()) {
-    const historyRef = doc(db, "dailyHistory", gender);
-    const pool = characters[gender === "girl" ? "girls" : "boys"];
-    const historySnap = await getDoc(historyRef);
-    let used = historySnap.exists() ? historySnap.data().used : [];
-    let available = pool.filter(c => !used.includes(c.id));
-    if (available.length === 0) { available = pool; used = []; }
-    const newChar = available[Math.floor(Math.random() * available.length)];
-    await setDoc(dailyRef, newChar);
-    await setDoc(historyRef, { used: [...used, newChar.id] });
-  }
-}
-
-function startDailyMode(gender) {
-  const todayUTC = new Date().toISOString().slice(0, 10);
-  const dailyRef = doc(db, "daily", `${gender}_${todayUTC}`);
-  const historyRef = doc(db, "dailyHistory", gender);
-
-  runTransaction(db, async (transaction) => {
-    const dailySnap = await transaction.get(dailyRef);
-    if (dailySnap.exists()) {
-      dailyChar = dailySnap.data();
-    } else {
-      const pool = characters[gender === "girl" ? "girls" : "boys"];
-      const historySnap = await transaction.get(historyRef);
-      let used = historySnap.exists() ? historySnap.data().used : [];
-      let available = pool.filter(c => !used.includes(c.id));
-      if (available.length === 0) { available = pool; used = []; }
-      dailyChar = available[Math.floor(Math.random() * available.length)];
-      transaction.set(dailyRef, dailyChar);
-      transaction.set(historyRef, { used: [...used, dailyChar.id] });
-    }
-  })
-  .then(() => {
-    currentGroup = [dailyChar];
-    currentIndex = 0;
-    currentDaily = true;
-    const menu = document.getElementById("menu");
-    const dailyMenu = document.getElementById("dailyMenu");
-    if (menu) menu.style.display = "none";
-    if (dailyMenu) dailyMenu.style.display = "none";
-    const gameCountdown = document.getElementById("dailyCountdownGame");
-    if (gameCountdown) gameCountdown.style.display = "block";
-    showCharacter();
-  })
-  .catch((e) => console.error("Transaction failed: ", e));
-}
 
 // --- Wallpaper logic ---
 const wallpapers = [
@@ -537,10 +437,26 @@ async function autoUpdateLeaderboardIfNeeded() {
 
   musicToggle = document.getElementById("musicToggle");
   bgMusic = document.getElementById("bgMusic");
+if (boyBtn) boyBtn.onclick = () => {
+  currentGroup = shuffleArray(characters.boys);
+  currentIndex = 0;
+  document.getElementById("menu").style.display = "none";
+  showCharacter();
+};
 
-  if (boyBtn) boyBtn.onclick = () => { currentGroup = shuffleArray(characters.boys); currentIndex = 0; currentDaily = false; document.getElementById("menu").style.display = "none"; document.getElementById("dailyMenu").style.display = "none"; showCharacter(); };
-  if (girlBtn) girlBtn.onclick = () => { currentGroup = shuffleArray(characters.girls); currentIndex = 0; currentDaily = false; document.getElementById("menu").style.display = "none"; document.getElementById("dailyMenu").style.display = "none"; showCharacter(); };
-  if (bothBtn) bothBtn.onclick = () => { currentGroup = shuffleArray([...characters.boys, ...characters.girls]); currentIndex = 0; currentDaily = false; document.getElementById("menu").style.display = "none"; document.getElementById("dailyMenu").style.display = "none"; showCharacter(); };
+if (girlBtn) girlBtn.onclick = () => {
+  currentGroup = shuffleArray(characters.girls);
+  currentIndex = 0;
+  document.getElementById("menu").style.display = "none";
+  showCharacter();
+};
+
+if (bothBtn) bothBtn.onclick = () => {
+  currentGroup = shuffleArray([...characters.boys, ...characters.girls]);
+  currentIndex = 0;
+  document.getElementById("menu").style.display = "none";
+  showCharacter();
+};
 
   // music toggle
   if (musicToggle && bgMusic) {
@@ -551,14 +467,10 @@ async function autoUpdateLeaderboardIfNeeded() {
   }
   document.body.addEventListener("click", () => { if (bgMusic && bgMusic.paused) bgMusic.play().catch(()=>{}); }, { once: true });
 
-  // wire daily buttons (if present)
-  const dailyWaifuBtn = document.getElementById("dailyWaifuBtn");
-  const dailyHusbandoBtn = document.getElementById("dailyHusbandoBtn");
-  if (dailyWaifuBtn) dailyWaifuBtn.onclick = () => startDailyMode("girl");
-  if (dailyHusbandoBtn) dailyHusbandoBtn.onclick = () => startDailyMode("boy");
+  
 
   // start countdown + wallpapers + leaderboards
-  startDailyCountdown();
+  
   setRandomWallpaper();
   setInterval(setRandomWallpaper, 180000);
 await autoUpdateLeaderboardIfNeeded();
@@ -654,4 +566,5 @@ if (originalIncrement) {
     loadAchievements();
   };
 }
+
 
