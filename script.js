@@ -352,7 +352,6 @@ function pickDaily(selected) {
 }
 
 
-
 // --- Display single character (game view) ---
 function showCharacter() {
   if (!gameArea) return;
@@ -811,4 +810,3 @@ if (originalIncrement) {
     loadAchievements();
   };
 }
-
