@@ -23,7 +23,7 @@ const testConfig = {
   appId: "1:153651694103:web:dcee9781f4129fa04faa52",
   measurementId: "G-0QC1NNRH1T"
 };
-const useTest = false; // set to true for test project
+const useTest = true; // set to true for test project
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
@@ -97,18 +97,251 @@ async function loadCharacters() {
 // --- State ---
 let currentGroup = [];
 let currentIndex = 0;
+let dailyPool = [];
+let dailyRoundSize = 16;
+let dailyIndex = 0;
+let dailyWinners = [];
+let dailyGender = "";
 
 
 // DOM references (will be set in init)
 let gameArea, boyBtn, girlBtn, bothBtn, musicToggle, bgMusic;
+function getDailyStateKey(gender) {
+  return `daily_state_${gender}_${getTodayUTC()}`;
+}
+
+function saveDailyState() {
+  localStorage.setItem(
+    getDailyStateKey(dailyGender),
+    JSON.stringify({
+      dailyPool,
+      dailyIndex,
+      dailyWinners,
+      dailyGender,
+      date: getTodayUTC()
+    })
+  );
+}
+
+function loadDailyState(gender) {
+  const raw = localStorage.getItem(getDailyStateKey(gender));
+  if (!raw) return false;
+
+  const data = JSON.parse(raw);
+  if (data.date !== getTodayUTC()) return false;
+
+  dailyPool = data.dailyPool;
+  dailyIndex = data.dailyIndex;
+  dailyWinners = data.dailyWinners;
+  dailyGender = data.dailyGender;
+
+  return true;
+}
+
+function clearDailyState(gender) {
+  localStorage.removeItem(getDailyStateKey(gender));
+}
+
 
 // --- Helper: shuffle ---
+function pickDailyById(id) {
+  const selected = dailyPool.find(c => c.id === id);
+  if (selected) pickDaily(selected);
+}
+window.pickDailyById = pickDailyById;
+
 function shuffleArray(arr) {
   return arr
     .map(value => ({ value, sort: Math.random() }))
     .sort((a, b) => a.sort - b.sort)
     .map(({ value }) => value);
 }
+function getTodayUTC() {
+  return new Date().toISOString().slice(0, 10);
+}
+
+async function getDailyPool(gender) {
+  const today = getTodayUTC();
+  const docId = `${gender}_${today}`;
+  const ref = doc(db, "daily_modes", docId);
+
+  const snap = await getDoc(ref);
+
+  // ✅ Already generated for today
+  if (snap.exists()) {
+    return snap.data().pool;
+  }
+
+  // ⛔ Generate ONLY ONCE (transaction-safe)
+  return await runTransaction(db, async (tx) => {
+    const freshSnap = await tx.get(ref);
+    if (freshSnap.exists()) {
+      return freshSnap.data().pool;
+    }
+
+    const source =
+      gender === "girl" ? characters.girls : characters.boys;
+
+    const pool = shuffleArray(source)
+      .slice(0, 16)
+      .map(c => c.id);
+
+    tx.set(ref, {
+      date: today,
+      gender,
+      pool,
+      createdAt: new Date()
+    });
+
+    return pool;
+  });
+}
+function hasPlayedDaily(gender) {
+  const key = `daily_played_${gender}_${getTodayUTC()}`;
+  return localStorage.getItem(key) === "true";
+}
+
+function markDailyPlayed(gender) {
+  const key = `daily_played_${gender}_${getTodayUTC()}`;
+  localStorage.setItem(key, "true");
+}
+
+async function startDailyMode(gender) {
+  
+  dailyGender = gender;
+    const winnerKey = `daily_winner_${gender}_${getTodayUTC()}`;
+  const storedWinner = localStorage.getItem(winnerKey);
+
+  if (storedWinner) {
+    const winner = JSON.parse(storedWinner);
+    document.getElementById("menu").style.display = "none";
+
+    gameArea.innerHTML = `
+      <h2>👑 ${gender === "girl" ? "Waifu" : "Husbando"} of the Day</h2>
+      <img src="${winner.image}" class="character-img gold-frame" />
+      <h3>${formatName(winner.name)}</h3>
+      <p class="anime-name">${winner.anime}</p>
+      <button class="btn" onclick="returnHome()">Return Home</button>
+    `;
+    return;
+  }
+// winner check FIRST (already added above)
+
+// then resume unfinished match
+if (loadDailyState(gender)) {
+
+  document.getElementById("menu").style.display = "none";
+  showDailyMatch();
+  return;
+}
+
+
+
+
+  const poolIds = await getDailyPool(gender);
+
+  dailyPool = poolIds.map(id =>
+    [...characters.boys, ...characters.girls].find(c => c.id === id)
+  ).filter(Boolean);
+
+  dailyRoundSize = dailyPool.length;
+  dailyIndex = 0;
+  dailyWinners = [];
+
+  document.getElementById("menu").style.display = "none";
+  showDailyMatch();
+ 
+
+}
+function showDailyMatch() {
+  const roundNames = {
+    16: "Round of 16",
+    8: "Quarterfinals",
+    4: "Semifinals",
+    2: "Final 👑"
+    
+
+  };
+
+ if (dailyPool.length === 1) {
+  const winner = dailyPool[0];
+  markDailyPlayed(dailyGender);
+
+localStorage.setItem(
+  `daily_winner_${dailyGender}_${getTodayUTC()}`,
+  JSON.stringify(dailyPool[0])
+);
+
+
+  gameArea.innerHTML = `
+    <h2>👑 ${dailyGender === "girl" ? "Waifu" : "Husbando"} of the Day</h2>
+    <img src="${winner.image}" class="character-img gold-frame" />
+    <h3>${formatName(winner.name)}</h3>
+    <p>(${winner.anime})</p>
+    <button class="btn" onclick="returnHome()">Return Home</button>
+  `;
+  return;
+}
+
+
+  const a = dailyPool[dailyIndex];
+  const b = dailyPool[dailyIndex + 1];
+    if (!a || !b) {
+    console.warn("Daily match corrupted, resetting daily state");
+    clearDailyState(dailyGender);
+
+    returnHome();
+    clearDailyState(dailyGender);
+localStorage.removeItem(`daily_played_${dailyGender}_${getTodayUTC()}`);
+
+    return;
+  }
+
+
+  gameArea.innerHTML = `
+    <h2>${roundNames[dailyPool.length]}</h2>
+    <button class="btn secondary" onclick="returnHome()">← Return to Menu</button>
+
+
+    <div class="vs-container">
+      <div class="vs-card">
+
+        <img src="${a.image}" />
+        <p>${formatName(a.name)}</p>
+        <span>${a.anime}</span>
+        <button onclick="pickDailyById('${a.id}')">Choose</button>
+
+      </div>
+
+      <div class="vs-text">VS</div>
+<div class="vs-card">
+
+        <img src="${b.image}" />
+        <p>${formatName(b.name)}</p>
+        <span>${b.anime}</span>
+       <button onclick="pickDailyById('${b.id}')">Choose</button>
+
+
+      </div>
+    </div>
+  `;
+
+
+}
+function pickDaily(selected) {
+  dailyWinners.push(selected);
+  dailyIndex += 2;
+
+  if (dailyIndex >= dailyPool.length) {
+    dailyPool = dailyWinners;
+    dailyWinners = [];
+    dailyIndex = 0;
+  }
+
+  saveDailyState();
+  showDailyMatch();
+}
+
 
 // --- Display single character (game view) ---
 function showCharacter() {
@@ -425,6 +658,8 @@ async function autoUpdateLeaderboardIfNeeded() {
 // --- Initialization (run once) ---
 (async function init() {
   await loadCharacters();
+  window.startDailyMode = startDailyMode;
+
 
   // DOM refs (ensure script is loaded at end of body or DOM exists)
   gameArea = document.getElementById("gameArea");
@@ -566,5 +801,4 @@ if (originalIncrement) {
     loadAchievements();
   };
 }
-
 
