@@ -134,7 +134,7 @@ function loadDailyState(gender) {
   dailyIndex = data.dailyIndex;
   dailyWinners = data.dailyWinners;
   dailyGender = data.dailyGender;
-
+dailyRoundSize = dailyPool.length;
   return true;
 }
 
