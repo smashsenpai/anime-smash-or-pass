@@ -134,7 +134,7 @@ function loadDailyState(gender) {
   dailyIndex = data.dailyIndex;
   dailyWinners = data.dailyWinners;
   dailyGender = data.dailyGender;
-dailyRoundSize = dailyPool.length;
+ dailyRoundSize = dailyPool.length;
   return true;
 }
 
@@ -221,7 +221,12 @@ async function startDailyMode(gender) {
       <img src="${winner.image}" class="character-img gold-frame" />
       <h3>${formatName(winner.name)}</h3>
       <p class="anime-name">${winner.anime}</p>
-      <button class="btn" onclick="returnHome()">Return Home</button>
+     <p style="opacity:0.8;margin-top:10px;">
+  🌙 Come back tomorrow for a new ${dailyGender === "girl" ? "Waifu" : "Husbando"}!
+</p>
+
+<button class="btn" onclick="returnHome()">Return Home</button>
+
     `;
     return;
   }
@@ -305,7 +310,8 @@ localStorage.setItem(
 
 
   gameArea.innerHTML = `
-   <h2>${roundNames[dailyRoundSize] || "Final 👑"}</h2>
+   <h2>${roundNames[dailyPool.length] || "Final 👑"}</h2>
+
 
     <button class="btn secondary" onclick="returnHome()">← Return to Menu</button>
 
