@@ -725,4 +725,125 @@ body::before {
 .achievement-card.rare:hover {
   box-shadow: 0 0 30px rgba(120, 160, 255, 0.35);
 }
+.vs-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.vs-card {
+  width: 220px;
+  padding: 12px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.6);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.vs-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.vs-card:hover {
+  transform: scale(1.05);
+}
+
+.vs-card button {
+  margin-top: 10px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #ff69b4;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.vs-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.btn.secondary {
+  background: transparent;
+  border: 1px solid white;
+  margin-top: 20px;
+}
+.anime-name,
+.vs-card span {
+  font-size: 0.9rem;
+  opacity: 0.75;
+  font-style: italic;
+  margin-top: 4px;
+}
+
+
+  .vs-container {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .vs-card {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .vs-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .vs-text {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  
+
+  h2 {
+    text-align: center;
+  }
+
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  max-width: 420px;
+  margin: 0 auto;
+}
+#menu button {
+  flex: 0 0 auto;      /* 🔥 stop stretching */
+  min-width: 140px;
+}
+
+@media (max-width: 600px) {
+  #menu {
+    gap: 10px;
+    max-width: 340px;
+  }
+
+  #menu button {
+    padding: 8px 18px;     /* ⬅ MUCH slimmer */
+    font-size: 13.5px;
+    border-radius: 999px;
+  }
+
+  /* Character Gallery centered */
+  #menu button:nth-child(5) {
+    padding: 9px 22px;
+  }
+
+  /* Daily buttons slightly bigger but NOT full width */
+  #menu button:nth-last-child(2),
+  #menu button:nth-last-child(1) {
+    padding: 10px 26px;
+    font-size: 14px;
+  }
+}
+
 
