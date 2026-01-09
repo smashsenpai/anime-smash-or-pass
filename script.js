@@ -305,7 +305,8 @@ localStorage.setItem(
 
 
   gameArea.innerHTML = `
-    <h2>${roundNames[dailyPool.length]}</h2>
+   <h2>${roundNames[dailyRoundSize] || "Final 👑"}</h2>
+
     <button class="btn secondary" onclick="returnHome()">← Return to Menu</button>
 
 
