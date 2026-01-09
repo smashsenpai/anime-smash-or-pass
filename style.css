@@ -30,21 +30,6 @@ h1 {
   justify-content: center;
 }
 
-button {
-  background-color: #4c4cff;
-  color: white;
-  border: none;
-  padding: 12px 25px;
-  font-size: 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button:hover {
-  background-color: #3737cc;
-}
-
 .game-area {
   text-align: center;
 }
@@ -257,11 +242,6 @@ button:hover {
   margin-top: 20px;
 }
 
-.mascot img {
-  max-width: 300px; /* scales for mobile */
-  width: 80%;
-  height: auto;
-}
 
 .mascot-text {
   font-family: 'Dancing Script', cursive;
@@ -455,15 +435,7 @@ body::before {
 #galleryHeader button {
   margin-left: 10px;
 }
-@media (max-width: 700px) {
-  .leaderboards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .leaderboard {
-    width: 90%;
-  }
-}
+
 /* 🔎 Search Bar */
 #searchInput {
   padding: 8px 12px;
