@@ -1,0 +1,141 @@
+[
+  {
+    "id": "first_vote",
+    "name": "My First Degeneracy",
+    "icon": "🎉",
+    "description": "Cast your very first Smash or Pass vote",
+    "type": "votes",
+    "value": 1,
+    "percent": 92
+  },
+  {
+    "id": "certified_simp",
+    "name": "Certified Simp",
+    "icon": "❤️",
+    "description": "Cast 50 total votes",
+    "type": "votes",
+    "value": 50,
+    "percent": 61
+  },
+  {
+    "id": "cant_stop_clicking",
+    "name": "Can’t Stop Clicking",
+    "icon": "🖱️",
+    "description": "Cast 100 total votes",
+    "type": "votes",
+    "value": 100,
+    "percent": 48
+  },
+  {
+    "id": "down_astronomically_bad",
+    "name": "Down Astronomically Bad",
+    "icon": "💧",
+    "description": "Cast 200 total votes",
+    "type": "votes",
+    "value": 200,
+    "percent": 34
+  },
+  {
+    "id": "no_shame",
+    "name": "No Shame Whatsoever",
+    "icon": "😈",
+    "description": "Cast 300 total votes",
+    "type": "votes",
+    "value": 300,
+    "percent": 26
+  },
+  {
+    "id": "touch_some_grass",
+    "name": "Touch Some Grass",
+    "icon": "🌱",
+    "description": "Cast 500 total votes",
+    "type": "votes",
+    "value": 500,
+    "percent": 19
+  },
+
+
+  {
+    "id": "daily_degenerate",
+    "name": "Daily Degenerate",
+    "icon": "📅",
+    "description": "Play the game on 5 different days",
+    "type": "days_played",
+    "value": 5,
+    "percent": 27
+  },
+  {
+    "id": "streak_lord",
+    "name": "Streak Lord",
+    "icon": "⚡",
+    "description": "Maintain a 7-day voting streak",
+    "type": "streak",
+    "value": 7,
+    "percent": 14
+  },
+  {
+    "id": "no_life_behavior",
+    "name": "No Life Behavior",
+    "icon": "☠️",
+    "description": "Cast 1,000 total votes",
+    "type": "votes",
+    "value": 1000,
+    "percent": 9
+  },
+  {
+    "id": "grass_is_a_myth",
+    "name": "Grass Is a Myth",
+    "icon": "🌿❌",
+    "description": "Maintain a 14-day voting streak",
+    "type": "streak",
+    "value": 14,
+    "percent": 6
+  },
+  {
+    "id": "i_was_here_every_day",
+    "name": "I Was Here Every Day",
+    "icon": "🧠",
+    "description": "Play the game for 15 different days",
+    "type": "days_played",
+    "value": 15,
+    "percent": 8
+  },
+ 
+
+  {
+    "id": "terminally_online",
+    "name": "Terminally Online",
+    "icon": "💀",
+    "description": "Cast 2,500 total votes",
+    "type": "votes",
+    "value": 2500,
+    "percent": 4
+  },
+  {
+    "id": "there_is_no_cure",
+    "name": "There Is No Cure",
+    "icon": "🧪",
+    "description": "Cast 5,000 total votes",
+    "type": "votes",
+    "value": 5000,
+    "percent": 2
+  },
+  {
+    "id": "anime_ruined_me",
+    "name": "Anime Ruined Me",
+    "icon": "📺",
+    "description": "Maintain a 30-day voting streak",
+    "type": "streak",
+    "value": 30,
+    "percent": 1
+  },
+  {
+    "id": "this_is_my_personality",
+    "name": "This Is My Personality Now",
+    "icon": "🧠🔥",
+    "description": "Play the game for 30 different days",
+    "type": "days_played",
+    "value": 30,
+    "percent": 1
+  }
+]
