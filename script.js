@@ -293,7 +293,7 @@ localStorage.setItem(
 
   if (dailyIndex >= dailyPool.length) {
     dailyPool = dailyWinners;
-    dailyRoundSize = dailyPool.length;
+    
     dailyWinners = [];
     dailyIndex = 0;
   }
@@ -339,8 +339,10 @@ function pickDaily(selected) {
   dailyWinners.push(selected);
   dailyIndex += 2;
 
+  // round finished
   if (dailyIndex >= dailyPool.length) {
     dailyPool = dailyWinners;
+    dailyRoundSize = dailyPool.length; // ✅ ONLY HERE
     dailyWinners = [];
     dailyIndex = 0;
   }
@@ -348,6 +350,7 @@ function pickDaily(selected) {
   saveDailyState();
   showDailyMatch();
 }
+
 
 
 // --- Display single character (game view) ---
