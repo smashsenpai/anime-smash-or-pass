@@ -29,6 +29,15 @@ const firebaseConfig = useTest ? testConfig : liveConfig;
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+// ===============================
+// 🧠 VOTE BATCHING SYSTEM
+// ===============================
+import { writeBatch } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+const voteBuffer = {};
+let bufferedVotesCount = 0;
+const FLUSH_LIMIT = 10;
+
 // ⏱️ AUTO LEADERBOARD UPDATE (1 DAY)
 const LEADERBOARD_UPDATE_DAYS = 1;
 
@@ -387,6 +396,35 @@ function showCharacter() {
     </div>
   `;
 }
+async function flushVoteBuffer() {
+  if (bufferedVotesCount === 0) return;
+
+  try {
+    const batch = writeBatch(db);
+
+    Object.entries(voteBuffer).forEach(([id, counts]) => {
+      const ref = doc(db, "votes", id);
+      batch.set(
+        ref,
+        {
+          smash: increment(counts.smash || 0),
+          nah: increment(counts.nah || 0)
+        },
+        { merge: true }
+      );
+    });
+
+    await batch.commit();
+
+    // reset buffer
+    for (const k in voteBuffer) delete voteBuffer[k];
+    bufferedVotesCount = 0;
+
+    console.log("✅ Votes flushed to Firestore");
+  } catch (err) {
+    console.error("❌ Failed to flush votes:", err);
+  }
+}
 
 // --- Voting function (same optimistic + firestore logic) ---
 async function vote(characterId, isSmash) {
@@ -409,22 +447,19 @@ async function vote(characterId, isSmash) {
     showCharacter();
   }, 500);
 
-  // Background save
-  (async () => {
-    try {
-      const ref = doc(db, "votes", characterId);
-      const snap = await getDoc(ref);
-      if (!snap.exists()) {
-        await setDoc(ref, { smash: 0, nah: 0 });
-      }
-      const field = isSmash ? "smash" : "nah";
-      await updateDoc(ref, { [field]: increment(1) });
-    } catch (err) {
-      console.error("Vote error:", err);
-      const vr2 = document.getElementById("voteResult");
-      if (vr2) vr2.innerText = "⚠️ Network error — your vote may not have counted.";
-    }
-  })();
+// 🧠 Queue vote locally instead of immediate write
+voteBuffer[characterId] ??= { smash: 0, nah: 0 };
+
+if (isSmash) voteBuffer[characterId].smash++;
+else voteBuffer[characterId].nah++;
+
+bufferedVotesCount++;
+
+// 🔥 Auto flush every 10 votes
+if (bufferedVotesCount >= FLUSH_LIMIT) {
+  flushVoteBuffer();
+}
+
 }
 
 // --- Play again / return home ---
@@ -433,6 +468,7 @@ function playAgain() {
   showCharacter();
 }
 function returnHome() {
+  flushVoteBuffer(); // 🔥 ensure votes are saved
   gameArea.innerHTML = "";
   const menu = document.getElementById("menu");
   if (menu) menu.style.display = "flex";
@@ -576,6 +612,9 @@ async function adminUpdateLeaderboard(gender) {
   console.log(`✅ ${gender} leaderboard updated`);
 
 }
+window.addEventListener("beforeunload", () => {
+  flushVoteBuffer();
+});
 
 
 // ===============================
