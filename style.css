@@ -919,5 +919,24 @@ body::before {
     padding: 11px 22px;
   }
 }
+/* 🔒 Isolate Ad Layout */
+.ad-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.ad-container {
+  width: 300px;
+  min-width: 300px;
+  height: 250px;
+}
+
+/* 💪 Force leaderboard full width */
+.leaderboards {
+  width: 100%;
+  max-width: none;
+}
 
 
