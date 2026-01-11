@@ -23,7 +23,7 @@ const testConfig = {
   appId: "1:153651694103:web:dcee9781f4129fa04faa52",
   measurementId: "G-0QC1NNRH1T"
 };
-const useTest = false; // set to true for test project
+const useTest = true; // set to true for test project
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
@@ -150,6 +150,20 @@ function loadDailyState(gender) {
 function clearDailyState(gender) {
   localStorage.removeItem(getDailyStateKey(gender));
 }
+function scrollUpSlightly() {
+  window.scrollBy({
+    top: -300, // adjust this value
+    behavior: "smooth"
+  });
+}
+function scrollDownSlightly() {
+  window.scrollBy({
+    top: 300, // adjust if needed
+    behavior: "smooth"
+  });
+}
+
+
 
 
 // --- Helper: shuffle ---
@@ -469,6 +483,7 @@ function playAgain() {
 }
 function returnHome() {
   flushVoteBuffer(); // 🔥 ensure votes are saved
+  scrollUpSlightly();
   gameArea.innerHTML = "";
   const menu = document.getElementById("menu");
   if (menu) menu.style.display = "flex";
@@ -730,6 +745,7 @@ if (boyBtn) boyBtn.onclick = () => {
   currentGroup = shuffleArray(characters.boys);
   currentIndex = 0;
   document.getElementById("menu").style.display = "none";
+  scrollDownSlightly();
   showCharacter();
 };
 
@@ -737,6 +753,7 @@ if (girlBtn) girlBtn.onclick = () => {
   currentGroup = shuffleArray(characters.girls);
   currentIndex = 0;
   document.getElementById("menu").style.display = "none";
+  scrollDownSlightly();
   showCharacter();
 };
 
@@ -744,6 +761,7 @@ if (bothBtn) bothBtn.onclick = () => {
   currentGroup = shuffleArray([...characters.boys, ...characters.girls]);
   currentIndex = 0;
   document.getElementById("menu").style.display = "none";
+  scrollDownSlightly();
   showCharacter();
 };
 
