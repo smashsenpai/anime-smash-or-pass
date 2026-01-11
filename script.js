@@ -23,7 +23,7 @@ const testConfig = {
   appId: "1:153651694103:web:dcee9781f4129fa04faa52",
   measurementId: "G-0QC1NNRH1T"
 };
-const useTest = true; // set to true for test project
+const useTest = false; // set to true for test project
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
