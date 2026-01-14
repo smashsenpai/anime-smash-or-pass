@@ -69,11 +69,7 @@
     "name": "Mahito",
     "gender": "Male"
   },
-  {
-    "anime": "Jujutsu Kaisen",
-    "name": "Panda",
-    "gender": "Male"
-  },
+  
   {
     "anime": "ONE PIECE",
     "name": "Luffy Monkey",
@@ -109,11 +105,7 @@
     "name": "Ace Portgas",
     "gender": "Male"
   },
-  {
-    "anime": "ONE PIECE",
-    "name": "Chopper Tony Tony",
-    "gender": "Male"
-  },
+
   {
     "anime": "ONE PIECE",
     "name": "Usopp",
@@ -124,11 +116,7 @@
     "name": "Shanks",
     "gender": "Male"
   },
-  {
-    "anime": "ONE PIECE",
-    "name": "Brook",
-    "gender": "Male"
-  },
+ ,
   {
     "anime": "ONE PIECE",
     "name": "Hancock Boa",
@@ -164,11 +152,7 @@
     "name": "Katakuri Charlotte",
     "gender": "Male"
   },
-  {
-    "anime": "ONE PIECE",
-    "name": "Sabo",
-    "gender": "Male"
-  },
+  
   {
     "anime": "ONE PIECE",
     "name": "Yamato",
@@ -239,11 +223,7 @@
     "name": "Erwin Smith",
     "gender": "Male"
   },
-  {
-    "anime": "Shingeki no Kyojin",
-    "name": "Gabi Braun",
-    "gender": "Female"
-  },
+
   {
     "anime": "Shingeki no Kyojin",
     "name": "Sasha Blouse",
@@ -289,16 +269,8 @@
     "name": "Connie Springer",
     "gender": "Male"
   },
-  {
-    "anime": "HUNTER×HUNTER",
-    "name": "Killua Zoldyck",
-    "gender": "Male"
-  },
-  {
-    "anime": "HUNTER×HUNTER",
-    "name": "Gon Freecss",
-    "gender": "Male"
-  },
+  
+ 
   {
     "anime": "HUNTER×HUNTER",
     "name": "Hisoka Morow",
@@ -434,11 +406,7 @@
     "name": "Shigeo Kageyama",
     "gender": "Male"
   },
-  {
-    "anime": "Mob Psycho 100",
-    "name": "Ekubo",
-    "gender": "Male"
-  },
+
   {
     "anime": "Mob Psycho 100",
     "name": "Teruki Hanazawa",
@@ -509,11 +477,7 @@
     "name": "Asa Mitaka",
     "gender": "Female"
   },
-  {
-    "anime": "Chainsaw Man",
-    "name": "Pochita",
-    "gender": "Male"
-  },
+
   {
     "anime": "Chainsaw Man",
     "name": "Himeno",
@@ -634,11 +598,7 @@
     "name": "Tomoe Koga",
     "gender": "Female"
   },
-  {
-    "anime": "Seishun Buta Yarou wa Bunny Girl Senpai no Yume wo Minai",
-    "name": "Kaede Azusagawa",
-    "gender": "Female"
-  },
+
   {
     "anime": "NARUTO",
     "name": "Itachi Uchiha",
@@ -1294,11 +1254,7 @@
     "name": "Tsukasa Shishiou",
     "gender": "Male"
   },
-  {
-    "anime": "Dr. STONE",
-    "name": "Suika",
-    "gender": "Female"
-  },
+
   {
     "anime": "Bakemonogatari",
     "name": "Hitagi Senjougahara",
@@ -1394,21 +1350,13 @@
     "name": "Yor Forger",
     "gender": "Female"
   },
-  {
-    "anime": "SPY×FAMILY",
-    "name": "Anya Forger",
-    "gender": "Female"
-  },
+ 
   {
     "anime": "SPY×FAMILY",
     "name": "Loid Forger",
     "gender": "Male"
   },
-  {
-    "anime": "SPY×FAMILY",
-    "name": "Bond",
-    "gender": "Male"
-  },
+ 
   {
     "anime": "Nekomonogatari (Kuro)",
     "name": "Shinobu Oshino",
@@ -1524,11 +1472,7 @@
     "name": "Jet Black",
     "gender": "Male"
   },
-  {
-    "anime": "Cowboy Bebop",
-    "name": "Ein",
-    "gender": "Female"
-  },
+
   {
     "anime": "Tensei Shitara Slime Datta Ken",
     "name": "Rimuru Tempest",
@@ -1849,36 +1793,16 @@
     "name": "Naoka Ueno",
     "gender": "Female"
   },
-  {
-    "anime": "Koe no Katachi",
-    "name": "Yuzuru Nishimiya",
-    "gender": "Female"
-  },
+
   {
     "anime": "Mahou Shoujo Madoka☆Magica",
     "name": "Homura Akemi",
     "gender": "Female"
   },
-  {
-    "anime": "Mahou Shoujo Madoka☆Magica",
-    "name": "Madoka Kaname",
-    "gender": "Female"
-  },
-  {
-    "anime": "Mahou Shoujo Madoka☆Magica",
-    "name": "Kyouko Sakura",
-    "gender": "Female"
-  },
-  {
-    "anime": "Mahou Shoujo Madoka☆Magica",
-    "name": "Sayaka Miki",
-    "gender": "Female"
-  },
-  {
-    "anime": "Mahou Shoujo Madoka☆Magica",
-    "name": "Mami Tomoe",
-    "gender": "Female"
-  },
+ 
+ 
+
+
   {
     "anime": "MONSTER",
     "name": "Johan Liebert",
@@ -1939,11 +1863,7 @@
     "name": "Luck Voltia",
     "gender": "Male"
   },
-  {
-    "anime": "Black Clover",
-    "name": "Kuro Nero",
-    "gender": "Female"
-  },
+
   {
     "anime": "Black Clover",
     "name": "Zora Ideale",
@@ -2029,11 +1949,7 @@
     "name": "Hatsuharu Souma",
     "gender": "Male"
   },
-  {
-    "anime": "Fruits Basket",
-    "name": "Momiji Souma",
-    "gender": "Male"
-  },
+
   {
     "anime": "Fruits Basket",
     "name": "Saki Hanajima",
@@ -2219,26 +2135,10 @@
     "name": "Gokuu Son",
     "gender": "Male"
   },
-  {
-    "anime": "Yakusoku no Neverland",
-    "name": "Ray",
-    "gender": "Male"
-  },
-  {
-    "anime": "Yakusoku no Neverland",
-    "name": "Norman",
-    "gender": "Male"
-  },
-  {
-    "anime": "Yakusoku no Neverland",
-    "name": "Emma",
-    "gender": "Female"
-  },
-  {
-    "anime": "Yakusoku no Neverland",
-    "name": "Phil",
-    "gender": "Male"
-  },
+
+
+
+
   {
     "anime": "Shigatsu wa Kimi no Uso",
     "name": "Kaori Miyazono",
@@ -2254,11 +2154,7 @@
     "name": "Hanako",
     "gender": "Male"
   },
-  {
-    "anime": "Jibaku Shounen Hanako-kun",
-    "name": "Nene Yashiro",
-    "gender": "Female"
-  },
+ 
   {
     "anime": "Jibaku Shounen Hanako-kun",
     "name": "Kou Minamoto",
@@ -2429,11 +2325,7 @@
     "name": "Ryuuko Matoi",
     "gender": "Female"
   },
-  {
-    "anime": "Kill la Kill",
-    "name": "Mako Mankanshoku",
-    "gender": "Female"
-  },
+
   {
     "anime": "Kill la Kill",
     "name": "Satsuki Kiryuuin",
@@ -2444,11 +2336,7 @@
     "name": "Howl",
     "gender": "Male"
   },
-  {
-    "anime": "Howl no Ugoku Shiro",
-    "name": "Calcifer",
-    "gender": ""
-  },
+
   {
     "anime": "JoJo no Kimyou na Bouken: Stone Ocean",
     "name": "Jolyne Kuujou",
@@ -2604,11 +2492,7 @@
     "name": "Naofumi Iwatani",
     "gender": "Male"
   },
-  {
-    "anime": "Tate no Yuusha no Nariagari",
-    "name": "Filo",
-    "gender": "Female"
-  },
+
   {
     "anime": "Fate/stay night",
     "name": "Kiritsugu Emiya",
@@ -2639,11 +2523,7 @@
     "name": "Juvia Lockser",
     "gender": "Female"
   },
-  {
-    "anime": "FAIRY TAIL",
-    "name": "Happy",
-    "gender": "Male"
-  },
+ 
   {
     "anime": "Dragon Ball GT",
     "name": "Vegeta",
@@ -2744,11 +2624,7 @@
     "name": "Rei Kiriyama",
     "gender": "Male"
   },
-  {
-    "anime": "3-gatsu no Lion",
-    "name": "Hinata Kawamoto",
-    "gender": "Female"
-  },
+
   {
     "anime": "JoJo no Kimyou na Bouken: Ougon no Kaze",
     "name": "Giorno Giovanna",
@@ -2864,11 +2740,7 @@
     "name": "Hyakkimaru",
     "gender": "Male"
   },
-  {
-    "anime": "Dororo to Hyakkimaru",
-    "name": "Dororo",
-    "gender": "Male"
-  },
+  
   {
     "anime": "Nisemonogatari",
     "name": "Deishuu Kaiki",
@@ -2919,11 +2791,7 @@
     "name": "Nazuna Nanakusa",
     "gender": "Female"
   },
-  {
-    "anime": "Made in Abyss",
-    "name": "Nanachi",
-    "gender": "female"
-  },
+
   {
     "anime": "Made in Abyss",
     "name": "Bondrewd",
@@ -2939,31 +2807,15 @@
     "name": "Ouzen",
     "gender": "Female"
   },
-  {
-    "anime": "K-ON!",
-    "name": "Yui Hirasawa",
-    "gender": "Female"
-  },
-  {
-    "anime": "K-ON!",
-    "name": "Mio Akiyama",
-    "gender": "Female"
-  },
+
+ 
   {
     "anime": "K-ON!",
     "name": "Azusa Nakano",
     "gender": "Female"
   },
-  {
-    "anime": "K-ON!",
-    "name": "Tsumugi Kotobuki",
-    "gender": "Female"
-  },
-  {
-    "anime": "K-ON!",
-    "name": "Ritsu Tainaka",
-    "gender": "Female"
-  },
+
+
   {
     "anime": "Overlord",
     "name": "Albedo",
@@ -2979,11 +2831,7 @@
     "name": "Shalltear Bloodfallen",
     "gender": "Female"
   },
-  {
-    "anime": "Kobayashi-san Chi no Maidragon",
-    "name": "Kanna Kamui",
-    "gender": "Female"
-  },
+
   {
     "anime": "Kobayashi-san Chi no Maidragon",
     "name": "Tohru",
@@ -3004,11 +2852,7 @@
     "name": "Quetzalcoatl",
     "gender": "Female"
   },
-  {
-    "anime": "No Game No Life",
-    "name": "Shiro",
-    "gender": "Female"
-  },
+
   {
     "anime": "No Game No Life",
     "name": "Sora",
@@ -3024,11 +2868,7 @@
     "name": "Death the Kid",
     "gender": "Male"
   },
-  {
-    "anime": "Soul Eater",
-    "name": "Maka Albarn",
-    "gender": "Female"
-  },
+
   {
     "anime": "Soul Eater",
     "name": "Soul Eater Evans",
@@ -3174,11 +3014,7 @@
     "name": "Vash the Stampede",
     "gender": "Male"
   },
-  {
-    "anime": "TRIGUN",
-    "name": "Narrator",
-    "gender": ""
-  },
+
   {
     "anime": "TRIGUN",
     "name": "Nicholas",
@@ -3499,11 +3335,7 @@
     "name": "Ginko",
     "gender": "Male"
   },
-  {
-    "anime": "Ousama Ranking",
-    "name": "Bojji",
-    "gender": "Male"
-  },
+ 
   {
     "anime": "Jeonjijeok Dokja Sijeom",
     "name": "Dok Ja Kim",
@@ -3614,11 +3446,7 @@
     "name": "Alibaba Saluja",
     "gender": "Male"
   },
-  {
-    "anime": "Magi: The labyrinth of magic",
-    "name": "Aladdin",
-    "gender": "Male"
-  },
+
   {
     "anime": "Angel Beats!",
     "name": "Yuri Nakamura",
@@ -3634,11 +3462,7 @@
     "name": "Fushi",
     "gender": "Male"
   },
-  {
-    "anime": "Fumetsu no Anata e",
-    "name": "Gugu",
-    "gender": "Male"
-  },
+
   {
     "anime": "Kuroko no Basket",
     "name": "Daiki Aomine",
@@ -3744,21 +3568,13 @@
     "name": "Haruhi Suzumiya",
     "gender": "Female"
   },
-  {
-    "anime": "Nyoro-n☆Churuya-san",
-    "name": "Yuki Nagato",
-    "gender": "Female"
-  },
+
   {
     "anime": "Nyoro-n☆Churuya-san",
     "name": "Kyon",
     "gender": "Male"
   },
-  {
-    "anime": "Wonder Egg Priority",
-    "name": "Ai Ooto",
-    "gender": "Female"
-  },
+
   {
     "anime": "Wonder Egg Priority",
     "name": "Rika Kawai",
@@ -3814,11 +3630,7 @@
     "name": "Shinichi Izumi",
     "gender": "Male"
   },
-  {
-    "anime": "Kiseijuu: Sei no Kakuritsu",
-    "name": "Migi",
-    "gender": "Male"
-  },
+
   {
     "anime": "Vivy: Fluorite Eye’s Song",
     "name": "Vivy",
@@ -3914,11 +3726,7 @@
     "name": "Anos Voldigoad",
     "gender": "Male"
   },
-  {
-    "anime": "Karakai Jouzu no Takagi-san",
-    "name": "Takagi",
-    "gender": "Female"
-  },
+
   {
     "anime": "Free!",
     "name": "Rin Matsuoka",
@@ -3994,11 +3802,7 @@
     "name": "Kaiji Itou",
     "gender": "Male"
   },
-  {
-    "anime": "Azumanga WEB Daiou",
-    "name": "Ayumu Kasuga",
-    "gender": "Female"
-  },
+
   {
     "anime": "Toaru Kagaku no Railgun S",
     "name": "Accelerator",
@@ -4074,11 +3878,7 @@
     "name": "Mei Misaki",
     "gender": "Female"
   },
-  {
-    "anime": "Yotsuba to!",
-    "name": "Yotsuba Koiwai",
-    "gender": "Female"
-  },
+
   {
     "anime": "Bungou Stray Dogs 2nd Season",
     "name": "Lucy Montgomery",
@@ -4114,11 +3914,7 @@
     "name": "Anna Yamada",
     "gender": "Female"
   },
-  {
-    "anime": "Boku no Kokoro no Yabai Yatsu",
-    "name": "Kyoutarou Ichikawa",
-    "gender": "Male"
-  },
+
   {
     "anime": "Watashi ga Motenai no wa Dou Kangaetemo Omaera ga Warui!",
     "name": "Tomoko Kuroki",
@@ -4264,11 +4060,7 @@
     "name": "Satoru Fujinuma",
     "gender": "Male"
   },
-  {
-    "anime": "Boku dake ga Inai Machi",
-    "name": "Kayo Hinazuki",
-    "gender": "Female"
-  },
+
   {
     "anime": "Yuu☆Yuu☆Hakusho: The Golden Seal",
     "name": "Hiei",
@@ -4304,16 +4096,8 @@
     "name": "Haku",
     "gender": "Male"
   },
-  {
-    "anime": "Sen to Chihiro no Kamikakushi",
-    "name": "Chihiro Ogino",
-    "gender": "Female"
-  },
-  {
-    "anime": "Sen to Chihiro no Kamikakushi",
-    "name": "Kaonashi",
-    "gender": ""
-  },
+
+
   {
     "anime": "Skip to Loafer",
     "name": "Mitsumi Iwakura",
@@ -4379,11 +4163,7 @@
     "name": "Stella Vermillion",
     "gender": "Female"
   },
-  {
-    "anime": "Non Non Biyori",
-    "name": "Renge Miyauchi",
-    "gender": "Female"
-  },
+
   {
     "anime": "ReLIFE",
     "name": "Chizuru Hishiro",
@@ -4414,11 +4194,7 @@
     "name": "Iruma Suzuki",
     "gender": "Male"
   },
-  {
-    "anime": "Mairimashita! Iruma-kun",
-    "name": "Clara Valac",
-    "gender": "Female"
-  },
+
   {
     "anime": "Kono Subarashii Sekai ni Shukufuku wo!: Kono Subarashii Choker ni Shukufuku wo!",
     "name": "Yunyun",
@@ -4539,26 +4315,14 @@
     "name": "Sniper Kamen",
     "gender": "Male"
   },
-  {
-    "anime": "Shoujo Shuumatsu Ryokou",
-    "name": "Chito",
-    "gender": "Female"
-  },
-  {
-    "anime": "Shoujo Shuumatsu Ryokou",
-    "name": "Yuuri",
-    "gender": "Female"
-  },
+
+ 
   {
     "anime": "Mononoke-hime",
     "name": "San",
     "gender": "Female"
   },
-  {
-    "anime": "Kumo desu ga, Nani ka?",
-    "name": "Kumoko",
-    "gender": "Female"
-  },
+
   {
     "anime": "Fire Punch",
     "name": "Togata",
@@ -4659,11 +4423,7 @@
     "name": "Haruka Sakura",
     "gender": "Male"
   },
-  {
-    "anime": "Himouto! Umaru-chan",
-    "name": "Umaru Doma",
-    "gender": "Female"
-  },
+
   {
     "anime": "Tonari no Kaibutsu-kun",
     "name": "Haru Yoshida",
@@ -4679,11 +4439,7 @@
     "name": "Konjiki no Yami",
     "gender": "Female"
   },
-  {
-    "anime": "Tonari no Totoro",
-    "name": "Totoro",
-    "gender": ""
-  },
+
   {
     "anime": "It's a Rumic World: 50th Anniversary Weekly★Shonen Sunday",
     "name": "Lum",
@@ -4719,11 +4475,7 @@
     "name": "Angelo Lagusa",
     "gender": "Male"
   },
-  {
-    "anime": "Ano Hi Mita Hana no Namae wo Bokutachi wa Mada Shiranai.",
-    "name": "Meiko Honma",
-    "gender": "Female"
-  },
+
   {
     "anime": "Deadman Wonderland",
     "name": "shiro",
@@ -4824,11 +4576,7 @@
     "name": "Leonardo Watch",
     "gender": "Male"
   },
-  {
-    "anime": "Itai no wa Iya nano de Bougyoryoku ni Kyokufuri Shitai to Omoimasu.",
-    "name": "Kaede Honjou",
-    "gender": "Female"
-  },
+
   {
     "anime": "No Game No Life Zero",
     "name": "Schwi Dola",
@@ -4869,11 +4617,7 @@
     "name": "Seto Kaiba",
     "gender": "Male"
   },
-  {
-    "anime": "Ore no Imouto ga Konna ni Kawaii Wake ga Nai",
-    "name": "Ruri Gokou",
-    "gender": "Female"
-  },
+ 
   {
     "anime": "20 Seiki Shounen",
     "name": "Kenji Endou",
@@ -4884,11 +4628,7 @@
     "name": "Tomodachi",
     "gender": "Male"
   },
-  {
-    "anime": "Nichijou",
-    "name": "Yuuko Aioi",
-    "gender": "Female"
-  },
+
   {
     "anime": "NEW GAME!",
     "name": "Hifumi Takimoto",
@@ -4924,11 +4664,7 @@
     "name": "Reki",
     "gender": "Female"
   },
-  {
-    "anime": "Eromanga Sensei",
-    "name": "Sagiri Izumi",
-    "gender": "Female"
-  },
+ 
   {
     "anime": "Love Live! Sunshine!!",
     "name": "Yoshiko Tsushima",
@@ -4939,11 +4675,7 @@
     "name": "Twelve",
     "gender": "Male"
   },
-  {
-    "anime": "Uma Musume: Pretty Derby",
-    "name": "Toukai Teiou",
-    "gender": "Female"
-  },
+
   {
     "anime": "Gekkan Shoujo Nozaki-kun",
     "name": "Chiyo Sakura ",
@@ -4964,11 +4696,7 @@
     "name": "Arche Eeb Rile Furt",
     "gender": "female"
   },
-  {
-    "anime": "Cardcaptor Sakura Movie: Fuinsareta Card",
-    "name": "Tomoyo Daidouji",
-    "gender": "Female"
-  },
+
   {
     "anime": "Owarimonogatari",
     "name": "Sodachi Oikura",
@@ -4984,21 +4712,14 @@
     "name": "Yuuko Ichihara",
     "gender": "Female"
   },
-  {
-    "anime": "Dead Dead Demon's Dededededestruction",
-    "name": "Ouran Nakagawa",
-    "gender": "Female"
-  },
-  {
-    "anime": "Berserk",
-    "name": "Puck",
-    "gender": ""
-  },
+ 
+
   {
     "anime": "Tongari Boushi no Atelier",
     "name": "Qifrey",
     "gender": "Male"
   }
 ]
+
 
 
