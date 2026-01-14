@@ -1024,5 +1024,52 @@ body::before {
     height: 180px;
   }
 }
+.special-card.voted {
+  opacity: 0.6;
+  pointer-events: none;
+}
+.voted-msg {
+  color: #7dff9c;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+/* 🔥 SPECIAL MODE MENU BUTTON */
+.menu-special-btn {
+  background: linear-gradient(135deg, #ff4da6, #ff7a18);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 14px 26px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 0 18px rgba(255, 77, 166, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
 
+/* hover glow */
+.menu-special-btn:hover {
+  transform: scale(1.06);
+  box-shadow: 0 0 28px rgba(255, 77, 166, 0.9);
+}
+
+/* subtle shine animation */
+.menu-special-btn::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -30%;
+  width: 40%;
+  height: 200%;
+  background: rgba(255,255,255,0.25);
+  transform: rotate(25deg);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% { left: -30%; }
+  100% { left: 130%; }
+}
 
