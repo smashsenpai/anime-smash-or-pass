@@ -104,6 +104,8 @@ async function loadCharacters() {
 }
 
 // --- State ---
+let specialModeData = null;
+
 let currentGroup = [];
 let currentIndex = 0;
 let dailyPool = [];
@@ -439,6 +441,124 @@ async function flushVoteBuffer() {
     console.error("❌ Failed to flush votes:", err);
   }
 }
+async function loadSpecialMode() {
+  try {
+    const ref = doc(db, "special_mode", "active");
+    const snap = await getDoc(ref);
+
+    if (!snap.exists()) return null;
+
+    const data = snap.data();
+
+    if (!data.active) return null;
+
+    const now = Date.now();
+    const expires = data.expiresAt.toMillis();
+
+    if (now > expires) return null;
+
+    return data;
+  } catch (err) {
+    console.error("Special mode load failed:", err);
+    return null;
+  }
+}
+function showSpecialMode() {
+  if (!specialModeData) return;
+
+  document.getElementById("menu").style.display = "none";
+
+  const chars = specialModeData.characters
+    .map(id =>
+      [...characters.boys, ...characters.girls, ...characters.other]
+        .find(c => c.id === id)
+    )
+    .filter(Boolean);
+
+let timeLeft = "soon";
+
+try {
+  const diffMs =
+    specialModeData.expiresAt.toMillis() - Date.now();
+
+  if (diffMs > 0) {
+    const totalMinutes = Math.floor(diffMs / 60000);
+    const hours = Math.floor(totalMinutes / 60);
+    const minutes = totalMinutes % 60;
+
+    timeLeft =
+      hours > 0
+        ? `${hours}h ${minutes}m`
+        : `${minutes}m`;
+  }
+} catch (err) {
+  console.warn("⏳ Timer parse failed:", err);
+}
+
+
+  gameArea.innerHTML = `
+    <div class="special-mode">
+      <h2>${specialModeData.title || "🔥 Special Mode"}</h2>
+      <p class="special-note">
+        ${specialModeData.note || ""}
+      </p>
+    <p class="special-timer">⏳ Ends in ~${timeLeft}</p>
+
+
+      <div class="special-grid">
+        ${chars.map(c => `
+          <div class="special-card" data-id="${c.id}">
+
+            <img src="${c.image}">
+            <h3>${formatName(c.name)}</h3>
+            <p>${c.anime}</p>
+            <button onclick="voteSpecial('${c.id}', true)">🔥 Smash</button>
+            <button onclick="voteSpecial('${c.id}', false)">❌ Pass</button>
+          </div>
+        `).join("")}
+      </div>
+
+      <button class="btn secondary" onclick="returnHome()">Return Home</button>
+    </div>
+  `;
+}
+function voteSpecial(characterId, isSmash) {
+  const key = `special_voted_${characterId}_${specialModeData.expiresAt.toMillis()}`;
+
+  // ❌ already voted
+  if (localStorage.getItem(key)) {
+    const card = document.querySelector(`[data-id="${characterId}"]`);
+    if (card && !card.querySelector(".voted-msg")) {
+      card.classList.add("voted");
+      const msg = document.createElement("p");
+      msg.className = "voted-msg";
+      msg.innerText = "✅ You already voted";
+      card.appendChild(msg);
+    }
+    return;
+  }
+
+  // ✅ FIRST TIME vote
+  localStorage.setItem(key, "true");
+
+  voteBuffer[characterId] ??= { smash: 0, nah: 0 };
+  if (isSmash) voteBuffer[characterId].smash++;
+  else voteBuffer[characterId].nah++;
+
+  bufferedVotesCount++;
+  if (bufferedVotesCount >= FLUSH_LIMIT) flushVoteBuffer();
+
+  const card = document.querySelector(`[data-id="${characterId}"]`);
+  if (card) {
+    card.classList.add("voted");
+    const msg = document.createElement("p");
+    msg.className = "voted-msg";
+    msg.innerText = "🔥 Vote counted!";
+    card.appendChild(msg);
+  }
+}
+
+
 
 // --- Voting function (same optimistic + firestore logic) ---
 async function vote(characterId, isSmash) {
@@ -727,6 +847,8 @@ async function autoUpdateLeaderboardIfNeeded() {
 // --- Initialization (run once) ---
 (async function init() {
   await loadCharacters();
+  specialModeData = await loadSpecialMode();
+
   window.startDailyMode = startDailyMode;
 
 
@@ -764,6 +886,27 @@ if (bothBtn) bothBtn.onclick = () => {
   scrollDownSlightly();
   showCharacter();
 };
+const specialBtn = document.getElementById("specialBtn");
+
+if (specialBtn) {
+  specialBtn.onclick = async () => {
+    if (!specialModeData) {
+      document.getElementById("menu").style.display = "none";
+      gameArea.innerHTML = `
+        <h2>🔥 Special Mode</h2>
+        <p style="opacity:0.8;">
+          No featured characters right now.
+          <br><br>
+          Smash Senpai is updated regularly 👀
+        </p>
+        <button class="btn" onclick="returnHome()">Return Home</button>
+      `;
+      return;
+    }
+    showSpecialMode();
+  };
+}
+
 
   // music toggle
   if (musicToggle && bgMusic) {
@@ -790,6 +933,7 @@ displayLeaderboard("girl", "wifeBoard", "Top Wives");
   window.vote = vote;
   window.playAgain = playAgain;
   window.returnHome = returnHome;
+  window.voteSpecial = voteSpecial;
  
 
 })();
