@@ -23,7 +23,7 @@ const testConfig = {
   appId: "1:153651694103:web:dcee9781f4129fa04faa52",
   measurementId: "G-0QC1NNRH1T"
 };
-const useTest = false; // set to true for test project
+const useTest =false; // set to true for test project
 const firebaseConfig = useTest ? testConfig : liveConfig;
 
 // Initialize Firebase
@@ -441,6 +441,17 @@ async function flushVoteBuffer() {
     console.error("❌ Failed to flush votes:", err);
   }
 }
+const SPECIAL_VOTE_COOLDOWN_MS = 2 * 60 * 60 * 1000; // 2 hours
+function formatCooldown(ms) {
+  const totalSeconds = Math.ceil(ms / 1000);
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+
+  if (hours > 0) return `${hours}h ${minutes}m`;
+  return `${minutes}m`;
+}
+
+
 async function loadSpecialMode() {
   try {
     const ref = doc(db, "special_mode", "active");
@@ -524,22 +535,34 @@ try {
 }
 function voteSpecial(characterId, isSmash) {
   const key = `special_voted_${characterId}_${specialModeData.expiresAt.toMillis()}`;
+  const now = Date.now();
 
-  // ❌ already voted
-  if (localStorage.getItem(key)) {
-    const card = document.querySelector(`[data-id="${characterId}"]`);
-    if (card && !card.querySelector(".voted-msg")) {
-      card.classList.add("voted");
-      const msg = document.createElement("p");
-      msg.className = "voted-msg";
-      msg.innerText = "✅ You already voted";
-      card.appendChild(msg);
+ const stored = localStorage.getItem(key);
+
+
+
+  // ⛔ Cooldown active
+  if (stored) {
+    const nextVoteTime = parseInt(stored, 10);
+
+    if (!isNaN(nextVoteTime) && now < nextVoteTime) {
+      const remaining = formatCooldown(nextVoteTime - now);
+
+      const card = document.querySelector(`[data-id="${characterId}"]`);
+      if (card && !card.querySelector(".voted-msg")) {
+        card.classList.add("voted");
+        const msg = document.createElement("p");
+        msg.className = "voted-msg";
+        msg.innerText = `⏳ Vote again in ${remaining}`;
+        card.appendChild(msg);
+      }
+      return;
     }
-    return;
   }
 
-  // ✅ FIRST TIME vote
-  localStorage.setItem(key, "true");
+  // ✅ Vote allowed
+  const nextVoteTime = now + SPECIAL_VOTE_COOLDOWN_MS;
+  localStorage.setItem(key, nextVoteTime.toString());
 
   voteBuffer[characterId] ??= { smash: 0, nah: 0 };
   if (isSmash) voteBuffer[characterId].smash++;
@@ -553,10 +576,11 @@ function voteSpecial(characterId, isSmash) {
     card.classList.add("voted");
     const msg = document.createElement("p");
     msg.className = "voted-msg";
-    msg.innerText = "🔥 Vote counted!";
+    msg.innerText = "🔥 Vote counted! Come back later";
     card.appendChild(msg);
   }
 }
+
 
 
 
