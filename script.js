@@ -576,7 +576,7 @@ function voteSpecial(characterId, isSmash) {
     card.classList.add("voted");
     const msg = document.createElement("p");
     msg.className = "voted-msg";
-    msg.innerText = "🔥 Vote counted! Come back later";
+    msg.innerText = "🔥 Vote counted! Come back after 2 hours";
     card.appendChild(msg);
   }
 }
